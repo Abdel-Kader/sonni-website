@@ -1,0 +1,16 @@
+import React from 'react'
+
+
+export default function Valeurs() {
+    return (
+        <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
+            <div className="mx-auto lg:mx-0">
+                <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl animate-slidein500 opacity-0">Nos valeurs</h2>
+                <p className="mt-6 text-xl l leading-loose text-justify animate-slidein700 opacity-0">
+                    Excellence, Performance , Leadership
+                </p>
+            </div>
+
+        </section>
+    )
+}
