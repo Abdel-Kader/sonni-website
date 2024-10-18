@@ -47,7 +47,9 @@ export default function Navbar() {
                 <Link to='/blog'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Blog</p>
                 </Link>
-                <a href="#" className="rounded-md px-2 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Contact</a>
+                <Link to='/contact'>
+                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Contact</p>
+                </Link>
               </div>
             </div>
           </div>

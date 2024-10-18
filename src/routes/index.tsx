@@ -7,6 +7,7 @@ import CertificatPage from "../pages/CertificatPage";
 import BlogPage from "../pages/BlogPage";
 import TeamBuildingPage from "../pages/TeamBuildingPage";
 import SeminairePage from "../pages/SeminairePage";
+import ContactPage from "../pages/ContactPage";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
             {
                 path: '/team-building',
                 element: <TeamBuildingPage />,
+            },
+            {
+                path: '/contact',
+                element: <ContactPage />,
             },
         ],
     }
