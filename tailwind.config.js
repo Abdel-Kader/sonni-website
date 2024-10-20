@@ -30,6 +30,11 @@ module.exports = {
       },
     }
   },
+  variants: {
+    extend: {
+      visibility: ["group-hover"],
+    },
+  },
   plugins: [],
 }
 

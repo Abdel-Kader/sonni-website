@@ -8,6 +8,7 @@ import BlogPage from "../pages/BlogPage";
 import TeamBuildingPage from "../pages/TeamBuildingPage";
 import SeminairePage from "../pages/SeminairePage";
 import ContactPage from "../pages/ContactPage";
+import TeamPage from "../pages/TeamPage";
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
             {
                 path: '/',
                 element: <HomePage />,
+            },
+            {
+                path: '/team',
+                element: <TeamPage />,
             },
             {
                 path: '/formations',
