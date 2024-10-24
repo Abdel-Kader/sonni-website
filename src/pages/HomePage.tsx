@@ -4,8 +4,9 @@ import homeBanner from "../assets/banners/home.jpg";
 import Banner from "../components/layout/Banner";
 import {presentation} from "../assets/contents/homePage";
 import Valeurs from "../components/home/Valeurs";
-//import Testimonial from "../components/home/Testimonial";
+import Testimonial from "../components/home/Testimonial";
 import Missions from '../components/home/Missions';
+import Services from "../components/home/Services";
 
 export default function HomePage() {
   return (
@@ -14,7 +15,8 @@ export default function HomePage() {
         <Vision/>
         <Missions/>
         <Valeurs/>
-        {/* <Testimonial/> */}
+        <Services/>
+        <Testimonial/>
     </>
   )
 }

@@ -3,7 +3,7 @@ import pharmacie from "../../assets/teams/consultant-pharmacie.jpeg"
 import consultantAO from "../../assets/teams/consultant-ao.jpg"
 import consultantDP from "../../assets/teams/consultant-dp.jpg"
 import consultantFinance from "../../assets/teams/consultant-finance.jpg"
-import assistantProg from "../../assets/teams/assistant-prog.jpg"
+import consultantFisc from "../../assets/teams/consultant-fisc.jpeg"
 import {Consultant} from "../Consultant";
 
 function Partners() {
@@ -35,6 +35,11 @@ function Partners() {
                     title="Sié Oumar SANOU"
                     img={consultantFinance}
                     position="Expert Comptable, Cadre de la BCEAO"
+                />
+                <Consultant
+                    title="Magnamé BARADJI"
+                    img={consultantFisc}
+                    position="Consultant en Comptabilité - Fiscalité & Finances"
                 />
 
 

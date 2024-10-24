@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import Banner from "../components/layout/Banner";
-import Maps from "../assets/img.png"
+import Maps from "../assets/img_1.png"
 
 const ContactPage = () => {
 
