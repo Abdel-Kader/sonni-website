@@ -1,65 +1,73 @@
 import React from 'react';
-
+import { Carousel } from "flowbite-react";
+import {TestimonialItem} from "./TestimonialItem";
 const Testimonial = () => {
     return (
 
-
-        <div id="default-carousel" className="relative w-full" data-carousel="slide">
-            <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <p>Témoignage 1</p>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <p>Témoignage 1</p>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <p>Témoignage 1</p>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <p>Témoignage 1</p>
-                </div>
-                <div className="hidden duration-700 ease-in-out" data-carousel-item>
-                    <p className="text-black">Témoignage 1</p>
-                </div>
-            </div>
-            <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
-                        data-carousel-slide-to="0"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
-                        data-carousel-slide-to="1"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
-                        data-carousel-slide-to="2"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4"
-                        data-carousel-slide-to="3"></button>
-                <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5"
-                        data-carousel-slide-to="4"></button>
-            </div>
-            <button type="button"
-                    className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-prev>
-        <span
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="M5 1 1 5l4 4"/>
-            </svg>
-            <span className="sr-only">Previous</span>
-        </span>
-            </button>
-            <button type="button"
-                    className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-                    data-carousel-next>
-        <span
-            className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
-                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                      d="m1 9 4-4-4-4"/>
-            </svg>
-            <span className="sr-only">Next</span>
-        </span>
-            </button>
+        <div className="h-56 mt-7 mb-7 sm:h-64 xl:h-80 2xl:h-96">
+            <Carousel  slideInterval={1000} >
+                <TestimonialItem
+                    name="Gisèle Catherine MANGA Dr en pharmacie"
+                    position="Responsable Logistique  (Sénégal)"
+                    message="Félicitations pour le choix des professeurs, très compétents et dynamiques. Enseignements reçus, répondant à nos attentes. Merci au Cabinet SONNI. Personnels très disponibles et réactifs."
+                />
+                <TestimonialItem
+                    name="Rubben UMBA "
+                    position="Responsable logistique de l’action humanitaire"
+                    message="Votre réactivité, disponibilité à nous accompagner nous touche. Merci beaucoup au Cabinet SONNI. "
+                />
+                <TestimonialItem
+                    name="Yacouba ASKOU"
+                    position="Agent Humanitaire"
+                    message="Merci beaucoup au Cabinet SONNI, à son personnel, pour la qualité de la formation. Nous sommes vraiment sorti grandi à l’issue de c programme de certification de deux mois. Que Dieu vous récompense"
+                />
+                <TestimonialItem
+                    name="Fanta BALDÉ"
+                    position="Assistante au service Régional de Pêche de Dakar"
+                    message="Je suis très contente de la formation
+d’assistante de direction passée à SONNI qui m’a permis d’avoir une nouvelle opportunité. Fanta BALDÉ - Assistante au service Régional de Pêche de Dakar Je suis très contente de la formation d’assistante de direction passée à SONNI qui m’a permis d’avoir une nouvelle opportunité. "
+                />
+                <TestimonialItem
+                    name="Abdourahmane SAMB"
+                    position="Entrepreneur"
+                    message="Je suis très satisfait de la certification en gestion de stock passée
+au cabinet SONNI avec un formateur compétent. Ce qui m’a permis de maîtriser la pratique. Je remercie aussi M. Maiga pour son cours en développement personnel. "
+                />
+                <TestimonialItem
+                    name="Abdoul Amadou BA"
+                    position="Gestionnaire de Stock à H&D Industrie Chère"
+                    message="je remercie de passage toute
+l’équipe du Cabinet SONNI. Grâce à la certification passée à SONNI, j’ai pu saisir une nouvelle opportunité. Remerciement spécial à M. MAIGA. "
+                />
+                <TestimonialItem
+                    name="Frédéric KANFANY"
+                    position="fonctionnaire au TER Dakar "
+                    message="C’est avec un grand plaisir que j’ai découvert le
+Cabinet SONNI où j’ai pu faire une formation certifiante en comptabilité. Remerciement spécial au Directeur M. Maiga et au grand formateur M. Idrissa qui nous a appris à mieux cerner les contours de SAGE."
+                />
+                <TestimonialItem
+                    name="Adama DIONE"
+                    position="Comptable"
+                    message="Ce fut une belle expérience la formation passée au Cabinet SONNI. Avec des formateurs hautement qualifiés. Nous remercions M. Maiga avec son équipe."
+                />
+                <TestimonialItem
+                    name="Modou SARR"
+                    position="Gendarme/ Chef Comptable magasin d’approvisionnement "
+                    message="Je tenais à remercier le cabinet SONNI pour la bonne formation en gestion de stock que j'ai acquise là-bas, actuellement, chef comptable Magasin approvisionnement des pièces détachées pour les véhicules automobiles, acquise grâce à la formation. Merci beaucoup de m'avoir donné cette chance"
+                />
+                <TestimonialItem
+                    name="Moussa CAMARA "
+                    position="Manager de commerce Auchan Sénégal"
+                    message="La formation a été intéressante et instructive.
+Votre expertise, votre clarté d'explication et votre disponibilité ont rendu l'apprentissage particulièrement agréable et stimulant la formation. Je suis enchanté d'avoir eu l'opportunité de participer à cette formation."
+                />
+                <TestimonialItem
+                    name="Mme KAKPO"
+                    position="Entrepreneur"
+                    message="Je suis vraiment satisfaite de ma formation passée à votre cabinet.
+Actuellement ça m’aide beaucoup dans la gestion de mes produits que je vends en ligne. Aussi, en tant qu’assistante administrative en ligne."
+                />
+            </Carousel>
         </div>
 
     );
