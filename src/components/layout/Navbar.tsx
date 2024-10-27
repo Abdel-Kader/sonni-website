@@ -1,11 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
   ChevronDownIcon,
 } from '@heroicons/react/16/solid'
 import logo from '../../assets/logos/logo.jpeg'
+import {useEffect} from "react";
 
 export default function Navbar() {
+  const location = useLocation();
+  useEffect(() => {
+    console.log(location)
+  }, [location]);
   return (
     <nav className="bg-white shadow-2xl fixed w-full z-40 border-gray-100 ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12">
@@ -34,7 +39,7 @@ export default function Navbar() {
               <div className="flex space-x-4 ml-28">
                   <Menu>
                     <MenuButton
-                        className="flex items-center py-2 text-primary text-sm font-medium">
+                        className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
                       A Propos
                       <ChevronDownIcon className="size-5 fill-primary"/>
                     </MenuButton>
@@ -64,24 +69,24 @@ export default function Navbar() {
                     </MenuItems>
                   </Menu>
                 <Link to='/formations'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Formations</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/formations' ? 'underline underline-offset-8' : ''}`} aria-current="page">Formations</p>
                 </Link>
                 <Link to='/services'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Services</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`} aria-current="page">Services</p>
                 </Link>
                 <Link to='/certificats'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Certificats & MBA</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`} aria-current="page">Certificats & MBA</p>
                 </Link>
                 <Link to='/seminaires'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Séminaires</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/seminaires' ? 'underline underline-offset-8' : ''}`} aria-current="page">Séminaires</p>
                 </Link>
 
                 <Link to='/team-building'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Team building</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team-building' ? 'underline underline-offset-8' : ''}`} aria-current="page">Team building</p>
                 </Link>
                 <Menu>
                   <MenuButton
-                      className="flex items-center py-2 text-primary text-sm font-medium">
+                      className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/blog' ? 'underline underline-offset-8' : location.pathname === '/blog' ? 'underline underline-offset-8' : ''}`}>
                     Blog
                     <ChevronDownIcon className="size-5 fill-primary"/>
                   </MenuButton>
@@ -120,7 +125,7 @@ export default function Navbar() {
                 </Menu>
 
                 <Link to='/contact'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Contact</p>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/contact' ? 'underline underline-offset-8' : ''}`} aria-current="page">Contact</p>
                 </Link>
               </div>
             </div>
@@ -130,11 +135,14 @@ export default function Navbar() {
 
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
-            <a href="#" className="rounded-md bg-primary px-6 py-2 text-sm font-medium text-white" aria-current="page">Formation</a>
-            <a href="#" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Services</a>
-            <a href="#" className="rounded-md px6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Team building</a>
-            <a href="#" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Blog</a>
-            <a href="#" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Contact</a>
+            <a href="/team" className="rounded-md bg-primary px-6 py-2 text-sm font-medium text-white" aria-current="page">A Propos</a>
+            <a href="/formations" className="rounded-md bg-primary px-6 py-2 text-sm font-medium text-white" aria-current="page">Formation</a>
+            <a href="/services" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Services</a>
+            <a href="/certificats" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Certificats & MBA</a>
+            <a href="/seminaires" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Séminaires</a>
+            <a href="/team-building" className="rounded-md px6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Team building</a>
+            <a href="/blog" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Blog</a>
+            <a href="/contact" className="rounded-md px-6 py-2 text-sm font-medium text-primary hover:bg-gray-700 hover:text-white">Contact</a>
           </div>
         </div>
       </div>

@@ -14,7 +14,7 @@ const DetailFormation = () => {
             <Banner image={formationBanner} title={"Formations"}
                     description={"Nous offrons une palette de formation afin avec des formateurs compétents"}/>
             <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
-                <h3 className="font-bold text-2xl  mb-5">{location.state?.title}</h3>
+                <h3 className="font-bold text-2xl mb-5 underline underline-offset-8 decoration-4 decoration-primary">{location.state?.title}</h3>
                 {
                     location.state.modules?.map((ml: any)=> (
                         <FormationSubItem title={ml.titre} module={ml}/>

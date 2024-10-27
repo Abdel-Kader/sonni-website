@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Tabs, List} from "flowbite-react";
-import {Link} from "react-router-dom";
 
 export function FormationSubItem({title, module}: {title: string, module: any}) {
     const [detail, setDetail] = useState(false)
