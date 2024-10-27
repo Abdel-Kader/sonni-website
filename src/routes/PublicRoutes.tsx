@@ -13,7 +13,7 @@ import DetailFormation from "../pages/DetailFormation";
 import ReferencePage from "../pages/ReferencePage";
 import {LoginPage} from "../pages/LoginPage";
 
-export const router = createBrowserRouter([
+export const PublicRouter = createBrowserRouter([
     {
         path: '/',
         element: <PageLayout />,

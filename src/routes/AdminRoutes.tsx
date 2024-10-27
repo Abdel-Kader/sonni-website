@@ -12,11 +12,12 @@ import TeamPage from "../pages/TeamPage";
 import DetailFormation from "../pages/DetailFormation";
 import ReferencePage from "../pages/ReferencePage";
 import {LoginPage} from "../pages/LoginPage";
+import {AdminLayout} from "../components/layout/AdminLayout";
 
-export const router = createBrowserRouter([
+export const AdminRouter = createBrowserRouter([
     {
         path: '/',
-        element: <PageLayout />,
+        element: <AdminLayout />,
         children: [
             {
                 path: '/',

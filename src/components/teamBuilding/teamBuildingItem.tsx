@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, AnimatePresence } from "framer-motion"
 
 
 
@@ -30,9 +31,21 @@ export const TeamBuildingItem = ({title, description, image, subList, doc}: {tit
                         </div>
                     </div>
                 </div>
-                <div className="ml-12">
-                    <img src={image} className="h-80 w-[500px]" alt="team-building-image"/>
-                </div>
+                <AnimatePresence>
+                    <div className="ml-12">
+
+                        <motion.img initial={{x: 300, opacity: 0}}
+                                    animate={{x: 0, opacity: 1}}
+                                    exit={{x: -300, opacity: 0}}
+                                    src={image}
+                                    key={image}
+                                    transition={{
+                                        ease: "linear",
+                                        duration: 2,
+                                        x: {duration: 1}
+                                    }} className="h-80 w-[500px]"/>
+                    </div>
+                </AnimatePresence>
             </div>
         </div>
     );
