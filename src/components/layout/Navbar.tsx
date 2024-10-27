@@ -53,7 +53,7 @@ export default function Navbar() {
                       </MenuItem>
                       </Link>
 
-                      <Link to='/team'>
+                      <Link to='/reference'>
                         <MenuItem>
                           <button
                               className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -66,21 +66,59 @@ export default function Navbar() {
                 <Link to='/formations'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Formations</p>
                 </Link>
+                <Link to='/services'>
+                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Services</p>
+                </Link>
                 <Link to='/certificats'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Certificats & MBA</p>
                 </Link>
                 <Link to='/seminaires'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Séminaires</p>
                 </Link>
-                <Link to='/services'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Services</p>
-                </Link>
+
                 <Link to='/team-building'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Team building</p>
                 </Link>
-                <Link to='/blog'>
-                  <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Blog</p>
-                </Link>
+                <Menu>
+                  <MenuButton
+                      className="flex items-center py-2 text-primary text-sm font-medium">
+                    Blog
+                    <ChevronDownIcon className="size-5 fill-primary"/>
+                  </MenuButton>
+
+                  <MenuItems
+                      transition
+                      anchor="bottom"
+                      className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 text-sm/6 text-primary transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                  >
+                    <Link to='/blog'>
+                      <MenuItem>
+                        <button
+                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                          Webinaires
+                        </button>
+                      </MenuItem>
+                    </Link>
+
+                    <Link to='/blog'>
+                      <MenuItem>
+                        <button
+                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                          Articles
+                        </button>
+                      </MenuItem>
+                    </Link>
+                    <Link to='/blog'>
+                      <MenuItem>
+                        <button
+                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                          Librairie
+                        </button>
+                      </MenuItem>
+                    </Link>
+                  </MenuItems>
+                </Menu>
+
                 <Link to='/contact'>
                   <p className="rounded-md px-2 py-2 text-sm font-medium text-primary" aria-current="page">Contact</p>
                 </Link>

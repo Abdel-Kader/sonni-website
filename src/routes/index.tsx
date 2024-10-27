@@ -10,6 +10,7 @@ import SeminairePage from "../pages/SeminairePage";
 import ContactPage from "../pages/ContactPage";
 import TeamPage from "../pages/TeamPage";
 import DetailFormation from "../pages/DetailFormation";
+import ReferencePage from "../pages/ReferencePage";
 
 export const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ export const router = createBrowserRouter([
             {
                 path: '/team',
                 element: <TeamPage />,
+            },
+            {
+                path: '/reference',
+                element: <ReferencePage />,
             },
             {
                 path: '/formations',

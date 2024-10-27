@@ -1,10 +1,13 @@
 import React from 'react';
+import { motion } from "framer-motion"
 
 export const ServiceItem = ({title, description, serviceImg}: {title: string, description: string, serviceImg: string}) => {
     return (
 
 
-            <div
+            <motion.div whileHover={{ scale: 1.2 }}
+                        onHoverStart={e => {}}
+                        onHoverEnd={e => {}}
                 className="block justify-center max-w-sm rounded-lg bg-cover shadow-lg ml-4"
                 style={{backgroundImage: `url(${serviceImg})`}}>
                 <div className="bg-black bg-opacity-60 max-w-sm h-full p-8 rounded-lg">
@@ -19,7 +22,7 @@ export const ServiceItem = ({title, description, serviceImg}: {title: string, de
 
                 </div>
 
-            </div>
+            </motion.div>
 
     );
 };
