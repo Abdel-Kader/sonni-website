@@ -8,7 +8,7 @@ const Services = () => {
     return (
         <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
             <div className="mx-auto lg:mx-0 mb-5">
-                <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">Nos services phares</h2>
+                <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">NOS SERVICES PHARES</h2>
 
             </div>
             <div className="grid lg:grid-cols-2 grid-cols-2 gap-20">

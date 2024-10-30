@@ -1,22 +1,25 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Banner from "../components/layout/Banner";
 import formationBanner from "../assets/banners/formation.jpg";
 import {FormationSubItem} from "../components/formation/FormationSubItem";
-import { useLocation } from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 
 const DetailFormation = () => {
     let location = useLocation();
-    useEffect(() => {
-        console.log(location.state?.title)
-    }, []);
+
     return (
         <>
-            <Banner image={formationBanner} title={"Formations"}
-                    description={"Nous offrons une palette de formation afin avec des formateurs compétents"}/>
+            <Banner image={formationBanner} title={location.state?.title} catalogue={location.state.type} />
             <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
-                <h3 className="font-bold text-2xl mb-5 underline underline-offset-8 decoration-4 decoration-primary">{location.state?.title}</h3>
+                <div className="mx-auto lg:mx-0 mb-7 mt-7 flex justify-between items-center">
+                    <h3 className="font-bold text-2xl mb-5 underline underline-offset-8 decoration-4 decoration-primary">{location.state?.title}</h3>
+                    <Link to="/contact" state={{type: 'devis'}}
+                          className="text-white text-center content-center mt-5 h-12 w-[230px] hover:bg-secondaty bg-primary align-bottom">
+                        Demander un dévis
+                    </Link>
+                </div>
                 {
-                    location.state.modules?.map((ml: any)=> (
+                    location.state.modules?.map((ml: any) => (
                         <FormationSubItem title={ml.titre} module={ml}/>
                     ))
                 }

@@ -1,6 +1,6 @@
 
-import { address, mobile, presentation, telephone } from '../../assets/contents/homePage'
-import logo from '../../assets/logos/logo.jpeg'
+import {address, email, mobile, presentation, telephone} from '../../assets/contents/homePage'
+import logo from '../../assets/logos/logo-1.jpeg'
 
 export default function Footer() {
     return (
@@ -12,10 +12,15 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0 flex-1 mr-12">
                         <a href="/" className="flex items-center mb-6">
                             <img src={logo} className="h-12 me-3" alt="Sonni Logo" />
-                            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">Sonni Groupe</span>
+                            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">SONNI GROUP</span>
                         </a>
 
-                        <p className="text-justify text-sm text-gray-300">{presentation}</p>
+                        <p className="text-justify text-sm text-gray-300">
+                            Nous sommes un organisme de conseils et
+                            de formation professionnelle continue. Implanté à Dakar, nous disposons d’une
+                            expertise avérée en ingénierie pédagogique, en conseils et solutions : Relations
+                            Internationales, Diplomatie, Organisation Managériale et Leadership.
+                        </p>
 
                         <ul className="text-gray-300 mt-8">
                             <li className="mb-4">
@@ -68,7 +73,7 @@ export default function Footer() {
 
                                     <span>
                                         Email
-                                        <p className="text-justify text-sm text-gray-300 mt-4">(+221) 77 216 27 85</p>
+                                        <p className="text-justify text-sm text-gray-300 mt-4">{email}</p>
                                     </span>
                                 </div>
 

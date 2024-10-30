@@ -2,18 +2,38 @@ import React, {useState} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import Banner from "../components/layout/Banner";
 import Maps from "../assets/img_1.png"
+import CEDM from "../assets/cedm.png"
+import CS from '../assets/cs.png'
+import { useLocation } from 'react-router-dom';
 
 const ContactPage = () => {
 
-    const [form, setForm] = useState({firstName: '', lastName: '', email: '', object: '', message: ''})
+    const [form, setForm] = useState({firstName: '', lastName: '', email: '', object: '', message: '', profession: '', institution: ''})
 
+    let location = useLocation();
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
         if(form.firstName && form.lastName && form.email && form.message) {
+            if(location.state?.type === 'CEDM' || location.state?.type === 'CS') {
+                if(form.institution && form.profession) {
+                    fetch("../docs/Catalogue-Cabinet-SONNI.pdf")
+                        .then((res) => res.blob())
+                        .then((blob) => {
 
+                            const url = URL.createObjectURL(blob);
+
+                            const a = document.createElement("a");
+                            a.href = url;
+                            a.download = "technical-digital-salary-survey-november-2023.pdf";
+                            a.click();
+                        })
+                        .catch((error) => console.error(error));
+                }
+            }
         } else alert('Veuillez saisir tous les champs')
-    };
+        }
+
 
     return (
         <>
@@ -33,28 +53,30 @@ const ContactPage = () => {
 
                     <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
                         <img
-                            src={Maps}
+                            src={location.state?.type === 'CEDM' ? CEDM : location.state?.type === 'CS' ? CS :  Maps}
                             alt="map"
-                            className="w-full h-full lg:max-h-[510px]"
+                            className="w-full h-full lg:max-h-[610px]"
                         />
                         <form
                             onSubmit={handleSubmit}
                             className="flex flex-col gap-4 lg:max-w-sm">
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <p className="mb-3 text-left font-medium !text-gray-900">Nom</p>
+                                    <p className="mb-3 text-left font-medium !text-gray-900">Nom *</p>
                                     <input
                                         placeholder="Nom"
+                                        required
                                         name="firstName"
                                         className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
                                         onChange={e => setForm({...form, firstName: e.target.value})}
                                     />
                                 </div>
                                 <div>
-                                    <p className="mb-3 text-left font-medium !text-gray-900">Prénom</p>
+                                    <p className="mb-3 text-left font-medium !text-gray-900">Prénom *</p>
                                     <input
                                         placeholder="Prénom"
                                         name="lastName"
+                                        required
                                         className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
                                         onChange={e => setForm({...form, lastName: e.target.value})}
 
@@ -62,42 +84,73 @@ const ContactPage = () => {
                                 </div>
                             </div>
                             <div>
-                                <p className="mb-3 text-left font-medium !text-gray-900">Email</p>
+                                <p className="mb-3 text-left font-medium !text-gray-900">Email *</p>
                                 <input
                                     type="email"
                                     placeholder="votre adresse mail"
                                     name="email"
+                                    required
                                     className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
                                     onChange={e => setForm({...form, email: e.target.value})}
 
                                 />
                             </div>
-                            <div>
-                                <p className="mb-3 text-left font-medium !text-gray-900">Objet</p>
-                                <input
-                                    placeholder="Objet"
-                                    name="object"
-                                    className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
-                                    onChange={e => setForm({...form, object: e.target.value})}
+                            {location.state && location.state.type === 'service' &&
+                                <div>
+                                    <p className="mb-3 text-left font-medium !text-gray-900">Service *</p>
+                                    <input
+                                        placeholder="De quel service avez-vous besoin ?"
+                                        name="object"
+                                        required
+                                        className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                        onChange={e => setForm({...form, object: e.target.value})}
 
-                                />
-                            </div>
+                                    />
+                                </div>
+                            }
+                            {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS' || location.state.type === 'devis') &&
+                                <>
+                                    <div>
+                                        <p className="mb-3 text-left font-medium !text-gray-900">Profession *</p>
+                                        <input
+                                            placeholder="Profession"
+                                            required
+                                            name="profession"
+                                            className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                            onChange={e => setForm({...form, profession: e.target.value})}
+
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <p className="mb-3 text-left font-medium !text-gray-900">Institution *</p>
+                                        <input
+                                            placeholder="Institution"
+                                            name="institution"
+                                            required
+                                            className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                            onChange={e => setForm({...form, institution: e.target.value})}
+
+                                        />
+                                    </div>
+                                </>
+                            }
 
                             <div>
-                                <p className="mb-2 text-left font-medium !text-gray-900">Votre message</p>
-                                <textarea
+                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS') && <p className="mb-2 text-left font-medium !text-gray-900">Raision du téléchargement *</p>}
+                                {!location.state  && <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
+                                {location.state && location.state.type !== 'devis' && <textarea
                                     name="message"
                                     rows={4}
+                                    required
                                     onChange={e => setForm({...form, message: e.target.value})}
-
                                     className="focus:border-t-gray-900 text-gray min-w-full rounded border-[1.5px] border-gray-400"
                                 >
 
-                                </textarea>
-
+                                </textarea>}
                             </div>
                             <button className="w-full bg-primary h-10 rounded-md">
-                                Envoyer
+                                Valider
                             </button>
                         </form>
                     </div>

@@ -3,7 +3,7 @@ import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import {
   ChevronDownIcon,
 } from '@heroicons/react/16/solid'
-import logo from '../../assets/logos/logo.jpeg'
+import logo from '../../assets/logos/logo-1.jpeg'
 import {useEffect} from "react";
 
 export default function Navbar() {

@@ -27,8 +27,8 @@ module.exports = {
       },
       colors: {
         transparent: 'transparent',
-        primary: '#2586ed',
-        secondaty: '#fde6ac'
+        primary: '#3c6dbd',
+        secondaty: '#f6b218'
       },
     }
   },
