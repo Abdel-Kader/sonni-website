@@ -14,7 +14,7 @@ const Banner = ({image, title, description, catalogue}: bannerProps) => {
 
             <div className="bg-black bg-opacity-40 h-full flex justify-center items-center mt-20">
                 <div className="mx-auto lg:mx-0 justify-center flex flex-col  ">
-                    <h2 className="text-xl mb-10 font-bold text-secondaty text-center tracking-tight sm:text-3xl animate-slidein300 opacity-0">{title}</h2>
+                    <h2 className="text-xl mb-10 font-bold text-secondary text-center tracking-tight sm:text-3xl animate-slidein300 opacity-0">{title}</h2>
                     {description && <div className="w-full ">
                         <p className="text-xl text-white leading-8 text-center animate-slidein500 opacity-80">
                             {description}

@@ -2,9 +2,16 @@ import React from 'react';
 
 export const TestimonialItem = ({name, position, message}: {name: string, position: string, message: string}) => {
     return (
-        <div className="max-w-screen-xl px-4 py-8 mx-auto text-center lg:py-16 lg:px-6">
+        <div className="max-w-screen-xl shadow-2xl border-black border-t-black mt-4 px-4 pt-4 mx-auto text-center lg:py-16 lg:px-6">
 
-            <figure className="max-w-screen-md mx-auto">
+            <p className="text-xl font-medium text-gray-900">{message}</p>
+            <div className="flex items-center mt-7 divide-gray-500 flex-col">
+                <div className="pr-3 font-medium text-secondaty">{name}
+                </div>
+                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">{position}
+                </div>
+            </div>
+            {/*<figure className="max-w-screen-md mx-auto">
                 <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27"
                      fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -12,7 +19,7 @@ export const TestimonialItem = ({name, position, message}: {name: string, positi
                         fill="currentColor"/>
                 </svg>
                 <blockquote>
-                    <p className="text-xl font-medium text-gray-900">{message}</p>
+
                 </blockquote>
                 <figcaption className="flex items-center justify-center mt-6 space-x-3">
 
@@ -23,7 +30,7 @@ export const TestimonialItem = ({name, position, message}: {name: string, positi
                         </div>
                     </div>
                 </figcaption>
-            </figure>
+            </figure>*/}
         </div>
     );
 };

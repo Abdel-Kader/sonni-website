@@ -11,7 +11,7 @@ const SeminairePage = () => {
     return (
         <>
             <Banner image={certificatBanner} title={"Nos séminaires"}
-                    description={"Nous offrons une palette de services de qualité"}/>
+                    description={"Consultez et inscrivez-vous à nos séminaires à venir"}/>
             <div
                 className="col-span-3 m-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">
                 Séminaires à venir

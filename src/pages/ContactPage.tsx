@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 const ContactPage = () => {
 
-    const [form, setForm] = useState({firstName: '', lastName: '', email: '', object: '', message: '', profession: '', institution: ''})
+    const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: '', message: '', profession: '', institution: ''})
 
     let location = useLocation();
 
@@ -37,13 +37,13 @@ const ContactPage = () => {
 
     return (
         <>
-            <Banner image={certificatBanner} title={"Nous contacter"}
-                    description={"Un service commercial toujours à votre écoute"}/>
+            <Banner image={certificatBanner} title={"Contactez-nous"}
+                    description={"Un conseiller client toujours à votre écoute"}/>
 
             <section className="px-8 py-8 lg:py-16">
                 <div className="container mx-auto text-center">
                     <h5 className="mb-4 !text-base lg:!text-2xl text-primary">
-                        Contacter nous
+                        Contactez-nous !
                     </h5>
 
                     <p className="mb-10 font-normal !text-lg lg:mb-20 mx-auto max-w-3xl !text-gray-500">
@@ -60,7 +60,19 @@ const ContactPage = () => {
                         <form
                             onSubmit={handleSubmit}
                             className="flex flex-col gap-4 lg:max-w-sm">
+                            <p className="text-2xl  font-medium mb-4 text-secondary">
+                                {
+                                    location.state && location.state.type === 'service' && 'De quel service avez vous besoin ?'
+                                }
+                                {
+                                    location.state && location.state.type === 'devis' && 'Demande de dévis'
+                                }
+                                {
+                                    ((location.state && location.state.type === 'CEDM') || (location.state && location.state.type === 'CS')) && 'Téléchargement Catalogue'
+                                }
+                            </p>
                             <div className="grid grid-cols-2 gap-4">
+
                                 <div>
                                     <p className="mb-3 text-left font-medium !text-gray-900">Nom *</p>
                                     <input
@@ -95,6 +107,18 @@ const ContactPage = () => {
 
                                 />
                             </div>
+                            <div>
+                                <p className="mb-3 text-left font-medium !text-gray-900">Numéro de téléphone (WhatsApp) *</p>
+                                <input
+                                    type="number"
+                                    placeholder="votre numéro de téléphone (WhatsApp)"
+                                    name="phone"
+                                    required
+                                    className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                    onChange={e => setForm({...form, phone: e.target.value})}
+
+                                />
+                            </div>
                             {location.state && location.state.type === 'service' &&
                                 <div>
                                     <p className="mb-3 text-left font-medium !text-gray-900">Service *</p>
@@ -108,44 +132,63 @@ const ContactPage = () => {
                                     />
                                 </div>
                             }
+                            <div>
+                                <p className="mb-3 text-left font-medium !text-gray-900">Profession *</p>
+                                <input
+                                    placeholder="Profession"
+                                    required
+                                    name="profession"
+                                    className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                    onChange={e => setForm({...form, profession: e.target.value})}
+
+                                />
+                            </div>
+                            <div>
+                                <p className="mb-3 text-left font-medium !text-gray-900">Nom de Entreprise ou
+                                    organisation *</p>
+                                <input
+                                    placeholder="Nom de Entreprise ou organisation."
+                                    name="institution"
+                                    required
+                                    className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                    onChange={e => setForm({...form, institution: e.target.value})}
+
+                                />
+                            </div>
                             {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS' || location.state.type === 'devis') &&
                                 <>
-                                    <div>
-                                        <p className="mb-3 text-left font-medium !text-gray-900">Profession *</p>
-                                        <input
-                                            placeholder="Profession"
-                                            required
-                                            name="profession"
-                                            className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
-                                            onChange={e => setForm({...form, profession: e.target.value})}
 
-                                        />
-                                    </div>
 
-                                    <div>
-                                        <p className="mb-3 text-left font-medium !text-gray-900">Institution *</p>
-                                        <input
-                                            placeholder="Institution"
-                                            name="institution"
-                                            required
-                                            className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
-                                            onChange={e => setForm({...form, institution: e.target.value})}
-
-                                        />
-                                    </div>
                                 </>
                             }
 
                             <div>
-                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS') && <p className="mb-2 text-left font-medium !text-gray-900">Raision du téléchargement *</p>}
-                                {!location.state  && <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
-                                {location.state && location.state.type !== 'devis' && <textarea
-                                    name="message"
-                                    rows={4}
-                                    required
-                                    onChange={e => setForm({...form, message: e.target.value})}
-                                    className="focus:border-t-gray-900 text-gray min-w-full rounded border-[1.5px] border-gray-400"
-                                >
+                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS') &&
+                                    <p className="mb-2 text-left font-medium !text-gray-900">Raision du téléchargement
+                                        *</p>}
+                                {!location.state &&
+                                    <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
+                                {location.state && location.state.type === 'service' &&
+                                    <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
+                                {location.state && location.state.type !== 'devis' &&
+                                    <textarea
+                                        name="message"
+                                        rows={4}
+                                        required
+                                        onChange={e => setForm({...form, message: e.target.value})}
+                                        className="focus:border-t-gray-900 text-gray min-w-full rounded border-[1.5px] border-gray-400"
+                                    >
+
+                                </textarea>}
+
+                                {!location.state &&
+                                    <textarea
+                                        name="message"
+                                        rows={4}
+                                        required
+                                        onChange={e => setForm({...form, message: e.target.value})}
+                                        className="focus:border-t-gray-900 text-gray min-w-full rounded border-[1.5px] border-gray-400"
+                                    >
 
                                 </textarea>}
                             </div>

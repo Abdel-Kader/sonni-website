@@ -10,10 +10,14 @@ import Partners from "../components/home/Partners";
 const TeamPage = () => {
     return (
         <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
-            <div className="mx-auto lg:mx-0 mb-5">
-                <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">Notre équipe</h2>
-                <p className="mt-6 text-xl l leading-loose text-justify">
-                    A sonni, nous sommes entourés d'une équipe jeune, dynamique et professionnelle
+            <div className="mx-auto lg:mx-0 mb-10">
+                <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">NOTRE EQUIPE</h2>
+                <p className="mt-6 text-xl leading-loose text-center">
+                    A SONNI tout en nous alignant sur notre vision qui est de contribuer à l’essor économique du continent et au rayonnement du potentiel humain partout sur le continent. Nous nous sommes entourés d’une équipe à la fois mixte et interculturelle, reflétant une Afrique unie dans sa diversité.
+                </p>
+
+                <p className="mt-6 text-xl font-medium leading-loose text-center">
+                    Notre équipe est dynamique, performante, orientée résultats et qualités, prête à être à écoute pour vous servir.
                 </p>
             </div>
             <Avatar
