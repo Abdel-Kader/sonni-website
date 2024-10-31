@@ -86,7 +86,7 @@ export default function Navbar() {
                 </Link>
                 <Menu>
                   <MenuButton
-                      className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/blog' ? 'underline underline-offset-8' : location.pathname === '/blog' ? 'underline underline-offset-8' : ''}`}>
+                      className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/webinaires' ? 'underline underline-offset-8' : location.pathname === '/articles' ? 'underline underline-offset-8' : ''}`}>
                     Blog
                     <ChevronDownIcon className="size-5 fill-primary"/>
                   </MenuButton>
@@ -96,7 +96,7 @@ export default function Navbar() {
                       anchor="bottom"
                       className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 text-sm/6 text-primary transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
-                    <Link to='/blog'>
+                    <Link to='/webinaires'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -105,7 +105,7 @@ export default function Navbar() {
                       </MenuItem>
                     </Link>
 
-                    <Link to='/blog'>
+                    <Link to='/articles'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -113,7 +113,7 @@ export default function Navbar() {
                         </button>
                       </MenuItem>
                     </Link>
-                    <Link to='/blog'>
+                    <Link to='/librairie'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">

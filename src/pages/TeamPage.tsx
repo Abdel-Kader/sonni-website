@@ -21,10 +21,10 @@ const TeamPage = () => {
                 </p>
             </div>
             <Avatar
-                title="Mahamadou Chaïbou MAÏGA"
+                title="Mahamadou Chaïbou MAIGA"
                 img={dg}
-                description="Ph.D. C En Relations internationales et diplomatie d’affaires, Écrivain, Chercheur ZLECAF, Conférencier"
-                position="Directeur général du Cabinet SONNI"
+                description="PhD. C en relations internationales et diplomatie d’affaires, Écrivain, Juriste, Chercheur ZLECAF, Conférencier"
+                position="Directeur Exécutif de SONNI GROUP"
             />
             <div className="grid lg:grid-cols-2 grid-cols-2">
                 {/* <Avatar
@@ -36,28 +36,28 @@ const TeamPage = () => {
                 <Avatar
                     title="Aminata SALL"
                     img={assistant}
-                    description="Diplômée en comptabilité de l’Université Cheickh Anta DIOP (l’IFACE)"
-                    position="Assistante de Direction et financière du Cabinet SONNI"
+                    description="Diplômée en comptabilité de l’université Cheikh Anta DIOP (IFACE)"
+                    position="Assistante de Direction et financière de SONNI GROUP"
                 />
 
                 <Avatar
                     title="Nourroudine ALFARI"
                     img={responTraining}
-                    description="Détenteur d’un Master en Audit & Comptabilité du CESAG"
-                    position="Responsable pôle formation certifiante du Cabinet SONNI"
+                    description="Diplômé du Master en Audit &amp; Comptabilité du CESAG"
+                    position="Responsable administratif et financier de SONNI GROUP"
                 />
 
                 <Avatar
                     title="Nazir CHEIKH"
                     img={responInnov}
-                    description="Ingénieur en transformation et innovation de l’Ecole Supérieure Multinationale des Télécommunications (ESMT)"
-                    position="Responsable de la recherche et de l’innovation du Cabinet SONNI"
+                    description="Ingénieur en transformation et innovation de l’École Supérieure Multinationale des Télécommunications (ESMT)"
+                    position="Responsable de la recherche et de l’innovation de SONNI GROUP"
                 />
                 <Avatar
-                    title="Aboubacar CHAÏBOU"
+                    title="Aboubacar CHAIBOU"
                     img={assistantProg}
-                    description=""
-                    position="Assistant Programme et innovation"
+                    description="Diplômé de l’Université de TÉTOUAN en QHSE"
+                    position="Assistant de la recherche et de l’innovation de SONNI GROUP"
                 />
             </div>
 

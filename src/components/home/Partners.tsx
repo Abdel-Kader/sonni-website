@@ -11,41 +11,41 @@ function Partners() {
     return (
         <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
             <div className="mx-auto lg:mx-0 mb-5">
-                <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">Quelques uns de nos experts consultants</h2>
+                <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary uppercase">Quelques uns de nos experts consultants</h2>
             </div>
             <div className="grid lg:grid-cols-2 grid-cols-2">
                 <Consultant
                     title="Mah KEITA"
                     img={pharmacie}
-                    position="Docteur en Pharmacie"
+                    position="Formatrice associée à SONNI GROUP, Docteur en Pharmacie"
                 />
 
                 <Consultant
                     title="Sié Oumar SANOU"
                     img={consultantFinance}
-                    position="Expert Comptable, Cadre de la BCEAO"
+                    position="Formateur associé à SONNI GROUP, Expert-Comptable, Cadre de la Banque Centrale des États de l’Afrique de l’Ouest (BECEAO)"
                 />
 
                 <Consultant
                     title="Moussa GUEYE"
                     img={consultantDP}
-                    position="Coach certifiée Maxwell Leadership"
+                    position="Formateur Associée à SONNI GROUP, Expert en Ressources Humaines, Coach certifié Maxwell Leadership"
                 />
                 <Consultant
                     title="Ousmina Soto BALDÉ"
                     img={consultantAO}
-                    position="Experte en communication, Coach certifiée Maxwell Leadership"
+                    position="Formatrice Associé à SONNI GROUP, Experte en Communication, Coach certifiée Maxwell Leadership"
                 />
 
                 <Consultant
                     title="Magnamé BARADJI"
                     img={consultantFisc}
-                    position="Consultant en Comptabilité - Fiscalité & Finances"
+                    position="Formateur associé à SONNI GROUP, Consultant en comptabilité – Fiscalité & finances"
                 />
                 <Consultant
                     title="Soha BENCHEKROUN"
                     img={consultantCld}
-                    position="Alayste et chercheuse en climat et développement"
+                    position="Analyste et chercheuse en climat développement"
                 />
 
 

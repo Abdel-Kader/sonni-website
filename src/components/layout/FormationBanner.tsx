@@ -20,42 +20,41 @@ export const FormationBanner = ({image}: bannerProps) => {
                         former pour être à pointe. SONNI, organisme de formation continue met à votre disposition
                         toute une palette de formation qui vous permet de développer vos compétences.
                     </p>
-
                 </div>
                 <div className="grid lg:grid-cols-6 grid-cols-6 gap-4 mx-20 mt-7">
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl p-1">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">DIPLOMATIE D’AFFAIRES
                         </Link>
                     </div>
                     <div
-                        className=" justify-center  flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center  flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">DIPLOMATIE ÉCONOMIQUE
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">REPRÉSENTATION DIPLOMATIQUE
                         </Link>
                     </div>
 
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">HUMANITAIRE
                         </Link>
                     </div>
                     <div
-                        className=" justify-center  flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center  flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">ZLECAF
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl p-1">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">LEADERSHIP
                         </Link>
@@ -64,37 +63,37 @@ export const FormationBanner = ({image}: bannerProps) => {
                 <div className="grid lg:grid-cols-6 grid-cols-6 gap-4 mt-7 mx-20">
 
                     <div
-                        className=" justify-center  flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center  flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">COMMUNICATION
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">PRISE DE PAROLE EN PUBLIC
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">DROIT DE TRAVAIL
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">DROIT DES AFFAIRES
                         </Link>
                     </div>
                     <div
-                        className=" justify-center  flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center  flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">COMPTABILITÉ ET GESTION
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl p-1">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">COACHING PERFORMANCE PROFESSIONNELLE
                         </Link>
@@ -102,25 +101,25 @@ export const FormationBanner = ({image}: bannerProps) => {
                 </div>
                 <div className="grid lg:grid-cols-4 grid-cols-4 gap-4 mt-7 mx-20">
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl p-1">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">COACHING PERFORMANCE PROFESSIONNELLE
                         </Link>
                     </div>
                     <div
-                        className=" justify-center  flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center  flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">MARKETING GESTION LOGISTIQUE
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">BUREAUTIQUE MARCHÉS PUBLICS
                         </Link>
                     </div>
                     <div
-                        className=" justify-center flex items-center bg-secondaty rounded-2xl">
+                        className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[14px]">SANTÉ TRAVAIL ET SECURITÉ DÉVELOPPEMENT DURABLE
                         </Link>

@@ -8,7 +8,7 @@ import { useLocation } from 'react-router-dom';
 
 const ContactPage = () => {
 
-    const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: '', message: '', profession: '', institution: ''})
+    const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: '', message: '', profession: '', institution: '', pays: ''})
 
     let location = useLocation();
 
@@ -69,6 +69,9 @@ const ContactPage = () => {
                                 }
                                 {
                                     ((location.state && location.state.type === 'CEDM') || (location.state && location.state.type === 'CS')) && 'Téléchargement Catalogue'
+                                }
+                                {
+                                    ((location.state && location.state.type === 'seminaire')) && 'Réserver votre place'
                                 }
                             </p>
                             <div className="grid grid-cols-2 gap-4">
@@ -132,6 +135,29 @@ const ContactPage = () => {
                                     />
                                 </div>
                             }
+                            {location.state && (location.state.type === 'seminaire' || location.state.type === 'webinaire') &&
+                                <div>
+                                    <p className="mb-3 text-left font-medium !text-gray-900">{location.state.type === 'seminaire' ? 'Séminaire' : 'Webinaire'}</p>
+                                    <input
+                                        value={location.state.title}
+                                        name="object"
+                                        disabled
+                                        required
+                                        className="focus:border-t-gray-900 text-sm text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2 mb-3"
+                                        onChange={e => setForm({...form, object: e.target.value})}
+
+                                    />
+                                    <p className="mb-3 text-left font-medium !text-gray-900">Pays *</p>
+                                    <input
+                                        name="pays"
+                                        placeholder="Pays"
+                                        required
+                                        className="focus:border-t-gray-900 text-sm text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                        onChange={e => setForm({...form, pays: e.target.value})}
+
+                                    />
+                                </div>
+                            }
                             <div>
                                 <p className="mb-3 text-left font-medium !text-gray-900">Profession *</p>
                                 <input
@@ -168,7 +194,7 @@ const ContactPage = () => {
                                         *</p>}
                                 {!location.state &&
                                     <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
-                                {location.state && location.state.type === 'service' &&
+                                {location.state && (location.state.type === 'service' || location.state.type === 'seminaire'|| location.state.type === 'webinaire') &&
                                     <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
                                 {location.state && location.state.type !== 'devis' &&
                                     <textarea

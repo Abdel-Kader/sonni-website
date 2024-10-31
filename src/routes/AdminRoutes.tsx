@@ -4,7 +4,6 @@ import FormationPage from "../pages/FormationPage";
 import { PageLayout } from "../components/layout/PageLayout";
 import ServicePage from "../pages/ServicePage";
 import CertificatPage from "../pages/CertificatPage";
-import BlogPage from "../pages/BlogPage";
 import TeamBuildingPage from "../pages/TeamBuildingPage";
 import SeminairePage from "../pages/SeminairePage";
 import ContactPage from "../pages/ContactPage";
@@ -51,10 +50,7 @@ export const AdminRouter = createBrowserRouter([
                 path: '/seminaires',
                 element: <SeminairePage />,
             },
-            {
-                path: '/blog',
-                element: <BlogPage />,
-            },
+           
             {
                 path: '/team-building',
                 element: <TeamBuildingPage />,

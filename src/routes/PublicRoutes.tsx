@@ -4,7 +4,7 @@ import FormationPage from "../pages/FormationPage";
 import { PageLayout } from "../components/layout/PageLayout";
 import ServicePage from "../pages/ServicePage";
 import CertificatPage from "../pages/CertificatPage";
-import BlogPage from "../pages/BlogPage";
+//import BlogPage from "../pages/BlogPage";
 import TeamBuildingPage from "../pages/TeamBuildingPage";
 import SeminairePage from "../pages/SeminairePage";
 import ContactPage from "../pages/ContactPage";
@@ -12,6 +12,7 @@ import TeamPage from "../pages/TeamPage";
 import DetailFormation from "../pages/DetailFormation";
 import ReferencePage from "../pages/ReferencePage";
 import {LoginPage} from "../pages/LoginPage";
+import ArticlePage from "../pages/ArticlePage";
 
 export const PublicRouter = createBrowserRouter([
     {
@@ -52,7 +53,7 @@ export const PublicRouter = createBrowserRouter([
             },
             {
                 path: '/blog',
-                element: <BlogPage />,
+                element: <ArticlePage />,
             },
             {
                 path: '/team-building',

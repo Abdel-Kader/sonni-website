@@ -111,26 +111,28 @@ export default function FormationPage() {
                 Télécharger notre catalogue du Centre d’Études en Diplomatie et Management – SONNI 2024-2025
               </p>
               <Link to="/contact" state={{type: 'CEDM'}}
-                    className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondaty bg-primary align-bottom">
+                    className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
                 Télécharger
               </Link>
-              <a rel="noreferrer" href={require("../docs/Catalogue-CEDM-SONNI.pdf")} download={"Catalogue-CEDM-SONNI"}
-                 target='_blank'
-                 className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondaty bg-primary align-bottom">
+              {/*<a rel="noreferrer" href={require("../docs/Catalogue-CEDM-SONNI.pdf")} download={"Catalogue-CEDM-SONNI"}
+                  target='_blank'
+                  className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
                 Télécharger
-              </a>
+              </a>*/}
             </div>
             <div className="flex flex-col mr-12 justify-center items-center">
               <p className="text-white text-lg">
                 Télécharger notre catalogue du Cabinet SONNI 2024-2025
               </p>
               <Link to="/contact" state={{type: 'CS'}}
-                    className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondaty bg-primary align-bottom">
+                    className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
                 Télécharger
               </Link>
-              <a rel="noreferrer" href={require("../docs/Catalogue-Cabinet-SONNI.pdf")} download={"Catalogue-Cabinet-SONNI"} target='_blank' className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondaty bg-primary align-bottom">
+              {/*<a rel="noreferrer" href={require("../docs/Catalogue-Cabinet-SONNI.pdf")}
+                  download={"Catalogue-Cabinet-SONNI"} target='_blank'
+                  className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
                 Télécharger
-              </a>
+              </a>*/}
             </div>
           </div>
         </div>

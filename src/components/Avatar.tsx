@@ -29,9 +29,9 @@ export function Avatar({img, title, description, position}: avatarProps) {
 const Description = ({title, position, description}: {title: string, position: string, description: string}) => {
   return (
       <div
-          className="bg-black h-[300px] w-[300px] animate-slidein500 justify-center p-2 rounded-xl flex-col hidden group-hover:flex relative bottom-[335px] bg-opacity-75">
+          className="bg-black h-[300px] w-[300px] justify-center p-2 rounded-xl flex-col hidden group-hover:flex relative bottom-[335px] bg-opacity-70">
           <span className="text-white mt-4 font-medium">{title}</span>
-          <span className="text-sm text-secondaty mt-4 font-medium mb-2">{position}</span>
+          <span className="text-sm text-secondary mt-4 font-medium mb-2">{position}</span>
           <span className="text-[12px] text-white mt-4">{description}</span>
       </div>
   )

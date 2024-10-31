@@ -4,7 +4,7 @@ import FormationPage from "../pages/FormationPage";
 import { PageLayout } from "../components/layout/PageLayout";
 import ServicePage from "../pages/ServicePage";
 import CertificatPage from "../pages/CertificatPage";
-import BlogPage from "../pages/BlogPage";
+import ArticlePage from "../pages/ArticlePage";
 import TeamBuildingPage from "../pages/TeamBuildingPage";
 import SeminairePage from "../pages/SeminairePage";
 import ContactPage from "../pages/ContactPage";
@@ -12,6 +12,11 @@ import TeamPage from "../pages/TeamPage";
 import DetailFormation from "../pages/DetailFormation";
 import ReferencePage from "../pages/ReferencePage";
 import {LoginPage} from "../pages/LoginPage";
+import SeminaireDetail from "../pages/SeminaireDetail";
+import WebinairePage from "../pages/WebinairePage";
+import WebinaireDetail from "../pages/WebinaireDetail";
+import LivresPage from "../pages/LivresPage";
+import AchatLivre from "../pages/AchatLivre";
 
 export const router = createBrowserRouter([
     {
@@ -51,8 +56,28 @@ export const router = createBrowserRouter([
                 element: <SeminairePage />,
             },
             {
-                path: '/blog',
-                element: <BlogPage />,
+                path: '/seminaires/detail',
+                element: <SeminaireDetail />,
+            },
+            {
+                path: '/webinaires',
+                element: <WebinairePage />,
+            },
+            {
+                path: '/webinaire/detail',
+                element: <WebinaireDetail />,
+            },
+            {
+                path: '/articles',
+                element: <ArticlePage />,
+            },
+            {
+                path: '/librairie',
+                element: <LivresPage />,
+            },
+            {
+                path: '/librairie/achat',
+                element: <AchatLivre />,
             },
             {
                 path: '/team-building',

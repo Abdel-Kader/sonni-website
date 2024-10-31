@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import {Link} from "react-router-dom";
 
 
-export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, image: string, date: string, lieu?: string, id: number}) => {
+export const WebinaireItem = ({title, image, date, heure, animateur}: {title: string, image: string, date: string, heure?: string, animateur: string}) => {
     return (
         <div className="shadow-md p-2 border-black mt-12 ml-20 mb-7 flex flex-row justify-between">
 
@@ -23,23 +23,26 @@ export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, im
                                 className="h-72 w-[300px]"
                                 alt="team-building-image"/>
                 </div>
-                <div className="ml-12">
-                    <span className="font-medium text-primary text-center mt-4">{title}</span>
-                    <span className="flex flex-row font-medium text-primary text-center mt-4">
+
+                <div className="ml-12 flex-col flex">
+                    <span className="font-medium text-xl text-primary mt-4">Webinaire</span>
+                    <span className="font-medium text-xl text-primary text-center mt-4">{title}</span>
+                    <span className="flex flex-row font-medium text-xl text-primary text-center mt-4">
                         <CalendarIcon height={25} style={{marginRight: 5}}/>
-                        {date}
+                        {date} {heure}
                     </span>
-                    <span className="flex flex-row font-medium text-primary text-center mt-4">
+                    <span className="flex flex-row font-medium text-xl text-primary text-center mt-4">
                         <MapPinIcon height={25} style={{marginRight: 5}}/>
-                        {lieu}
+                       En ligne sur zoom
                     </span>
+
                 </div>
 
             </div>
             <div className="flex justify-end flex-col">
                 <div
                     className="flex flex-col hover:bg-primary justify-end w-40 border-t-gray-300 border h-10 justify-center bg-secondary align-bottom">
-                    <Link to={`/seminaires/detail`} state={{title: title, image: image, date:date, lieu: lieu, id: id}}
+                    <Link to={`/webinaire/detail`} state={{title: title, image: image, date:date}}
                           className="text-white hover:text-white text-center">En
                         savoir plus
                     </Link>
