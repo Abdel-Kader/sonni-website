@@ -29,12 +29,12 @@ function Partners() {
                 <Consultant
                     title="Moussa GUEYE"
                     img={consultantDP}
-                    position="Formateur Associée à SONNI GROUP, Expert en Ressources Humaines, Coach certifié Maxwell Leadership"
+                    position="Formateur Associé à SONNI GROUP, Expert en Ressources Humaines, Coach certifié Maxwell Leadership"
                 />
                 <Consultant
                     title="Ousmina Soto BALDÉ"
                     img={consultantAO}
-                    position="Formatrice Associé à SONNI GROUP, Experte en Communication, Coach certifiée Maxwell Leadership"
+                    position="Formatrice Associée à SONNI GROUP, Experte en Communication, Coach certifiée Maxwell Leadership"
                 />
 
                 <Consultant

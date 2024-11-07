@@ -1,7 +1,7 @@
 export const presentation = "Nous sommes un organisme de conseils et de formation professionnelle continue. Implanté à Dakar, nous disposons d’une expertise avérée en ingénierie pédagogique, en conseils et solutions : Relations Internationales, Diplomatie, Organisation Managériale et Leadership."
 
 export const vision = "SONNI GROUP c’est en hommage à Sonni Ali Ber, fondateur du dernier grand empire de l’Afrique de l’Ouest, l’empire du Songhaï̈, connu comme un grand conquérant ayant su donner à la région ouest-africaine ses lettres de noblesses. " +
-"La vision de SONNI GROUP s’inscrit dans cette logique, contribuer à l’essor économique du continent et faire briller le potentiel humain partout en Afrique à travers nos services et formation."
+"La vision de SONNI GROUP s’inscrit dans cette logique, contribuer à l’essor économique du continent et faire briller le potentiel humain partout en Afrique à travers nos services et formations."
 
 export const about = "Nous sommes un organisme de conseils en Relations Internationales, en diplomatie, en organisation managériale et surtout en formation professionnelle continue du droit sénégalais. Ainsi, SONNI GROUP est un cabinet indépendant et pluridisciplinaire." +
     " Pour chaque cas soumis à notre appréciation, SONNI GROUP identifie les meilleurs experts afin de mieux répondre à vos besoins. SONNI vous propose ses services et ses formations professionnelles continues conçues par des experts rompus dans leurs domaines, adaptées à l’évolution mondiale."

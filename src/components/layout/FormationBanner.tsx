@@ -7,7 +7,7 @@ type bannerProps = {
 
 export const FormationBanner = ({image}: bannerProps) => {
     return (
-        <div className="  block justify-center bg-cover shadow-lg  h-[700px] max-sm:h-[900px] overflow-hidden" style={{backgroundImage: `url(${image})`}}>
+        <div className="block justify-center bg-cover shadow-lg  h-[700px] max-sm:h-[900px] overflow-hidden" style={{backgroundImage: `url(${image})`}}>
 
             <div className="bg-black bg-opacity-50 h-full">
                 <div className="items-center mx-auto pt-40 justify-center flex flex-col">
@@ -120,7 +120,7 @@ export const FormationBanner = ({image}: bannerProps) => {
                         className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[12px]">SANTÉ TRAVAIL ET SECURITÉ DÉVELOPPEMENT
-                            DURABLE
+
                         </Link>
                     </div>
 
@@ -134,28 +134,28 @@ export const FormationBanner = ({image}: bannerProps) => {
                         className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[12px] uppercase">Banque – Finance – audit
-                            DURABLE
+
                         </Link>
                     </div>
                     <div
                         className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[12px] uppercase">Suivi Évaluation
-                            DURABLE
+
                         </Link>
                     </div>
                     <div
                         className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[12px] uppercase">Ressources Humaines
-                            DURABLE
+
                         </Link>
                     </div>
                     <div
                         className=" justify-center flex items-center bg-secondary rounded-2xl">
                         <Link to={`/formations`}
                               className="text-white text-center text-[12px] uppercase"> Cybersécurité & Informatique
-                            DURABLE
+
                         </Link>
                     </div>
                 </div>
