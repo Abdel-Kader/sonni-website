@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import {auth} from "../config/firebase";
-import {createUserWithEmailAndPassword} from "firebase/auth";
+import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 
 
 export const LoginPage = () => {
     const [form, setForm] = useState({email: '', password: ''})
 
-console.log(auth.currentUser?.email)
+    console.log(auth.currentUser?.email)
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        if(form.email && form.password) {
-            await createUserWithEmailAndPassword(auth, form.email, form.password)
+        if (form.email && form.password) {
+            // await createUserWithEmailAndPassword(auth, form.email, form.password)
+             await signInWithEmailAndPassword(auth, form.email, form.password).then(res => {
+                 console.log(res)
+             }).catch(err => console.log(err))
         } else alert('Veuillez saisir tous les champs')
     };
 
@@ -51,4 +54,5 @@ console.log(auth.currentUser?.email)
         </div>
     );
 };
+
 

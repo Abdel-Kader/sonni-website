@@ -11,19 +11,21 @@ const SeminairePage = () => {
     return (
         <>
             <Banner image={certificatBanner} title={"Nos séminaires"}
-                    description={"Consultez et inscrivez-vous à nos séminaires à venir"} catalogue={"seminaire"} />
+                    description={"Consultez et inscrivez-vous à nos séminaires à venir"} catalogue={"seminaire"}/>
             <div
                 className="col-span-3 m-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">
                 Séminaires à venir
             </div>
+
             <section className="mx-auto mt-12">
-                <SeminaireItem id={2} title="Séminaire Pratique en Gestion du Temps et des Priorités" image={gestionDeTemps}
+                <SeminaireItem id={2} title="Séminaire Pratique en Gestion du Temps et des Priorités"
+                               image={gestionDeTemps}
                                date={"Démarrage le O9 Novembre"} lieu={"Salle SONNI"}/>
                 <SeminaireItem id={3} title="Atelier de Prise de Parole en Public" image={priseDeParole}
                                date={"Démarrage le 05 novembre"} lieu={"Salle SONNI"}/>
                 <SeminaireItem id={1}
-                    title="Séminaire pratique d’écriture: Plonger dans l’Écriture d’un livre, trouver votre style d’écriture"
-                    image={ecriture} date={"Démarrage le 11 Novembre"} lieu={"Salle SONNI"}/>
+                               title="Séminaire pratique d’écriture: Plonger dans l’Écriture d’un livre, trouver votre style d’écriture"
+                               image={ecriture} date={"Démarrage le 11 Novembre"} lieu={"Salle SONNI"}/>
             </section>
         </>
     );

@@ -45,18 +45,18 @@ export default function FormationPage() {
                   className="col-span-3 my-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">
                 Centre d’Études en Diplomatie et Management – SONNI
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CEDM"} id="1" title={"Relations Internationales"} description={relationInter}
                                modules={relationInterModules}/>
                 <FormationItem type={"CEDM"} id="2" title={"Diplomatie"} description={formationDiplomatie}
                                modules={formationDiplomatieModules}/>
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CEDM"} id="3" title={"Diplomatie d'affaires"} description={affaire} modules={affairesModules}/>
                 <FormationItem type={"CEDM"} id="4" title={"Diplomatie économiques"} description={economique}
                                modules={economieModules}/>
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CEDM"} id="5" title={"Humanitaire"} description={humanitaire} modules={humanitaireModules}/>
                 <FormationItem type={"CEDM"} id="6" title={"Suivi évaluation"} description={suivi} modules={suiviEvaluationModules}/>
               </div>
@@ -67,30 +67,30 @@ export default function FormationPage() {
                   className="col-span-3 my-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">CABINET
                 SONNI
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CS"} id="7" title={"Leadership, Coaching & performance professionnelle"}
                                description={leadership} modules={leadershipModules}/>
-                <FormationItem type={"CS"} id="8" title={"Acceuil, Bureautique & Administration"} description={bureautique}
+                <FormationItem type={"CS"} id="8" title={"Accueil, Bureautique & Administration"} description={bureautique}
                                modules={bureautiqueModules}/>
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CS"} id="9" title={"Comptabilité, Banque & Finance"} description={comptabilite}
                                modules={comptabiliteModules}/>
                 <FormationItem type={"CS"} id="10" title={"Gestion logistique"} description={logistique}
                                modules={logistiqueModules}/>
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CS"} id="11" title={"Droit de travail"} description={travail} modules={travailModules}/>
                 <FormationItem type={"CS"} id="12" title={"Droit es affaires"} description={droitAffaire}
                                modules={droitAffairesModules}/>
 
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CS"} id="13" title={"Marketing"} description={marketing} modules={marketingModules}/>
                 <FormationItem type={"CS"} id="14" title={"Marché public"} description={marchePublic}
                                modules={marchePublicModules}/>
               </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-2">
+              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
                 <FormationItem type={"CS"} id="15" title={"Santé Travail, Sécurité, Qhse & Développement Durable"}
                                description={qhse} modules={qhseModules}/>
                 <FormationItem type={"CS"} id="16" title={"Paie, Administration RH"} description={hr} modules={hrModules}/>
@@ -106,8 +106,8 @@ export default function FormationPage() {
              style={{backgroundImage: `url(${formationFooter})`}}>
 
           <div className="bg-black bg-opacity-50 h-full flex flex-row justify-between items-center">
-            <div className="flex flex-col ml-12 justify-center items-center">
-              <p className="text-white text-lg w-2/3 text-center">
+            <div className="flex flex-col lg:ml-12 max-sm:ml-3 max-sm:my-10 justify-center items-center">
+              <p className="text-white text-lg lg:w-2/3 text-center max-sm:mr-10">
                 Télécharger notre catalogue du Centre d’Études en Diplomatie et Management – SONNI 2024-2025
               </p>
               <Link to="/contact" state={{type: 'CEDM'}}

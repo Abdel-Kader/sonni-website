@@ -1,11 +1,11 @@
 import React from 'react';
 
-export const CertificatItem = ({title, image, pos, desc, program}: {title: string, image: string, pos: string, desc: string, program?: string}) => {
+export const CertificatItem = ({title, image, pos, desc, program}: {title: string, image?: string, pos: string, desc?: string, program?: string}) => {
     return (
             <section className="m-12 mb-24">
 
-                <div className="grid grid-cols-2 gap-4 mb-10">
-                    {pos === 'left' &&
+                <div className="grid lg:grid-cols-2 gap-4 mb-10">
+                    {pos === 'left' && image &&
                         <img
                             src={image}
                             className="h-[320px] w-[400px]"
@@ -36,7 +36,7 @@ export const CertificatItem = ({title, image, pos, desc, program}: {title: strin
                         </div>
                     </div>
 
-                    {pos === 'right' &&
+                    {pos === 'right' && image &&
                         <div className="flex flex-1 justify-end">
                             <img
                                 src={image}

@@ -104,18 +104,7 @@ const AchatLivre = () => {
 
                                 />
                             </div>
-                            <div>
-                                <p className="mb-3 text-left font-medium !text-gray-900">Nom de Entreprise ou
-                                    organisation *</p>
-                                <input
-                                    placeholder="Nom de Entreprise ou organisation."
-                                    name="institution"
-                                    required
-                                    className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
-                                    onChange={e => setForm({...form, entreprise: e.target.value})}
-
-                                />
-                            </div>
+                            
                             <div>
                                 <p className="mb-3 text-left font-medium !text-gray-900">Nombre d'exemplaire *</p>
                                 <input

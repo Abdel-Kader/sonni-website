@@ -11,7 +11,7 @@ const Services = () => {
                 <h2 className="text-xl font-bold tracking-tight text-primary sm:text-2xl">NOS SERVICES PHARES</h2>
 
             </div>
-            <div className="grid lg:grid-cols-2 grid-cols-2 gap-20">
+            <div className="grid lg:grid-cols-2 grid-cols-1 gap-20">
                 <ServiceItem
                     serviceImg={serviceImg}
                     title={"FORMATION  & COACHING"}

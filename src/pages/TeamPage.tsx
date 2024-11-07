@@ -17,7 +17,7 @@ const TeamPage = () => {
                 </p>
 
                 <p className="mt-6 text-xl font-medium leading-loose text-center">
-                    Notre équipe est dynamique, performante, orientée résultats et qualités, prête à être à écoute pour vous servir.
+                    Notre équipe est dynamique, performante, orientée résultats et qualités, prête à être à votre écoute pour mieux vous servir.
                 </p>
             </div>
             <Avatar

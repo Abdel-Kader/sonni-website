@@ -22,7 +22,7 @@ const TeamBuildingPage = () => {
             <section className="mx-auto mt-12">
                 <TeamBuildingItem doc={require("../docs/TEAM-LEARNING.pdf")} title="TEAM LEARNING DE SONNI" description={teamLearning} image={teamBuildingImg1} subList={teamLearningList}/>
                 <TeamBuildingItem doc={require("../docs/renforcement.pdf")} title="RENFORCEMENT DE LA COHÉSION DE L’ÉQUIPE" description={cohesion} image={teamBuildingImg3} subList={cohesionList}/>
-                <TeamBuildingItem doc={require("../docs/COMMUNICATION.pdf")} title="COMMUNIQUER ET MOTIVER" description={communiquer} subList={communiquerList} image={teamBuildingImg4}/>
+                <TeamBuildingItem doc={require("../docs/COMMUNICATION.pdf")} title="COMMUNICATION INCENTIVE" description={communiquer} subList={communiquerList} image={teamBuildingImg4}/>
             </section>
         </>
     );

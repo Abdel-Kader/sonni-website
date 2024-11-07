@@ -1,6 +1,7 @@
 import React from 'react'
 import Vision from '../components/home/Vision'
 import homeBanner from "../assets/banners/home.jpg";
+
 import Banner from "../components/layout/Banner";
 import {citationBilesGate, motDuDG, presentation} from "../assets/contents/homePage";
 import Valeurs from "../components/home/Valeurs";
@@ -23,11 +24,11 @@ export default function HomePage() {
               </svg>
               <blockquote>
                   <Link to="/certificats">
-                      <p className="text-3xl text-[#54595f] w-2/3 text-justify leading-relaxed">{motDuDG}</p>
+                      <p className="text-3xl max-sm:text-xl  text-[#54595f] lg:w-2/3  text-justify leading-relaxed">{motDuDG}</p>
                   </Link>
               </blockquote>
-              <p className="mt-3 mb-3 text-primary font-bold text-lg">Mahamadou Chaïbou MAIGA</p>
-              <p className="font-medium italic w-1/2 text-justify">Directeur Exécutif de SONNI GROUP, Ph.D C en
+              <p className="mt-3 mb-3 text-primary font-bold text-lg max-sm:text-md">Mahamadou Chaïbou MAIGA</p>
+              <p className="font-medium italic lg:w-1/2 text-justify">Directeur Exécutif de SONNI GROUP, Ph.D C en
                   Relations Internationales et diplomatie d’affaires, Conférencier, Écrivain, Chercheur ZLECAF.</p>
           </div>
           <div className="mx-auto px-6 lg:px-8 mt-14 mb-10 w-[70%]">
@@ -39,10 +40,13 @@ export default function HomePage() {
               </svg>
               <blockquote>
                   <Link to="/formations">
-                      <p className="text-3xl text-[#54595f] w-2/3 text-justify leading-relaxed">{citationBilesGate}</p>
+                      <p className="text-3xl max-sm:text-xl text-[#54595f] lg:w-2/3 text-justify leading-relaxed">{citationBilesGate}</p>
                   </Link>
               </blockquote>
-              <p className="mt-3 mb-3 text-primary font-bold text-lg">Bill Gates</p>
+              <p className="mt-3 mb-3 text-primary font-bold text-lg  max-sm:text-md">Bill Gates</p>
+              <p className="font-medium italic lg:w-1/2 text-justify">
+                  Entrepreneur Américain, Fondateur de Microsoft
+              </p>
           </div>
           <About/>
           <Vision/>

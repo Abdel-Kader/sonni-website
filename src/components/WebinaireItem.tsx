@@ -8,7 +8,7 @@ export const WebinaireItem = ({title, image, date, heure, animateur}: {title: st
     return (
         <div className="shadow-md p-2 border-black mt-12 ml-20 mb-7 flex flex-row justify-between">
 
-            <div className="flex flex-row">
+            <div className="flex flex-row max-sm:grid max-sm:grid-cols-1">
                 <div>
                     <motion.img initial={{x: 300, opacity: 0}}
                                 animate={{x: 0, opacity: 1}}
@@ -24,7 +24,7 @@ export const WebinaireItem = ({title, image, date, heure, animateur}: {title: st
                                 alt="team-building-image"/>
                 </div>
 
-                <div className="ml-12 flex-col flex">
+                <div className="lg:ml-12 flex-col flex">
                     <span className="font-medium text-xl text-primary mt-4">Webinaire</span>
                     <span className="font-medium text-xl text-primary text-center mt-4">{title}</span>
                     <span className="flex flex-row font-medium text-xl text-primary text-center mt-4">

@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 
 export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, image: string, date: string, lieu?: string, id: number}) => {
     return (
-        <div className="shadow-md p-2 border-black mt-12 ml-20 mb-7 flex flex-row justify-between">
+        <div className="shadow-md p-2 border-black mt-12 lg:ml-20 max-sm:ml-10 mb-7 flex flex-row justify-between">
 
-            <div className="flex flex-row">
+            <div className="flex flex-row max-sm:grid sm:grid-cols-1 gap-4">
                 <div>
                     <motion.img initial={{x: 300, opacity: 0}}
                                 animate={{x: 0, opacity: 1}}

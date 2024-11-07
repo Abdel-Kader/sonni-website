@@ -1,13 +1,10 @@
-export const presentation = "Nous sommes un organisme de conseil et de formation professionnelle continue. Implanté à Dakar, nous disposons d’une expertise avérée en ingénierie pédagogique, en conseils et solutions en Relations Internationales, Diplomatie, et Leadership."
+export const presentation = "Nous sommes un organisme de conseils et de formation professionnelle continue. Implanté à Dakar, nous disposons d’une expertise avérée en ingénierie pédagogique, en conseils et solutions : Relations Internationales, Diplomatie, Organisation Managériale et Leadership."
 
-export const vision = "SONNI c’est en hommage à Sonni Ali Ber, fondateur du denier grand empire de l’Afrique de\n" +
-    "l’Ouest, l’empire du Songhaï, connu comme un grand conquérant ayant su donner à la région\n" +
-    "ouest-africaine ses titres de noblesses.\n" +
-    "La vision du cabinet SONNI s’inscrit dans ceTe logique, faire rayonner le potentiel humain\n" +
-    "partout en Afrique à travers nos services et formation."
+export const vision = "SONNI GROUP c’est en hommage à Sonni Ali Ber, fondateur du dernier grand empire de l’Afrique de l’Ouest, l’empire du Songhaï̈, connu comme un grand conquérant ayant su donner à la région ouest-africaine ses lettres de noblesses. " +
+"La vision de SONNI GROUP s’inscrit dans cette logique, contribuer à l’essor économique du continent et faire briller le potentiel humain partout en Afrique à travers nos services et formation."
 
 export const about = "Nous sommes un organisme de conseils en Relations Internationales, en diplomatie, en organisation managériale et surtout en formation professionnelle continue du droit sénégalais. Ainsi, SONNI GROUP est un cabinet indépendant et pluridisciplinaire." +
-    "Pour chaque cas soumis à notre appréciation, SONNI GROUP identifie les meilleurs experts afin de mieux répondre à vos besoins. SONNI vous propose ses services et ses formations professionnelles continues conçues par des experts rompus dans leurs domaines, adaptées à l’évolution mondiale."
+    " Pour chaque cas soumis à notre appréciation, SONNI GROUP identifie les meilleurs experts afin de mieux répondre à vos besoins. SONNI vous propose ses services et ses formations professionnelles continues conçues par des experts rompus dans leurs domaines, adaptées à l’évolution mondiale."
 
 export const mission = "Nous croyons au potentiel économique et humain du continent africain. Pour cela, nous nous sommes fixés comme mission de mettre à̀ la disposition des entreprises, organisations (nationales et internationales) et des États africains, les meilleurs conseils et formations avec " +
 "les meilleurs experts d’ici et d’ailleurs pour promouvoir le développement économique du continent et outiller leurs collaborateurs à acquérir des nouvelles compétences. Afin d’aboutir à une croissance exceptionnelle."

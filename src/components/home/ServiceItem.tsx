@@ -8,11 +8,11 @@ export const ServiceItem = ({title, description, serviceImg}: {title: string, de
             <motion.div whileHover={{ scale: 1.2 }}
                         onHoverStart={e => {}}
                         onHoverEnd={e => {}}
-                className="block justify-center max-w-sm rounded-lg bg-cover shadow-lg ml-4"
+                className="block justify-center lg:max-w-sm rounded-lg bg-cover shadow-lg ml-4"
                 style={{backgroundImage: `url(${serviceImg})`}}>
-                <div className="bg-black bg-opacity-60 max-w-sm h-full p-8 rounded-lg">
+                <div className="bg-black bg-opacity-60 lg:max-w-sm h-full p-8 rounded-lg">
                     <h5
-                        className="mb-4 font-medium leading-tight text-secondaty">
+                        className="mb-4 font-medium leading-tight text-secondary max-sm:leading-relaxed">
                         {title}
                     </h5>
                     <p

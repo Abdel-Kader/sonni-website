@@ -118,10 +118,10 @@ export const relationInterModules = [
 
 
 export const formationDiplomatie = "La diplomatie, partie de la politique qui concerne les " +
-    "relations entre les États : représentation des intérêts d&#39;un " +
-    "gouvernement à l&#39;étranger, administration des affaires " +
+    "relations entre les États : représentation des intérêts d'un " +
+    "gouvernement à l'étranger, administration des affaires " +
     "internationales, direction et exécution des négociations " +
-    "entre États (ambassade, légation ; consulat). Nos " +
+    "entre États (ambassade, légation, consulat). Nos " +
     "séminaires vous permettent de cerner les contours du " +
     "domaine."
 

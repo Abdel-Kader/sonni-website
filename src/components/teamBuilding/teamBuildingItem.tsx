@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from "framer-motion"
+import {Link} from "react-router-dom";
 
 
 
@@ -7,7 +8,7 @@ export const TeamBuildingItem = ({title, description, image, subList, doc}: {tit
     return (
         <div className="shadow-md  flex items-center flex-col p-2 border-black mt-12">
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-4">
                 <div className="px-6">
                     <span className="font-medium text-primary text-center mt-4">{title}</span>
                     <br/>
@@ -21,14 +22,15 @@ export const TeamBuildingItem = ({title, description, image, subList, doc}: {tit
                         ))}
                     </ul>
                     <div className="justify-center flex">
-                        <div
-                            className="flex flex-col bg-primary w-40 rounded mt-10 mb-7 border-t-gray-300 border justify-center h-10 align-bottom">
-                            <a
+                        {/*<a
                                 href={doc} download={title} target='_blank'
                                 className=" text-md text-white text-center">En
                                 savoir plus
-                            </a>
-                        </div>
+                            </a>*/}
+                            <Link to="/contact" state={{type: 'CS'}}
+                                  className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
+                                En savoir plus
+                            </Link>
                     </div>
                 </div>
                 <AnimatePresence>

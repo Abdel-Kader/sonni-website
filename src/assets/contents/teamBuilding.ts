@@ -24,14 +24,12 @@ export const cohesionList = [
     {item: "CONVENTIONS"},
 ]
 
-export const communiquer = "La communication motivante est un type de communication conçu pour vos équipes par le programme team building de SONNI. C’est un style de communication comme son nom " +
-    "l’indique motivante, elle favorise la motivation d’une équipe. " +
-    "Lors de vos réunions, rencontres, vous aurez besoin d’animation fun, motivante pour " +
-    "reconnaitre la valeur de l’équipe, la recommencer. Le programme Communiquer et Motiver vous favorise :"
+export const communiquer = "La communication inventive est un type de communication que nous avons conçu pour vos équipes. C’est un style de communication comme motivante, encourageant elle favorise la motivation d’une équipe. " +
+"Lors de vos réunions, rencontres, vous aurez besoin d’animation fun, motivante pour reconnaitre la valeur de l’équipe, la recommencer. Le programme Communiquer et Motiver vous favorise :"
 
 export const communiquerList = [
-    {item: "De créer un pont entre les employés ;"},
-    {item: "D’attendrir les relations avec son équipe ;"},
-    {item: "De renforcer les relations avec les partenaires ou collaborateurs"},
+    {item: "De créer un pont entre les employés ;"},
+    {item: "D’attendrir les relations avec son équipe ;"},
+    {item: "De renforcer les relations avec les partenaires ou collaborateurs..."},
 ]
 
