@@ -39,8 +39,8 @@ export default function FormationPage() {
         <FormationBanner image={formationBanner} />
         <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
           <SearchBar/>
-          <div className="flex flex-row justify-between">
-            <div className="w-1/2 mr-8">
+          <div className="flex flex-row justify-between max-sm:grid max-sm:grid-cols-1">
+            <div className="w-1/2 max-sm:w-full mr-8">
               <div
                   className="col-span-3 my-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">
                 Centre d’Études en Diplomatie et Management – SONNI
@@ -62,7 +62,7 @@ export default function FormationPage() {
               </div>
             </div>
 
-            <div className="w-1/2">
+            <div className="w-1/2 max-sm:w-full">
               <div
                   className="col-span-3 my-12 text-xs font-bold tracking-tight text-primary sm:text-xl animate-slidein500 opacity-0">CABINET
                 SONNI

@@ -1,20 +1,17 @@
 import React, {useState} from 'react';
 import certificatBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
-import CEDM from "../assets/cedm.png";
-import CS from "../assets/cs.png";
-import Maps from "../assets/img_1.png";
 import {useLocation} from "react-router-dom";
 
 const AchatLivre = () => {
     let location = useLocation();
 
-    const [form, setForm] = useState({number: '', firstName: '', lastName: '',phone: '', email: '', profession: '', entreprise: ''})
+    const [form, setForm] = useState({number: '', firstName: '', lastName: '',phone: '', email: '', profession: ''})
 
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        if(form.firstName && form.lastName && form.email) {
+        if(form.firstName && form.lastName && form.email && form.phone && form.profession && form.number) {
 
         } else alert('Veuillez saisir tous les champs')
     }
@@ -104,7 +101,7 @@ const AchatLivre = () => {
 
                                 />
                             </div>
-                            
+
                             <div>
                                 <p className="mb-3 text-left font-medium !text-gray-900">Nombre d'exemplaire *</p>
                                 <input

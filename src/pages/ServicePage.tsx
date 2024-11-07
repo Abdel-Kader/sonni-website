@@ -12,6 +12,19 @@ import {
 } from "../assets/contents/servicePage";
 import {Link} from "react-router-dom";
 
+import coachingImg from '../assets/services/coaching.png'
+import commImg from '../assets/services/comm.png'
+import conseilImg from '../assets/services/conseil.png'
+import grandProjImg from '../assets/services/grandProjet.png'
+import juridiqueImg from '../assets/services/juridique.png'
+import lobbyingImg from '../assets/services/lobbying.png'
+import mediationImg from '../assets/services/mediation.png'
+import mesureImg from '../assets/services/mesure.png'
+import negociationImg from '../assets/services/negociation.png'
+import orgaImg from '../assets/services/orga.png'
+import relaIntImg from '../assets/services/rela-inter.png'
+import teamBuildingImg from '../assets/services/teambuilding.png'
+
 export default function ServicePage() {
     return (
         <>
@@ -26,23 +39,23 @@ export default function ServicePage() {
                         Laissez nous un message
                     </Link>
                 </div>
-                <div className="grid lg:grid-cols-4 gap-6 grid-cols-2 mb-12">
-                    <FormationItem title={"Conseils et Formations"} description={"Organisme de formation continue, le renforcement des capacités, au cœur de nos services. Nous mettons à votre disposition une palette de formation conçue pour répondre à vos" +
+                <div className="grid lg:grid-cols-4 gap-6 grid-cols-1 mb-12">
+                    <FormationItem img={conseilImg} title={"Conseils et Formations"} description={"Organisme de formation continue, le renforcement des capacités, au cœur de nos services. Nous mettons à votre disposition une palette de formation conçue pour répondre à vos" +
                         " besoins de séminaires, d’ateliers pratiques, de formations certifiantes."}/>
-                    <FormationItem title={"Formations sur mesure"} description={formationSurMesure}/>
-                    <FormationItem title={"Team Bulding"} description={teamBuilding}/>
-                    <FormationItem title={"Conseils en Relations internationales & Diplomatie"} description={"Notre expertise en relations internationales et pratique diplomatique est avérée, pour vos " +
+                    <FormationItem img={mesureImg} title={"Formations sur mesure"} description={formationSurMesure}/>
+                    <FormationItem img={teamBuildingImg} title={"Team Bulding"} description={teamBuilding}/>
+                    <FormationItem img={relaIntImg} title={"Conseils en Relations internationales & Diplomatie"} description={"Notre expertise en relations internationales et pratique diplomatique est avérée, pour vos " +
                         "besoins de conseils en relations internationales, en diplomatie, en analyses géopolitique," +
                         "géostratégique, SONNI vous offre les meilleurs services."}/>
-                    <FormationItem title={"Lobbying"} description={lobbying}/>
-                    <FormationItem title={"Négociations Internationales"} description={"La négociation internationale une science ! À SONNI, nous mettons à votre disposition notre " +
+                    <FormationItem img={lobbyingImg} title={"Lobbying"} description={lobbying}/>
+                    <FormationItem img={negociationImg} title={"Négociations Internationales"} description={"La négociation internationale une science ! À SONNI, nous mettons à votre disposition notre " +
                         "expertise de conseils en négociation internationale."}/>
-                    <FormationItem title={"Communication & Prise de parole en Public"} description={communication}/>
-                    <FormationItem title={"Coaching Professionnel"} description={coaching}/>
-                    <FormationItem title={"Mediation d’affaires"} description={mediationAffaire}/>
-                    <FormationItem title={"Conseil et assistance juridique"} description={assistanceJuridique}/>
-                    <FormationItem title={"Gestion de grands projets"} description={gestionProjetComplex}/>
-                    <FormationItem title={"Organisation et Qualité"} description={organisationManagerQuality}/>
+                    <FormationItem img={commImg} title={"Communication & Prise de parole en Public"} description={communication}/>
+                    <FormationItem img={coachingImg} title={"Coaching Professionnel"} description={coaching}/>
+                    <FormationItem img={mediationImg} title={"Mediation d’affaires"} description={mediationAffaire}/>
+                    <FormationItem img={juridiqueImg} title={"Conseil et assistance juridique"} description={assistanceJuridique}/>
+                    <FormationItem img={grandProjImg} title={"Gestion de grands projets"} description={gestionProjetComplex}/>
+                    <FormationItem img={orgaImg} title={"Organisation et Qualité"} description={organisationManagerQuality}/>
                 </div>
             </section>
         </>

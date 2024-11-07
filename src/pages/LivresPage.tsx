@@ -14,12 +14,12 @@ const LivresPage = () => {
                 title={"Libraire"}
                 description={"Consultez notre Librairie pour vous en procurer des ouvrages."}
             />
-            <div className="grid lg:grid-cols-2 gap-6 grid-cols-2 m-24 items-center ">
+            <div className="grid lg:grid-cols-2 gap-6 grid-cols-1 m-24 items-center ">
                 <div className="flex flex-col justify-center items-center">
                     <img
                         src={livre1}
                         key={livre1}
-                        className="h-96 w-[300px] rounded-xl"
+                        className="h-96 w-[300px] max-sm:w-full rounded-xl"
                         alt="team-building-image"/>
                     <p className="mt-3 text-xl text-center text-primary font-medium">Fatima Lobbo, la patience pour le foyer</p>
                     <p className="mt-3 text-xl text-center text-primary font-medium">Prix: 6500Fr</p>
@@ -28,11 +28,11 @@ const LivresPage = () => {
                         Acheter
                     </Link>
                 </div>
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center max-sm:mt-12">
                     <img
                         src={livre2}
                         key={livre2}
-                        className="h-96 w-[300px] rounded-xl"
+                        className="h-96 w-[300px] max-sm:w-full rounded-xl"
                         alt="team-building-image"/>
                     <p className="mt-3 text-xl text-center text-primary font-medium">Guirmey Latakabia, au chemin des épreuves </p>
                     <p className="mt-3 text-xl text-center text-primary font-medium">Prix: 5000Fr</p>

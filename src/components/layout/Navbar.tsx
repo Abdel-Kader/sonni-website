@@ -42,7 +42,7 @@ export default function Navbar() {
                           anchor="bottom"
                           className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                       >
-                        <Link to='/team'>
+                        <Link to='/team' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -51,7 +51,7 @@ export default function Navbar() {
                           </MenuItem>
                         </Link>
 
-                        <Link to='/reference'>
+                        <Link to='/reference' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -61,24 +61,24 @@ export default function Navbar() {
                         </Link>
                       </MenuItems>
                     </Menu>
-                    <Link to='/formations'>
+                    <Link to='/formations' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/formations' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Formations</p>
                     </Link>
-                    <Link to='/services'>
+                    <Link to='/services' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Services</p>
                     </Link>
-                    <Link to='/certificats'>
+                    <Link to='/certificats' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Certificats & MBA</p>
                     </Link>
-                    <Link to='/seminaires'>
+                    <Link to='/seminaires' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/seminaires' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Séminaires</p>
                     </Link>
 
-                    <Link to='/team-building'>
+                    <Link to='/team-building' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2  font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team-building' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Team building</p>
                     </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                           anchor="bottom"
                           className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                       >
-                        <Link to='/webinaires'>
+                        <Link to='/webinaires' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -103,7 +103,7 @@ export default function Navbar() {
                           </MenuItem>
                         </Link>
 
-                        <Link to='/articles'>
+                        <Link to='/articles' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -111,7 +111,7 @@ export default function Navbar() {
                             </button>
                           </MenuItem>
                         </Link>
-                        <Link to='/librairie'>
+                        <Link to='/librairie' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -122,7 +122,7 @@ export default function Navbar() {
                       </MenuItems>
                     </Menu>
 
-                    <Link to='/contact'>
+                    <Link to='/contact' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2  font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/contact' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Contact</p>
                     </Link>

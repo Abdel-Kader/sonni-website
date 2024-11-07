@@ -11,7 +11,7 @@ const ArticlePage = () => {
         <>
             <Banner image={blogBanner} title={"Articles"}
                     description={"Consultez les articles de SONNI Magazine"}/>
-           <div className="flex flex-row m-10">
+           <div className="flex flex-row m-10 max-sm:flex-col">
                <Sidebar aria-label="Default sidebar example" className="ml-12 border-2">
                    <p className="text-lg text-primary font-bold mb-7 text-center">ARCHIVES</p>
                    <Sidebar.Items>
