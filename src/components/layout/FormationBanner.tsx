@@ -7,9 +7,9 @@ type bannerProps = {
 
 export const FormationBanner = ({image}: bannerProps) => {
     return (
-        <div className="block justify-center bg-cover shadow-lg  h-[700px] max-sm:h-[900px] overflow-hidden" style={{backgroundImage: `url(${image})`}}>
+        <div className="block justify-center bg-cover shadow-lg w-full h-[700px] max-sm:h-full overflow-hidden" style={{backgroundImage: `url(${image})`}}>
 
-            <div className="bg-black bg-opacity-50 h-full">
+            <div className="bg-black bg-opacity-50 h-full max-sm:pb-20 ">
                 <div className="items-center mx-auto pt-40 justify-center flex flex-col">
                     <h2 className=" text-2xl tracking-tight text-center text-white animate-slidein300 opacity-0">Ensemble pour le
                         développement de vos compétences !</h2>
@@ -24,9 +24,9 @@ export const FormationBanner = ({image}: bannerProps) => {
                 <div className="grid lg:grid-cols-6 grid-cols-3 gap-4 lg:mx-20 mt-7">
                     <div
                         className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
-                        <Link to={`/formations`}
+                        <p
                               className="text-white text-center text-[12px]">DIPLOMATIE D’AFFAIRES
-                        </Link>
+                        </p>
                     </div>
                     <div
                         className=" justify-center  flex items-center bg-secondary rounded-2xl">

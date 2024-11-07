@@ -102,12 +102,12 @@ export default function FormationPage() {
           </div>
 
         </section>
-        <div className="mt-5 block justify-center bg-cover shadow-lg h-[170px] overflow-hidden"
+        <div className="mt-5 block justify-center bg-cover shadow-lg lg:h-[170px] overflow-hidden"
              style={{backgroundImage: `url(${formationFooter})`}}>
 
-          <div className="bg-black bg-opacity-50 h-full flex flex-row justify-between items-center">
+          <div className="bg-black bg-opacity-50 h-full flex flex-row justify-between items-center max-sm:grid">
             <div className="flex flex-col lg:ml-12 max-sm:ml-3 max-sm:my-10 justify-center items-center">
-              <p className="text-white text-lg lg:w-2/3 text-center max-sm:mr-10">
+              <p className="text-white text-lg lg:w-2/3 text-center">
                 Télécharger notre catalogue du Centre d’Études en Diplomatie et Management – SONNI 2024-2025
               </p>
               <Link to="/contact" state={{type: 'CEDM'}}
@@ -120,8 +120,8 @@ export default function FormationPage() {
                 Télécharger
               </a>*/}
             </div>
-            <div className="flex flex-col mr-12 justify-center items-center">
-              <p className="text-white text-lg">
+            <div className="flex flex-col lg:mr-12 justify-center items-center">
+              <p className="text-white text-lg text-center">
                 Télécharger notre catalogue du Cabinet SONNI 2024-2025
               </p>
               <Link to="/contact" state={{type: 'CS'}}
