@@ -9,7 +9,7 @@ type avatarProps = {
 
 export function Avatar({img, title, description, position}: avatarProps) {
     return (
-        <div className="flex items-center flex-col p-2">
+        <div className="flex items-center flex-col p-2 max-sm:mt-12">
             <div className="flex group flex-col">
                 <img
                     alt="DG"

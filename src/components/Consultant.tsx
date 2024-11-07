@@ -8,7 +8,7 @@ type avatarProps = {
 
 export function Consultant({img, title, position}: avatarProps) {
     return (
-        <div className="flex items-center flex-col p-2 mb-7">
+        <div className="flex items-center flex-col p-2 mb-7 max-sm:mt-12">
             <div>
                 <img
                     alt="DG"

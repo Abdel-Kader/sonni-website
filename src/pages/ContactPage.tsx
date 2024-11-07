@@ -87,7 +87,7 @@ const ContactPage = () => {
                                     ((location.state && location.state.type === 'seminaire')) && 'Réserver votre place'
                                 }
                             </p>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid lg:grid-cols-2 gap-4">
 
                                 <div>
                                     <p className="mb-3 text-left font-medium !text-gray-900">Nom *</p>

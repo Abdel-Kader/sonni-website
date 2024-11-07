@@ -7,7 +7,7 @@ const FormationItem = ({title, description, id, modules, type, img}: {title: str
             {img && <img className="p-8 rounded-t-lg" src={img} alt="service"/>}
             <div className="flex flex-col lg:h-[250px] w-full p-2">
                 <span className="font-medium text-primary text-center mt-4">{title}</span>
-                <span className="text-gray-500 text-[12px] text-justify mt-4">{description}</span>
+                <span className="text-gray-500 lg:text-[12px] text-justify mt-4">{description}</span>
             </div>
             {id &&
                 <div

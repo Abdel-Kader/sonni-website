@@ -14,12 +14,12 @@ type bannerProps = {
 
 const Banner = ({image, title, description, catalogue, seminaire, subdescription, webinaire}: bannerProps) => {
     return (
-        <div className=" block justify-center bg-cover shadow-lg h-[700px] overflow-hidden"
+        <div className=" block justify-center bg-cover shadow-lg h-[700px] max-sm:h-full overflow-hidden"
              style={{backgroundImage: `url(${image})`}}>
 
             <div className="bg-black bg-opacity-40 h-full flex justify-center items-center mt-20">
                 <div className="mx-auto justify-center flex flex-col">
-                    <h2 className="text-xl mb-10 font-bold text-secondary text-center tracking-tight sm:text-3xl animate-slidein300 opacity-0">{title}</h2>
+                    <h2 className="text-xl mb-10 font-bold text-secondary text-center tracking-tight sm:text-3xl animate-slidein300 opacity-0 max-sm:my-5">{title}</h2>
 
                     {subdescription &&
                         <div className="w-full flex flex-row items-center justify-center mb-7">
@@ -30,7 +30,7 @@ const Banner = ({image, title, description, catalogue, seminaire, subdescription
 
                         </div>}
                     {description &&
-                        <div className="flex flex-row items-center justify-center mb-7 w-1/2 ml-[25%]">
+                        <div className="flex flex-row items-center justify-center mb-7 w-1/2 ml-[25%] max-sm:w-full max-sm:ml-0 max-sm:mb-12 ">
                             {subdescription && <MapPinIcon className="animate-slidein500" height={25} style={{marginRight: 5, color: 'white'}}/> }
                         <p className="text-xl text-white leading-8 text-center animate-slidein500 opacity-80">
                             {description}

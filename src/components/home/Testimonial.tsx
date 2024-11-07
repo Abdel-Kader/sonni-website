@@ -5,7 +5,7 @@ const Testimonial = () => {
 
     return (
 
-        <div className="h-56 mt-10 mb-20 sm:h-64 xl:h-80 2xl:h-96">
+        <div className="h-56 mt-10 mb-20 max-sm:h-auto xl:h-80 2xl:h-96">
             <h2 className="text-xl ml-24 mb-10 font-bold tracking-tight text-primary sm:text-2xl animate-slidein500 opacity-0">LES TEMOIGNAGES</h2>
 
             <Carousel

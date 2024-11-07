@@ -8,7 +8,7 @@ export const TestimonialItem = ({name, position, message}: {name: string, positi
             <div className="flex items-center mt-7 divide-gray-500 flex-col">
                 <div className="pr-3 font-medium text-secondaty">{name}
                 </div>
-                <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">{position}
+                <div className="pl-3 max-sm:mb-10 text-sm font-light text-gray-500 dark:text-gray-400">{position}
                 </div>
             </div>
             {/*<figure className="max-w-screen-md mx-auto">

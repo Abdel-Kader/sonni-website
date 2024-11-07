@@ -5,17 +5,14 @@ export function FormationSubItem({title, module}: {title: string, module: any}) 
     const [detail, setDetail] = useState(false)
     return (
         <div className="shadow-md p-3 border-black mb-7">
-            <div className="p-3 mt-7 flex flex-row items-center justify-between">
+            <div className="p-3 mt-7 flex flex-row items-center justify-between max-sm:grid max-sm:grid-cols-1">
                 <span className="font-medium text-primary">{title}</span>
                 <div
-                    className="flex flex-col bg-primary w-40 rounded mb-2 border-t-gray-300 border justify-center h-10 align-bottom">
+                    className="flex flex-col bg-primary w-40 rounded mb-2 border-t-gray-300 border justify-center h-10 align-bottom  max-sm:mt-7">
                     <button className=" text-md text-white text-center" onClick={() => setDetail(!detail)}>
                         En savoir plus
                     </button>
-
-
                 </div>
-
             </div>
             {detail &&
                <>

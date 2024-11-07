@@ -26,7 +26,7 @@ const TeamPage = () => {
                 description="PhD. C en relations internationales et diplomatie d’affaires, Écrivain, Juriste, Chercheur ZLECAF, Conférencier"
                 position="Directeur Exécutif de SONNI GROUP"
             />
-            <div className="grid lg:grid-cols-2 grid-cols-2">
+            <div className="grid lg:grid-cols-2 grid-cols-1">
                 {/* <Avatar
                     title="Mahamadou Chaïbou MAÏGA"
                     img={dg}

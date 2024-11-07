@@ -13,7 +13,7 @@ function Partners() {
             <div className="mx-auto lg:mx-0 mb-5">
                 <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary uppercase">Quelques uns de nos experts consultants</h2>
             </div>
-            <div className="grid lg:grid-cols-2 grid-cols-2">
+            <div className="grid lg:grid-cols-2 grid-cols-1 ">
                 <Consultant
                     title="Mah KEITA"
                     img={pharmacie}

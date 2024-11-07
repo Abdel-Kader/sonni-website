@@ -11,17 +11,17 @@ export const FormationBanner = ({image}: bannerProps) => {
 
             <div className="bg-black bg-opacity-50 h-full">
                 <div className="items-center mx-auto pt-40 justify-center flex flex-col">
-                    <h2 className=" text-2xl tracking-tight text-white animate-slidein300 opacity-0">Ensemble pour le
+                    <h2 className=" text-2xl tracking-tight text-center text-white animate-slidein300 opacity-0">Ensemble pour le
                         développement de vos compétences !</h2>
                     <h4 className=" text-xl mt-10 tracking-tight text-white animate-slidein300 opacity-0">Découvrez nos
                         thématiques de formation</h4>
-                    <p className="text-center text-white mt-7 w-2/3">
+                    <p className="text-center text-white mt-7 lg:w-2/3">
                         Dans un monde de travail en pleine mutation, le professionnel a l’obligation de pouvoir se
                         former pour être à pointe. SONNI, organisme de formation continue met à votre disposition
                         toute une palette de formation qui vous permet de développer vos compétences.
                     </p>
                 </div>
-                <div className="grid lg:grid-cols-6 grid-cols-4 gap-4 lg:mx-20 mt-7">
+                <div className="grid lg:grid-cols-6 grid-cols-3 gap-4 lg:mx-20 mt-7">
                     <div
                         className=" justify-center flex items-center bg-secondary rounded-2xl p-1">
                         <Link to={`/formations`}
