@@ -5,16 +5,27 @@ import Maps from "../assets/img_1.png"
 import CEDM from "../assets/cedm.png"
 import CS from '../assets/cs.png'
 import { useLocation } from 'react-router-dom';
-
+import emailjs from '@emailjs/browser'
 const ContactPage = () => {
 
-    const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: '', message: '', profession: '', institution: '', pays: ''})
+    const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: 'Demande l\'information', message: '', profession: '', institution: '', pays: ''})
 
     let location = useLocation();
+
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
         if(form.firstName && form.lastName && form.email && form.message) {
+
+            emailjs.sendForm('service_1egafxp', 'template_7zwrjr8', '#contact').then(
+                (response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                },
+                (error) => {
+                    console.log('FAILED...', error);
+                },
+            );
+
             if(location.state?.type === 'CEDM' || location.state?.type === 'CS') {
                 if(form.institution && form.profession) {
                     fetch("../docs/Catalogue-Cabinet-SONNI.pdf")
@@ -58,6 +69,8 @@ const ContactPage = () => {
                             className="w-full h-full lg:max-h-[610px]"
                         />
                         <form
+                            name="contact"
+                            id="contact"
                             onSubmit={handleSubmit}
                             className="flex flex-col gap-4 lg:max-w-sm">
                             <p className="text-2xl  font-medium mb-4 text-secondary">
