@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useLayoutEffect, useState} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import Banner from "../components/layout/Banner";
 import Maps from "../assets/img_1.png"
@@ -11,6 +11,10 @@ const ContactPage = () => {
     const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: 'Demande l\'information', message: '', profession: '', institution: '', pays: ''})
 
     let location = useLocation();
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
 
     const handleSubmit = (e: any) => {

@@ -1,5 +1,5 @@
 import Banner from "../components/layout/Banner";
-import React from "react";
+import React, {useLayoutEffect} from "react";
 import blogBanner from "../assets/banners/blog.jpg";
 import webinaire1 from "../assets/webinaires/webinaire1.png";
 
@@ -7,6 +7,9 @@ import {WebinaireItem} from "../components/WebinaireItem";
 
 
 const WebinairePage = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <>
             <Banner image={blogBanner} title={"Webinaires"}

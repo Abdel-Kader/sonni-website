@@ -1,18 +1,20 @@
 import { Sidebar } from 'flowbite-react';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useLayoutEffect} from 'react';
 import blogBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
 
 const ArticlePage = () => {
     const [article, setArticle] = useState("")
-
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
 
     return (
         <>
             <Banner image={blogBanner} title={"Articles"}
                     description={"Consultez les articles de SONNI Magazine"}/>
-           <div className="flex flex-row m-10 max-sm:flex-col">
-               <Sidebar aria-label="Default sidebar example" className="ml-12 border-2">
+           <div className="flex flex-row lg:m-10 max-sm:mt-7 max-sm:flex-col">
+               <Sidebar aria-label="Default sidebar example" className="lg:ml-12 max-sm:w-full border-2">
                    <p className="text-lg text-primary font-bold mb-7 text-center">ARCHIVES</p>
                    <Sidebar.Items>
                        <Sidebar.ItemGroup>
@@ -34,7 +36,7 @@ const ArticlePage = () => {
 
                    </Sidebar.Items>
                </Sidebar>
-               <div className="flex flex-1 ml-10">
+               <div className="flex flex-1 lg:ml-10">
                    {article && <iframe
                        width="100%"
                        height="750"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import {Avatar} from "../components/Avatar";
 import dg from "../assets/teams/dg.jpg";
 import assistant from "../assets/teams/assistant.jpeg";
@@ -8,6 +8,11 @@ import assistantProg from "../assets/teams/assistant-prog.jpg";
 import Partners from "../components/home/Partners";
 
 const TeamPage = () => {
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
+
     return (
         <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
             <div className="mx-auto lg:mx-0 mb-10">

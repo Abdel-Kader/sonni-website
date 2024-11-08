@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useLayoutEffect} from 'react'
 import formationBanner from "../assets/banners/formation.jpg";
 import formationFooter from "../assets/banners/formationFooter.jpeg"
 import FormationItem from "../components/formation/FormationItem";
@@ -34,6 +34,10 @@ import {FormationBanner} from "../components/layout/FormationBanner";
 import {Link} from "react-router-dom";
 
 export default function FormationPage() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  });
+
   return (
       <>
         <FormationBanner image={formationBanner} />

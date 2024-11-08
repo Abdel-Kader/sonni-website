@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import Banner from "../components/layout/Banner";
 import seminaireBanner from "../assets/banners/certificat.jpg";
 import {useLocation} from 'react-router-dom';
@@ -9,13 +9,15 @@ import {List, Tabs} from "flowbite-react";
 const SeminaireDetail = () => {
     let location = useLocation();
     const seminaire = ateliers.filter(atelier => atelier.id === location.state.id);
-
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <>
             <Banner image={seminaireBanner} title={location.state?.title} subdescription={location.state.date} description={location.state?.lieu} seminaire={location.state?.title}/>
             <section className="m-12">
 
-                <div className="grid grid-cols-2 mb-5">
+                <div className="grid lg:grid-cols-2 mb-5">
                     <div className="flex">
                         <motion.img initial={{x: 300, opacity: 0}}
                                     animate={{x: 0, opacity: 1}}
@@ -30,7 +32,7 @@ const SeminaireDetail = () => {
                                     className="h-[400px] w-[400px]"
                                     alt="team-building-image"/>
                     </div>
-                    <div className="ml-12 flex flex-col">
+                    <div className="ml-12 flex flex-col max-sm:mt-7">
                         <h3 className="font-bold text-xl mb-5 underline underline-offset-8 decoration-4 decoration-primary">Présentation</h3>
 
                         <span

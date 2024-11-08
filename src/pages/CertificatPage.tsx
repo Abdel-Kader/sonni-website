@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import com from '../assets/certifications/com.png'
 import diplomatie from '../assets/certifications/diplomatie.png'
@@ -18,12 +18,15 @@ import Banner from "../components/layout/Banner";
 import {CertificatItem} from "../components/CertificatItem";
 
 const CertificatPage = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <>
             <Banner image={certificatBanner} title={"Nos certificats et MBA"}
                     description={"SONNI GROUP, organisme de formation professionnelle continue reconnu du droit sénégalais. Nous mettons à votre disposition des certifications et MBA conçus par notre comité pédagogique composé d’experts praticiens, répondants aux critères d’excellences."}/>
             <section className="mx-auto mt-12">
-                <h3 className="font-bold text-center text-primary text-2xl pb-[20px] underline underline-offset-8 decoration-4 decoration-primary">Les
+                <h3 className="font-bold text-center max-sm:m-3 max-sm:text-xl text-primary text-2xl pb-[20px] underline underline-offset-8 decoration-4 decoration-primary">Les
                     certificats du Centre d’Études en Diplomatie et Management – SONNI</h3>
 
                 <CertificatItem title={"Programme de certification communication politique et influence."} image={com}

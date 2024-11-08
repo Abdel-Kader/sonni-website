@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useLayoutEffect} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import Banner from "../components/layout/Banner";
 import ecriture from "../assets/seminaire/ecriture.jpg"
@@ -8,6 +8,9 @@ import {SeminaireItem} from "../components/seminaire/SeminaireItem";
 
 
 const SeminairePage = () => {
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    });
     return (
         <>
             <Banner image={certificatBanner} title={"Nos séminaires"}

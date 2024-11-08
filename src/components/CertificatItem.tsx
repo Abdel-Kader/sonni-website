@@ -2,17 +2,17 @@ import React from 'react';
 
 export const CertificatItem = ({title, image, pos, desc, program}: {title: string, image?: string, pos: string, desc?: string, program?: string}) => {
     return (
-            <section className="m-12 mb-24">
+            <section className="m-12 max-sm:m-5 mb-24">
 
                 <div className="grid lg:grid-cols-2 gap-4 mb-10">
                     {pos === 'left' && image &&
                         <img
                             src={image}
-                            className="h-[320px] w-[400px]"
+                            className="h-[320px] w-[400px] max-sm:h-64"
                             alt="team-building-image"/>
                     }
                     <div className="flex flex-col">
-                        <h3 className="font-bold text-xl mb-5 underline underline-offset-8 decoration-4 decoration-primary">{title}</h3>
+                        <h3 className="font-bold text-xl mb-5 max-sm:text-center underline underline-offset-8 decoration-4 decoration-primary">{title}</h3>
 
                         <span
                             className="font-medium text-primary text-justify mt-4">
