@@ -17,17 +17,16 @@ const ArticlePage = () => {
                <Sidebar aria-label="Default sidebar example" className="lg:ml-12 max-sm:w-full border-2">
                    <p className="text-lg text-primary font-bold mb-7 text-center">ARCHIVES</p>
                    <Sidebar.Items>
-                       <Sidebar.ItemGroup>
+                       <Sidebar.ItemGroup onClick={()=>(setArticle("https://sonnimagazine.blogspot.com/2022/07/umaro-sissoco-embalo-un-leadership-fort.html"))}>
                            <Sidebar.Item className={"text-black hover:bg-primary rounded-0 cursor-pointer"}>
-                               <button className={"text-black"} onClick={()=>(setArticle("https://sonnimagazine.blogspot.com/2022/07/umaro-sissoco-embalo-un-leadership-fort.html"))}>
+                               <button>
                                    Juillet 2022
                                </button>
                            </Sidebar.Item>
                        </Sidebar.ItemGroup>
-                       <Sidebar.ItemGroup>
+                       <Sidebar.ItemGroup onClick={() => (setArticle("https://sonnimagazine.blogspot.com/2020/01/niger-attaque-terroriste-bilan-63.html"))}>
                            <Sidebar.Item className={"text-black hover:bg-primary cursor-pointer"}>
-                               <button
-                                   onClick={() => (setArticle("https://sonnimagazine.blogspot.com/2020/01/niger-attaque-terroriste-bilan-63.html"))}>
+                               <button>
                                    Janvier 2020
                                </button>
                            </Sidebar.Item>
