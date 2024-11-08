@@ -6,6 +6,9 @@ import CEDM from "../assets/cedm.png"
 import CS from '../assets/cs.png'
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser'
+import Swal from 'sweetalert2'
+
+
 const ContactPage = () => {
 
     const [form, setForm] = useState({firstName: '', lastName: '',phone: '', email: '', object: 'Demande l\'information', message: '', profession: '', institution: '', pays: ''})
@@ -24,6 +27,23 @@ const ContactPage = () => {
             emailjs.sendForm('service_1egafxp', 'template_7zwrjr8', '#contact').then(
                 (response) => {
                     console.log('SUCCESS!', response.status, response.text);
+                    Swal.fire({
+                        icon: "success",
+                        title: "Votre message est envoyé avec succès",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    setForm({
+                        email: "",
+                        firstName: "",
+                        institution: "",
+                        lastName: "",
+                        message: "",
+                        object: "",
+                        pays: "",
+                        phone: "",
+                        profession: ""
+                    })
                 },
                 (error) => {
                     console.log('FAILED...', error);

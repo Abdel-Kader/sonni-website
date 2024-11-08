@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 const FormationItem = ({title, description, id, modules, type, img}: {title: string, description: string, id?: string, modules?: any[], type?:string, img?:string}) => {
     return (
-        <div className="shadow-xl flex items-center  flex-col  border-black max-sm:mt-14">
+        <div className="shadow-xl flex items-center  flex-col  border-black max-sm:mt-10">
             {img && <img className="p-8 rounded-t-lg" src={img} alt="service"/>}
             <div className="flex flex-col lg:h-[250px] w-full p-2">
                 <span className="font-medium text-primary text-center mt-4">{title}</span>
