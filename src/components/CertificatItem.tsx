@@ -28,7 +28,7 @@ export const CertificatItem = ({title, image, pos, desc, program}: {title: strin
                             </div>
                             <div
                                 className="flex flex-col bg-primary w-48 rounded mt-10 mb-7 border-t-gray-300 border justify-center h-12 align-bottom">
-                                <a
+                                <a rel="noreferrer"
                                     href={`mailto:contact@sonni-group.com?subject=${title}`} target='_blank'
                                     className=" text-md text-white text-center">Contacter un conseiller
                                 </a>

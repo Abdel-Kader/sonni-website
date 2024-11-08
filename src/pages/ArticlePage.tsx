@@ -1,5 +1,5 @@
 import { Sidebar } from 'flowbite-react';
-import React, {useState, useEffect, useLayoutEffect} from 'react';
+import React, {useState, useLayoutEffect} from 'react';
 import blogBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
 
@@ -37,6 +37,7 @@ const ArticlePage = () => {
                </Sidebar>
                <div className="flex flex-1 lg:ml-10">
                    {article && <iframe
+                       title={article}
                        width="100%"
                        height="750"
                        loading="lazy"

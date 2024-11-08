@@ -225,7 +225,7 @@ const CertificatPage = () => {
 
                 <div className="flex flex-row justify-center">
                     <div className="flex flex-row content-center bg-primary w-48 rounded mt-10 mb-7 border-t-gray-300 border justify-center items-center h-12 ">
-                        <a
+                        <a rel="noreferrer"
                             href={`mailto:contact@sonni-group.com?subject=autres certificats de SONNI ACADEMY`}
                             target='_blank'
                             className=" text-md text-white text-center">Contacter un conseiller
