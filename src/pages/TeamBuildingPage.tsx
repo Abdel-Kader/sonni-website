@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect} from 'react';
 import teamBuildingBanner from "../assets/banners/team-building.jpg";
 import Banner from "../components/layout/Banner";
 import {TeamBuildingItem} from "../components/teamBuilding/teamBuildingItem";
@@ -15,9 +15,9 @@ import {
 
 
 const TeamBuildingPage = () => {
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
         <>
             <Banner image={teamBuildingBanner} title={"Team building"}

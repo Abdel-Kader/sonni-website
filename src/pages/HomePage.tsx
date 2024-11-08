@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react'
+import React, {useEffect, useLayoutEffect} from 'react'
 import Vision from '../components/home/Vision'
 import homeBanner from "../assets/banners/home.jpg";
 
@@ -12,9 +12,9 @@ import About from "../components/home/About";
 import {Link} from "react-router-dom";
 
 export default function HomePage() {
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
   return (
       <>
           <Banner image={homeBanner} title={"SONNI GROUP"} description={presentation}/>

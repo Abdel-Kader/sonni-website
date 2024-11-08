@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import Banner from "../components/layout/Banner";
 import seminaireBanner from "../assets/banners/certificat.jpg";
 import {useLocation} from 'react-router-dom';
@@ -9,9 +9,9 @@ import {List, Tabs} from "flowbite-react";
 const SeminaireDetail = () => {
     let location = useLocation();
     const seminaire = ateliers.filter(atelier => atelier.id === location.state.id);
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
         <>
             <Banner image={seminaireBanner} title={location.state?.title} subdescription={location.state.date} description={location.state?.lieu} seminaire={location.state?.title}/>

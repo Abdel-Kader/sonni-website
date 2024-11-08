@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import blogBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
 import livre1 from '../assets/livres/livre1.jpeg'
@@ -6,9 +6,9 @@ import livre2 from '../assets/livres/livre2.jpeg'
 import {Link} from "react-router-dom";
 
 const LivresPage = () => {
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
         <>
             <Banner

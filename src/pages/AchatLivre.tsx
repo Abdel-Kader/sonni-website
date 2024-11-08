@@ -1,10 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import certificatBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
 import {useLocation} from "react-router-dom";
 
 const AchatLivre = () => {
     let location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[]);
 
     const [form, setForm] = useState({number: '', firstName: '', lastName: '',phone: '', email: '', profession: ''})
 
@@ -40,7 +44,7 @@ const AchatLivre = () => {
                             <p className="text-2xl  font-medium mb-4 text-secondary">
                                 Achetez {location.state.title}
                             </p>
-                            <div className="grid grid-cols-2 gap-4">
+                            <div className="grid lg:grid-cols-2 gap-4">
 
                                 <div>
                                     <p className="mb-3 text-left font-medium !text-gray-900">Nom *</p>

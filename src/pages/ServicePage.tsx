@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react'
+import React, {useEffect, useLayoutEffect} from 'react'
 import serviceBanner from "../assets/banners/service.jpg";
 import Banner from "../components/layout/Banner";
 import FormationItem from "../components/formation/FormationItem";
@@ -27,9 +27,9 @@ import teamBuildingImg from '../assets/services/teambuilding.png'
 
 export default function ServicePage() {
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
 
     return (
         <>

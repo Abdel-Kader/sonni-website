@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import Banner from "../components/layout/Banner";
 import formationBanner from "../assets/banners/formation.jpg";
 import {FormationSubItem} from "../components/formation/FormationSubItem";
@@ -6,9 +6,9 @@ import {Link, useLocation} from 'react-router-dom';
 
 const DetailFormation = () => {
     let location = useLocation();
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
         <>
             <Banner image={formationBanner} title={location.state?.title} catalogue={location.state.type} />

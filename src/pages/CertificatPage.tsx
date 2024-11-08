@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import com from '../assets/certifications/com.png'
 import diplomatie from '../assets/certifications/diplomatie.png'
@@ -18,9 +18,9 @@ import Banner from "../components/layout/Banner";
 import {CertificatItem} from "../components/CertificatItem";
 
 const CertificatPage = () => {
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
         <>
             <Banner image={certificatBanner} title={"Nos certificats et MBA"}

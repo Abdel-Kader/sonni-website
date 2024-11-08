@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 export const TeamBuildingItem = ({title, description, image, subList, doc}: {title: string, description: string, image: string, subList? : any[], doc: string}) => {
     return (
-        <div className="shadow-md  flex items-center flex-col p-2 border-black mt-12">
+        <div className="shadow-md flex items-center flex-col p-2 border-black mt-12">
 
             <div className="grid lg:grid-cols-2 gap-4">
                 <div className="px-6">
@@ -27,14 +27,14 @@ export const TeamBuildingItem = ({title, description, image, subList, doc}: {tit
                                 className=" text-md text-white text-center">En
                                 savoir plus
                             </a>*/}
-                            <Link to="/contact" state={{type: 'CS'}}
+                            <Link to="/contact" state={{type: 'TB'}}
                                   className="text-white text-center content-center mt-5 h-12 w-[200px] hover:bg-secondary bg-primary align-bottom">
                                 En savoir plus
                             </Link>
                     </div>
                 </div>
                 <AnimatePresence>
-                    <div className="ml-12">
+                    <div className="lg:ml-12 max-sm:mt-7">
 
                         <motion.img initial={{x: 300, opacity: 0}}
                                     animate={{x: 0, opacity: 1}}

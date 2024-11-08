@@ -1,9 +1,10 @@
-import React, {useLayoutEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import certificatBanner from "../assets/banners/certificat.jpg";
 import Banner from "../components/layout/Banner";
 import Maps from "../assets/img_1.png"
 import CEDM from "../assets/cedm.png"
 import CS from '../assets/cs.png'
+import TB from '../assets/teamBuilding/image-1.jpg'
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
@@ -15,9 +16,9 @@ const ContactPage = () => {
 
     let location = useLocation();
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
 
 
     const handleSubmit = (e: any) => {
@@ -50,7 +51,7 @@ const ContactPage = () => {
                 },
             );
 
-            if(location.state?.type === 'CEDM' || location.state?.type === 'CS') {
+            if(location.state?.type === 'CEDM' || location.state?.type === 'CS'|| location.state?.type === 'TB') {
                 if(form.institution && form.profession) {
                     fetch("../docs/Catalogue-Cabinet-SONNI.pdf")
                         .then((res) => res.blob())
@@ -88,7 +89,7 @@ const ContactPage = () => {
 
                     <div className="grid grid-cols-1 gap-x-12 gap-y-6 lg:grid-cols-2 items-start">
                         <img
-                            src={location.state?.type === 'CEDM' ? CEDM : location.state?.type === 'CS' ? CS :  Maps}
+                            src={location.state?.type === 'CEDM' ? CEDM : location.state?.type === 'CS' ? CS :  location.state?.type === 'TB' ? TB :  Maps}
                             alt="map"
                             className="w-full h-full lg:max-h-[610px]"
                         />
@@ -106,6 +107,8 @@ const ContactPage = () => {
                                 }
                                 {
                                     ((location.state && location.state.type === 'CEDM') || (location.state && location.state.type === 'CS')) && 'Téléchargement Catalogue'
+                                }{
+                                    ((location.state && location.state.type === 'TB')) && 'Téléchargement Contenu Team building'
                                 }
                                 {
                                     ((location.state && location.state.type === 'seminaire')) && 'Réserver votre place'
@@ -218,15 +221,10 @@ const ContactPage = () => {
 
                                 />
                             </div>
-                            {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS' || location.state.type === 'devis') &&
-                                <>
 
-
-                                </>
-                            }
 
                             <div>
-                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS') &&
+                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS'|| location.state.type === 'TB') &&
                                     <p className="mb-2 text-left font-medium !text-gray-900">Raision du téléchargement
                                         *</p>}
                                 {!location.state &&

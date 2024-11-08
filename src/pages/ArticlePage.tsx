@@ -1,13 +1,13 @@
 import { Sidebar } from 'flowbite-react';
-import React, {useState, useLayoutEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import blogBanner from "../assets/banners/blog.jpg";
 import Banner from "../components/layout/Banner";
 
 const ArticlePage = () => {
     const [article, setArticle] = useState("")
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
 
     return (
         <>

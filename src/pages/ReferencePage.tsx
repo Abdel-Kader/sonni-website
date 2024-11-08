@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import { Carousel } from "flowbite-react";
 import ref1 from "../assets/refs/ref1.jpg";
 import ref2 from "../assets/refs/ref2.jpg";
@@ -17,9 +17,9 @@ import Banner from "../components/layout/Banner";
 
 
 const ReferencePage = () => {
-    useLayoutEffect(() => {
+    useEffect(() => {
         window.scrollTo(0, 0)
-    });
+    },[]);
     return (
 
         <>

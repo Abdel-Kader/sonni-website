@@ -1,4 +1,4 @@
-import React, {useLayoutEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import formationBanner from "../assets/banners/formation.jpg";
 import formationFooter from "../assets/banners/formationFooter.jpeg"
 import FormationItem from "../components/formation/FormationItem";
@@ -33,16 +33,152 @@ import {
 import {FormationBanner} from "../components/layout/FormationBanner";
 import {Link} from "react-router-dom";
 
+
+const dataCEDM = [
+  {
+    category: 'CEDM',
+    title: "Relations Internationales",
+    description: relationInter,
+    modules: relationInterModules
+  },
+  {
+    category: 'CEDM',
+    title: "Diplomatie",
+    description: formationDiplomatie,
+    modules: formationDiplomatieModules
+  },
+  {
+    category: 'CEDM',
+    title: "Diplomatie d'affaires",
+    description: affaire,
+    modules: affairesModules
+  },
+  {
+    category: 'CEDM',
+    title: "Diplomatie économiques",
+    description: economique,
+    modules: economieModules
+  },
+  {
+    category: 'CEDM',
+    title: "Humanitaire",
+    description: humanitaire,
+    modules: humanitaireModules
+  },
+  {
+    category: 'CEDM',
+    title: "Suivi évaluation",
+    description: suivi,
+    modules: suiviEvaluationModules
+  },
+  {
+    category: 'CS',
+    title: "Leadership, Coaching & performance professionnelle",
+    description: leadership,
+    modules: leadershipModules
+  },
+  {
+    category: 'CS',
+    title: "Accueil, Bureautique & Administration",
+    description: bureautique,
+    modules: bureautiqueModules
+  },
+  {
+    category: 'CS',
+    title: "Comptabilité, Banque & Finance",
+    description: comptabilite,
+    modules: comptabiliteModules
+  },
+  {
+    category: 'CS',
+    title: "Gestion logistique",
+    description: logistique,
+    modules: logistiqueModules
+  },
+  {
+    category: 'CS',
+    title: "Droit de travail",
+    description: travail,
+    modules: travailModules
+  },
+  {
+    category: 'CS',
+    title: "Droit es affaires",
+    description: droitAffaire,
+    modules: droitAffairesModules
+  },
+  {
+    category: 'CS',
+    title: "Marketing",
+    description: marketing,
+    modules: marketingModules
+  },
+  {
+    category: 'CS',
+    title: "Marché public",
+    description: marchePublic,
+    modules: marchePublicModules
+  },
+  {
+    category: 'CS',
+    title: "Santé Travail, Sécurité, Qhse & Développement Durable",
+    description: qhse,
+    modules: qhseModules
+  },
+  {
+    category: 'CS',
+    title: "Paie, Administration RH",
+    description: hr,
+    modules: hrModules
+  },
+  {
+    category: 'CS',
+    title: "Cybersecurité & Système D’information",
+    description: cybersecurity,
+    modules: cybersecurityModules
+  },
+
+]
+
+
+
 export default function FormationPage() {
-  useLayoutEffect(() => {
+  const [searchItem, setSearchItem] = useState('')
+  const [filteredFormations, setFilteredFormations] = useState(dataCEDM)
+
+
+  const handleInputChange = (e: any) => {
+    const searchTerm = e.target.value;
+    setSearchItem(searchTerm)
+    const filteredItems = dataCEDM.filter((formation) =>
+        formation.title.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    setFilteredFormations(filteredItems);
+  }
+  useEffect(() => {
     window.scrollTo(0, 0)
-  });
+  }, []);
 
   return (
       <>
         <FormationBanner image={formationBanner} />
         <section className="mx-auto max-w-7xl px-6 lg:px-8 mt-12">
-          <SearchBar/>
+          <div className="relative mt-2 rounded-xs shadow-sm flex ">
+
+            <input
+                id="search"
+                name="search"
+                type="text"
+                value={searchItem}
+                onChange={handleInputChange}
+                placeholder="Rechercher une formation, Ex: Diplomatie"
+                className="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+            {/*<button className="hover:bg-primary text-primary mx-6 py-2 px-4 text-xs rounded border border-primary">
+              Rechercher
+            </button>*/}
+          </div>
           <div className="flex flex-row justify-between max-sm:grid max-sm:grid-cols-1">
             <div className="w-1/2 max-sm:w-full mr-8">
               <div
@@ -50,20 +186,12 @@ export default function FormationPage() {
                 Centre d’Études en Diplomatie et Management – SONNI
               </div>
               <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CEDM"} id="1" title={"Relations Internationales"} description={relationInter}
-                               modules={relationInterModules}/>
-                <FormationItem type={"CEDM"} id="2" title={"Diplomatie"} description={formationDiplomatie}
-                               modules={formationDiplomatieModules}/>
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CEDM"} id="3" title={"Diplomatie d'affaires"} description={affaire} modules={affairesModules}/>
-                <FormationItem type={"CEDM"} id="4" title={"Diplomatie économiques"} description={economique}
-                               modules={economieModules}/>
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CEDM"} id="5" title={"Humanitaire"} description={humanitaire} modules={humanitaireModules}/>
-                <FormationItem type={"CEDM"} id="6" title={"Suivi évaluation"} description={suivi} modules={suiviEvaluationModules}/>
-              </div>
+                {filteredFormations.filter(formation => formation.category === "CEDM").map((res, index) => (
+                    <FormationItem type={"CEDM"} id={(index + 1).toString()} title={res.title}
+                                   description={res.description}
+                                   modules={res.modules}/>
+                ))}
+                 </div>
             </div>
 
             <div className="w-1/2 max-sm:w-full">
@@ -72,34 +200,11 @@ export default function FormationPage() {
                 SONNI
               </div>
               <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CS"} id="7" title={"Leadership, Coaching & performance professionnelle"}
-                               description={leadership} modules={leadershipModules}/>
-                <FormationItem type={"CS"} id="8" title={"Accueil, Bureautique & Administration"} description={bureautique}
-                               modules={bureautiqueModules}/>
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CS"} id="9" title={"Comptabilité, Banque & Finance"} description={comptabilite}
-                               modules={comptabiliteModules}/>
-                <FormationItem type={"CS"} id="10" title={"Gestion logistique"} description={logistique}
-                               modules={logistiqueModules}/>
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CS"} id="11" title={"Droit de travail"} description={travail} modules={travailModules}/>
-                <FormationItem type={"CS"} id="12" title={"Droit es affaires"} description={droitAffaire}
-                               modules={droitAffairesModules}/>
-
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CS"} id="13" title={"Marketing"} description={marketing} modules={marketingModules}/>
-                <FormationItem type={"CS"} id="14" title={"Marché public"} description={marchePublic}
-                               modules={marchePublicModules}/>
-              </div>
-              <div className="grid lg:grid-cols-2 gap-4 grid-cols-1">
-                <FormationItem type={"CS"} id="15" title={"Santé Travail, Sécurité, Qhse & Développement Durable"}
-                               description={qhse} modules={qhseModules}/>
-                <FormationItem type={"CS"} id="16" title={"Paie, Administration RH"} description={hr} modules={hrModules}/>
-                <FormationItem type={"CS"} id="17" title={"Cybersecurité & Système D’information"} description={cybersecurity}
-                               modules={cybersecurityModules}/>
+                {filteredFormations.filter(formation => formation.category === "CS").map((res, index) => (
+                    <FormationItem type={"CS"} id={(index + 1).toString()} title={res.title}
+                                   description={res.description}
+                                   modules={res.modules}/>
+                ))}
               </div>
 
             </div>
