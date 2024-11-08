@@ -18,9 +18,8 @@ export const mobile = "(+221) 77 216 27 85"
 export const email = "contact@sonni-group.com"
 
 export const motDuDG = "Devenez la meilleure version de vous-même, atteignez votre plein potentiel en suivant\n" +
-    "nos programmes de formation conçus par des experts rompus dans leurs domaines pour\n" +
-    "vous permettre d’impacter"
+    "nos programmes de formation conçus par des experts rompus dans leurs domaines pour vous permettre d’impacter"
 
-export const citationBilesGate = "La clé́ du succès dans n’importe quelle entreprise est la capacité des employés à\n" +
-    "apprendre et à s’adapter aux changements rapides. Les leaders doivent investir dans la\n" +
+export const citationBilesGate = "La clé du succès dans n’importe quelle entreprise est la capacité des employés à " +
+    "apprendre et à s’adapter aux changements rapides. Les leaders doivent investir dans la " +
     "formation continue pour créer des équipes capables de relever les défis de demain."

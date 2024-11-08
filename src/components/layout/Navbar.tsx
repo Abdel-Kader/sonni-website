@@ -16,18 +16,18 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-2xl fixed w-full z-40 border-gray-100 ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-12">
-        <div className="relative flex h-20 items-center justify-between">
+        <div className="relative flex h-24 items-center justify-between">
 
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             <Menu as={Fragment}>
               <MenuButton className="hamburger-icon" onClick={()=> setIsOpen(true)}>
-                <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
+                <svg className="block h-10 w-10 m-5 border-2 border-primary rounded text-primary" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
                      aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
                 </svg>
               </MenuButton>
-              <Drawer open={isOpen} onClose={handleClose} className=" bg-primary" >
-                <Drawer.Header titleIcon={() => <></>}/>
+              <Drawer open={isOpen} onClose={handleClose} className="bg-primary" >
+                <Drawer.Header className="text-secondary" titleIcon={() => <></>}/>
                 <Drawer.Items>
                   <div className="flex flex-col space-y-3">
                     <Menu>
@@ -137,7 +137,7 @@ export default function Navbar() {
 
             <div className="flex flex-shrink-0 items-center">
               <Link to='/'>
-                <img className="h-20 w-auto" src={logo} alt="Cabinet Sonni"/>
+                <img className="h-24 w-auto" src={logo} alt="Cabinet Sonni"/>
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">

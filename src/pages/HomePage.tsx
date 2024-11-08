@@ -18,7 +18,7 @@ export default function HomePage() {
   return (
       <>
           <Banner image={homeBanner} title={"SONNI GROUP"} description={presentation}/>
-          <div className="mx-auto px-6 lg:px-8 mt-12 w-[70%]">
+          <div className="mx-auto px-6 lg:px-8 mt-12 lg:w-[70%]">
               <svg className="h-12 mb-3 text-secondary" viewBox="0 0 24 27"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -34,7 +34,7 @@ export default function HomePage() {
               <p className="font-medium italic lg:w-1/2 text-justify">Directeur Exécutif de SONNI GROUP, Ph.D C en
                   Relations Internationales et diplomatie d’affaires, Conférencier, Écrivain, Chercheur ZLECAF.</p>
           </div>
-          <div className="mx-auto px-6 lg:px-8 mt-14 mb-10 w-[70%]">
+          <div className="mx-auto px-6 lg:px-8 mt-14 mb-10 lg:w-[70%]">
               <svg className="h-12 mb-3 text-secondary" viewBox="0 0 24 27"
                    fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
