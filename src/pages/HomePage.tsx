@@ -31,7 +31,7 @@ export default function HomePage() {
                   </Link>
               </blockquote>
               <p className="mt-3 mb-3 text-primary font-bold text-lg max-sm:text-md">Mahamadou Chaïbou MAIGA</p>
-              <p className="font-medium italic lg:w-1/2 text-justify">Directeur Exécutif de SONNI GROUP, Ph.D C en
+              <p className="font-medium italic lg:w-1/2 text-center">Directeur Exécutif de SONNI GROUP, Ph.D C en
                   Relations Internationales et diplomatie d’affaires, Conférencier, Écrivain, Chercheur ZLECAF.</p>
           </div>
           <div className="mx-auto px-6 lg:px-8 mt-14 mb-10 lg:w-[70%]">
