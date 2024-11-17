@@ -1,19 +1,19 @@
-import React, {useEffect, useLayoutEffect} from 'react';
+import React, {useEffect} from 'react';
 import { Carousel } from "flowbite-react";
-import ref1 from "../assets/refs/ref1.jpg";
-import ref2 from "../assets/refs/ref2.jpg";
-import ref3 from "../assets/refs/ref3.jpg";
-import ref4 from "../assets/refs/ref4.jpg";
-import ref5 from "../assets/refs/ref5.jpg";
-import ref6 from "../assets/refs/ref6.jpg";
-import ref7 from "../assets/refs/ref7.jpg";
-import ref8 from "../assets/refs/ref8.jpg";
-import ref9 from "../assets/refs/ref9.jpg";
-import ref10 from "../assets/refs/ref10.jpg";
-import ref11 from "../assets/refs/ref11.jpg";
-import ref12 from "../assets/refs/ref12.jpg";
-import blogBanner from "../assets/banners/blog.jpg";
-import Banner from "../components/layout/Banner";
+import ref1 from "../../assets/refs/ref1.jpg";
+import ref2 from "../../assets/refs/ref2.jpg";
+import ref3 from "../../assets/refs/ref3.jpg";
+import ref4 from "../../assets/refs/ref4.jpg";
+import ref5 from "../../assets/refs/ref5.jpg";
+import ref6 from "../../assets/refs/ref6.jpg";
+import ref7 from "../../assets/refs/ref7.jpg";
+import ref8 from "../../assets/refs/ref8.jpg";
+import ref9 from "../../assets/refs/ref9.jpg";
+import ref10 from "../../assets/refs/ref10.jpg";
+import ref11 from "../../assets/refs/ref11.jpg";
+import ref12 from "../../assets/refs/ref12.jpg";
+import blogBanner from "../../assets/banners/blog.jpg";
+import Banner from "../../components/layout/Banner";
 
 
 const ReferencePage = () => {

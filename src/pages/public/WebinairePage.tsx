@@ -1,9 +1,9 @@
-import Banner from "../components/layout/Banner";
-import React, {useEffect, useLayoutEffect} from "react";
-import blogBanner from "../assets/banners/blog.jpg";
-import webinaire1 from "../assets/webinaires/webinaire1.png";
+import Banner from "../../components/layout/Banner";
+import React, {useEffect} from "react";
+import blogBanner from "../../assets/banners/blog.jpg";
+import webinaire1 from "../../assets/webinaires/webinaire1.png";
 
-import {WebinaireItem} from "../components/WebinaireItem";
+import {WebinaireItem} from "../../components/WebinaireItem";
 
 
 const WebinairePage = () => {

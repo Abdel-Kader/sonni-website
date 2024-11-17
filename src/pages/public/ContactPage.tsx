@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import certificatBanner from "../assets/banners/certificat.jpg";
-import Banner from "../components/layout/Banner";
-import Maps from "../assets/img_1.png"
-import CEDM from "../assets/cedm.png"
-import CS from '../assets/cs.png'
-import TB from '../assets/teamBuilding/image-1.jpg'
+import certificatBanner from "../../assets/banners/certificat.jpg";
+import Banner from "../../components/layout/Banner";
+import Maps from "../../assets/img_1.png"
+import CEDM from "../../assets/cedm.png"
+import CS from '../../assets/cs.png'
+import TB from '../../assets/teamBuilding/image-1.jpg'
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'

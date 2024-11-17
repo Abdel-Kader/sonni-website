@@ -1,22 +1,25 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import FormationPage from "../pages/FormationPage";
+import HomePage from "../pages/public/HomePage";
+import FormationPage from "../pages/public/FormationPage";
 import { PageLayout } from "../components/layout/PageLayout";
-import ServicePage from "../pages/ServicePage";
-import CertificatPage from "../pages/CertificatPage";
-import ArticlePage from "../pages/ArticlePage";
-import TeamBuildingPage from "../pages/TeamBuildingPage";
-import SeminairePage from "../pages/SeminairePage";
-import ContactPage from "../pages/ContactPage";
-import TeamPage from "../pages/TeamPage";
-import DetailFormation from "../pages/DetailFormation";
-import ReferencePage from "../pages/ReferencePage";
-import {LoginPage} from "../pages/LoginPage";
-import SeminaireDetail from "../pages/SeminaireDetail";
-import WebinairePage from "../pages/WebinairePage";
-import WebinaireDetail from "../pages/WebinaireDetail";
-import LivresPage from "../pages/LivresPage";
-import AchatLivre from "../pages/AchatLivre";
+import ServicePage from "../pages/public/ServicePage";
+import CertificatPage from "../pages/public/CertificatPage";
+import ArticlePage from "../pages/public/ArticlePage";
+import TeamBuildingPage from "../pages/public/TeamBuildingPage";
+import SeminairePage from "../pages/public/SeminairePage";
+import ContactPage from "../pages/public/ContactPage";
+import TeamPage from "../pages/public/TeamPage";
+import DetailFormation from "../pages/public/DetailFormation";
+import ReferencePage from "../pages/public/ReferencePage";
+import {LoginPage} from "../pages/admin/LoginPage";
+import SeminaireDetail from "../pages/public/SeminaireDetail";
+import WebinairePage from "../pages/public/WebinairePage";
+import WebinaireDetail from "../pages/public/WebinaireDetail";
+import LivresPage from "../pages/public/LivresPage";
+import AchatLivre from "../pages/public/AchatLivre";
+import {PrivateRoute} from "./PrivateRoute";
+import Seminaire from "../pages/admin/seminaires/Seminaire";
+
 
 export const router = createBrowserRouter([
     {
@@ -92,5 +95,19 @@ export const router = createBrowserRouter([
                 element: <LoginPage />,
             },
         ],
+    },
+    {
+        path: '/admin',
+        element: <PrivateRoute/>,
+        children: [
+            {
+                path: '',
+                element: <HomePage/>,
+            },
+            {
+                path: 'seminaires',
+                element: <Seminaire/>,
+            },
+        ]
     }
 ])

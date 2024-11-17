@@ -1,11 +1,11 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-import {Avatar} from "../components/Avatar";
-import dg from "../assets/teams/dg.jpg";
-import assistant from "../assets/teams/assistant.jpeg";
-import responTraining from "../assets/teams/responsible-training.jpeg";
-import responInnov from "../assets/teams/responsible-innovation.jpeg";
-import assistantProg from "../assets/teams/assistant-prog.jpg";
-import Partners from "../components/home/Partners";
+import React, {useEffect} from 'react';
+import {Avatar} from "../../components/Avatar";
+import dg from "../../assets/teams/dg.jpg";
+import assistant from "../../assets/teams/assistant.jpeg";
+import responTraining from "../../assets/teams/responsible-training.jpeg";
+import responInnov from "../../assets/teams/responsible-innovation.jpeg";
+import assistantProg from "../../assets/teams/assistant-prog.jpg";
+import Partners from "../../components/home/Partners";
 
 const TeamPage = () => {
 

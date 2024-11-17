@@ -1,21 +1,21 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-import certificatBanner from "../assets/banners/certificat.jpg";
-import com from '../assets/certifications/com.png'
-import diplomatie from '../assets/certifications/diplomatie.png'
-import finance from '../assets/certifications/finance.png'
-import marche from '../assets/certifications/marche.png'
-import mbaManage from '../assets/certifications/mba-management.png'
-import mbaCom from '../assets/certifications/mba-com-influence.png'
-import crise from '../assets/certifications/crise.png'
-import logistique from '../assets/certifications/logistique.png'
-import sante from '../assets/certifications/sante.png'
-import protocole from '../assets/certifications/protocole.png'
-import economie from '../assets/certifications/economie.png'
-import bienEtre from '../assets/certifications/bien-etre.png'
-import suivi from '../assets/certifications/suivi.png'
+import React, {useEffect} from 'react';
+import certificatBanner from "../../assets/banners/certificat.jpg";
+import com from '../../assets/certifications/com.png'
+import diplomatie from '../../assets/certifications/diplomatie.png'
+import finance from '../../assets/certifications/finance.png'
+import marche from '../../assets/certifications/marche.png'
+import mbaManage from '../../assets/certifications/mba-management.png'
+import mbaCom from '../../assets/certifications/mba-com-influence.png'
+import crise from '../../assets/certifications/crise.png'
+import logistique from '../../assets/certifications/logistique.png'
+import sante from '../../assets/certifications/sante.png'
+import protocole from '../../assets/certifications/protocole.png'
+import economie from '../../assets/certifications/economie.png'
+import bienEtre from '../../assets/certifications/bien-etre.png'
+import suivi from '../../assets/certifications/suivi.png'
 
-import Banner from "../components/layout/Banner";
-import {CertificatItem} from "../components/CertificatItem";
+import Banner from "../../components/layout/Banner";
+import {CertificatItem} from "../../components/CertificatItem";
 
 const CertificatPage = () => {
     useEffect(() => {
@@ -36,7 +36,7 @@ const CertificatPage = () => {
                                     "art de transmettre des messages et des idées à des fins politiques.\n" +
                                     "Elle englobe divers moyens de diffusion : les discours, les débats, les médias traditionnels et\n" +
                                     "numériques, ainsi que les campagnes publicitaires"} pos="left"
-                                program={require("../assets/certifications/communication.pdf")}/>
+                                program={require("../../assets/certifications/communication.pdf")}/>
 
                 <CertificatItem title={"Programme de Certification Diplomatie économique et diplomatie d’affaires"}
                                 image={diplomatie}
@@ -49,14 +49,14 @@ const CertificatPage = () => {
                                     "économique des citoyens d’un pays et a comme objectif l’utilisation de\n" +
                                     "tous les instruments de politique étrangère en vue de la promotion des\n" +
                                     "intérêts économiques des entrepreneurs et de l’État."} pos="right"
-                                program={require("../assets/certifications/diplomatie.pdf")}/>
+                                program={require("../../assets/certifications/diplomatie.pdf")}/>
 
 
                 <CertificatItem title={"Programme de certification Responsable Administratif et financier"}
                                 image={finance}
                                 desc={"Le responsable administratif et financier (RAF) est un poste stratégique au sein d’une entreprise. Le service administratif et financier est le pôle qui se charge de définir et de " +
                                     "conduire l’organisation interne et la budgétisation d’une entreprise. C’est l’un des services les plus importants au sein d’une société."}
-                                pos="left" program={require("../assets/certifications/finance.pdf")}/>
+                                pos="left" program={require("../../assets/certifications/finance.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification Responsable de passation de marchés publics et partenariat publics privés."}
@@ -67,7 +67,7 @@ const CertificatPage = () => {
                     "mise en œuvre de chaque étape du processus de\n" +
                     "passation de marchés et de l’établissement des\n" +
                     "partenariats publics privés."} pos="right"
-                    program={require("../assets/certifications/marche.pdf")}/>
+                    program={require("../../assets/certifications/marche.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification en gestion de crise"}
@@ -82,7 +82,7 @@ const CertificatPage = () => {
                         "crise. Elle se veut très opérationnelle et donne les clés concrètes et immédiatement\n" +
                         "applicables pour mettre en place un dispositif de crise, organiser et faire vivre une\n" +
                         "cellule de crise et gérer la communication de crise."} pos="left"
-                    program={require("../assets/certifications/crise.pdf")}/>
+                    program={require("../../assets/certifications/crise.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification Responsable Logistique de l’Action Humanitaire"}
@@ -91,7 +91,7 @@ const CertificatPage = () => {
                         "Les crises telles que les conflits, les catastrophes naturelles et sanitaires, ou les conséquences du changement climatique, " +
                         "le conduisent à concevoir et mettre en œuvre des solutions agiles et adaptées aux contextes d’intervention. La première grande étape de son intervention consiste à mobiliser les infrastructures et les équipements au service du fonctionnement de la mission. Il mobilise également les équipements techniques tels que télécoms, véhicules, informatique, chaine du froid, biomédical. Dans le cadre de son activité de supervision et d’organisation de la chaîne d' approvisionnement d’une mission humanitaire, le Responsable logistique supervise les achats de la mission au niveau régional et national"}
                     pos="right"
-                    program={require("../assets/certifications/logistique.pdf")}/>
+                    program={require("../../assets/certifications/logistique.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification Management des Etablissements de Santé"}
@@ -101,7 +101,7 @@ const CertificatPage = () => {
                         "la qualité des services de santé; Développer des stratégies pour" +
                         " faire face aux évolutions du secteur de la santé et aux besoins des patients…"}
                     pos="left"
-                    program={require("../assets/certifications/sante.pdf")}/>
+                    program={require("../../assets/certifications/sante.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification Protocole et Pratiques Diplomatique"}
@@ -113,7 +113,7 @@ const CertificatPage = () => {
                         "participants dans les subtilités et les normes qui régissent les interactions officielles entre les États, les organisations " +
                         "internationales et leurs représentants."}
                     pos="right"
-                    program={require("../assets/certifications/protocole.pdf")}/>
+                    program={require("../../assets/certifications/protocole.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification en Intelligence Economique"}
@@ -124,7 +124,7 @@ const CertificatPage = () => {
                         "utile aux acteurs économiques, en vue de son exploitation. On peut y ajouter les actions d'influence et de notoriété ainsi que " +
                         "celles liées à la protection de l'information. "}
                     pos="left"
-                    program={require("../assets/certifications/economie.pdf")}/>
+                    program={require("../../assets/certifications/economie.pdf")}/>
 
                 <CertificatItem
                     title={"Programme de certification en Santé et Bien-être"}
@@ -136,7 +136,7 @@ const CertificatPage = () => {
                         "bientraitance dans les organisations et les organismes universitaire. Il fournit un " +
                         "ensemble de points d’appui pour concevoir des interventions et développer des pratiques de prévention et de promotion de la santé et du bien-être."}
                     pos="right"
-                    program={require("../assets/certifications/bien-etre.pdf")}/>
+                    program={require("../../assets/certifications/bien-etre.pdf")}/>
                 <CertificatItem
                     title={"Programme de certification en Suivi Evaluation et Programme de Développement"}
                     image={suivi}
@@ -148,7 +148,7 @@ const CertificatPage = () => {
                         "certification en suivi évaluation et programme de développement. En effet, les organisations internationales, ainsi que celles\n" +
                         "du secteur public, investissent depuis plusieurs années dans la création de structures chargées du suivi-évaluation."}
                     pos="left"
-                    program={require("../assets/certifications/suivi.pdf")}/>
+                    program={require("../../assets/certifications/suivi.pdf")}/>
 
 
             </section>
@@ -172,14 +172,14 @@ const CertificatPage = () => {
                                 image={mbaManage}
                                 desc={"Le MBA en management des risques financiers et stratégies d’investissement prépare des experts à évaluer, anticiper et gérer les risques dans un environnement financier complexe. Ce programme combine des connaissances approfondies en finance, en évaluation des risques et en stratégie d’investissement, avec des compétences pratiques en gestion de portefeuille et en conformité réglementaire. Les diplômés sont ainsi armés pour optimiser le rendement des investissements tout en maîtrisant les risques pour évoluer dans des institutions financières et multinationales."}
                                 pos="left"
-                                program={require("../assets/certifications/mba-com-influence.pdf")}/>
+                                program={require("../../assets/certifications/mba-com-influence.pdf")}/>
 
                 <CertificatItem
                     title={"Exécutive MBA E-learning en Diplomatie, Relations Internationales et Communication d’Influence"}
                     image={mbaCom}
                     desc={"Le MBA en diplomatie, relations internationales et communication d’influence forme des leaders capables de naviguer dans les complexités géopolitiques et de développer des stratégies de communication mpactantes. Ce programme allie théorie et pratique pour maîtriser la diplomatie interculturelle, l’intelligence stratégique et l’art de la négociation. Les diplômés acquièrent ainsi des compétences essentielles pour nfluencer les décisions à l’échelle internationale et bâtir des réseaux durables dans un contexte globalisé."}
                     pos="right"
-                    program={require("../assets/certifications/mba-management.pdf")}/>
+                    program={require("../../assets/certifications/mba-management.pdf")}/>
 
 
             </section>

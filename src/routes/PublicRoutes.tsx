@@ -1,18 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import HomePage from "../pages/HomePage";
-import FormationPage from "../pages/FormationPage";
+import HomePage from "../pages/public/HomePage";
+import FormationPage from "../pages/public/FormationPage";
 import { PageLayout } from "../components/layout/PageLayout";
-import ServicePage from "../pages/ServicePage";
-import CertificatPage from "../pages/CertificatPage";
+import ServicePage from "../pages/public/ServicePage";
+import CertificatPage from "../pages/public/CertificatPage";
 //import BlogPage from "../pages/BlogPage";
-import TeamBuildingPage from "../pages/TeamBuildingPage";
-import SeminairePage from "../pages/SeminairePage";
-import ContactPage from "../pages/ContactPage";
-import TeamPage from "../pages/TeamPage";
-import DetailFormation from "../pages/DetailFormation";
-import ReferencePage from "../pages/ReferencePage";
-import {LoginPage} from "../pages/LoginPage";
-import ArticlePage from "../pages/ArticlePage";
+import TeamBuildingPage from "../pages/public/TeamBuildingPage";
+import SeminairePage from "../pages/public/SeminairePage";
+import ContactPage from "../pages/public/ContactPage";
+import TeamPage from "../pages/public/TeamPage";
+import DetailFormation from "../pages/public/DetailFormation";
+import ReferencePage from "../pages/public/ReferencePage";
+import {LoginPage} from "../pages/admin/LoginPage";
+import ArticlePage from "../pages/public/ArticlePage";
 
 export const PublicRouter = createBrowserRouter([
     {

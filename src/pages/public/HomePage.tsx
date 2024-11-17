@@ -1,14 +1,14 @@
-import React, {useEffect, useLayoutEffect} from 'react'
-import Vision from '../components/home/Vision'
-import homeBanner from "../assets/banners/home.jpg";
+import React, {useEffect} from 'react'
+import Vision from '../../components/home/Vision'
+import homeBanner from "../../assets/banners/home.jpg";
 
-import Banner from "../components/layout/Banner";
-import {citationBilesGate, motDuDG, presentation} from "../assets/contents/homePage";
-import Valeurs from "../components/home/Valeurs";
-import Testimonial from "../components/home/Testimonial";
-import Missions from '../components/home/Missions';
-import Services from "../components/home/Services";
-import About from "../components/home/About";
+import Banner from "../../components/layout/Banner";
+import {citationBilesGate, motDuDG, presentation} from "../../assets/contents/homePage";
+import Valeurs from "../../components/home/Valeurs";
+import Testimonial from "../../components/home/Testimonial";
+import Missions from '../../components/home/Missions';
+import Services from "../../components/home/Services";
+import About from "../../components/home/About";
 import {Link} from "react-router-dom";
 
 export default function HomePage() {

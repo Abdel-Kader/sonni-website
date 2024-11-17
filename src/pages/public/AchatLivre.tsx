@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import certificatBanner from "../assets/banners/blog.jpg";
-import Banner from "../components/layout/Banner";
+import certificatBanner from "../../assets/banners/blog.jpg";
+import Banner from "../../components/layout/Banner";
 import {useLocation} from "react-router-dom";
 
 const AchatLivre = () => {

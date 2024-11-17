@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react'
-import formationBanner from "../assets/banners/formation.jpg";
-import formationFooter from "../assets/banners/formationFooter.jpeg"
-import FormationItem from "../components/formation/FormationItem";
-import SearchBar from "../components/formation/SearchBar";
+import formationBanner from "../../assets/banners/formation.jpg";
+import formationFooter from "../../assets/banners/formationFooter.jpeg"
+import FormationItem from "../../components/formation/FormationItem";
 import {
   affaire,
   affairesModules,
@@ -29,8 +28,8 @@ import {
   relationInterModules,
   suivi, suiviEvaluationModules,
   travail, travailModules
-} from "../assets/contents/formationPage";
-import {FormationBanner} from "../components/layout/FormationBanner";
+} from "../../assets/contents/formationPage";
+import {FormationBanner} from "../../components/layout/FormationBanner";
 import {Link} from "react-router-dom";
 
 

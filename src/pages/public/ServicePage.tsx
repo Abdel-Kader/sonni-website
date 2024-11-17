@@ -1,7 +1,7 @@
-import React, {useEffect, useLayoutEffect} from 'react'
-import serviceBanner from "../assets/banners/service.jpg";
-import Banner from "../components/layout/Banner";
-import FormationItem from "../components/formation/FormationItem";
+import React, {useEffect} from 'react'
+import serviceBanner from "../../assets/banners/service.jpg";
+import Banner from "../../components/layout/Banner";
+import FormationItem from "../../components/formation/FormationItem";
 import {
     assistanceJuridique,
     coaching, communication,
@@ -9,21 +9,21 @@ import {
     lobbying, mediationAffaire,
     organisationManagerQuality,
     teamBuilding
-} from "../assets/contents/servicePage";
+} from "../../assets/contents/servicePage";
 import {Link} from "react-router-dom";
 
-import coachingImg from '../assets/services/coaching.png'
-import commImg from '../assets/services/comm.png'
-import conseilImg from '../assets/services/conseil.png'
-import grandProjImg from '../assets/services/grandProjet.png'
-import juridiqueImg from '../assets/services/juridique.png'
-import lobbyingImg from '../assets/services/lobbying.png'
-import mediationImg from '../assets/services/mediation.png'
-import mesureImg from '../assets/services/mesure.png'
-import negociationImg from '../assets/services/negociation.png'
-import orgaImg from '../assets/services/orga.png'
-import relaIntImg from '../assets/services/rela-inter.png'
-import teamBuildingImg from '../assets/services/teambuilding.png'
+import coachingImg from '../../assets/services/coaching.png'
+import commImg from '../../assets/services/comm.png'
+import conseilImg from '../../assets/services/conseil.png'
+import grandProjImg from '../../assets/services/grandProjet.png'
+import juridiqueImg from '../../assets/services/juridique.png'
+import lobbyingImg from '../../assets/services/lobbying.png'
+import mediationImg from '../../assets/services/mediation.png'
+import mesureImg from '../../assets/services/mesure.png'
+import negociationImg from '../../assets/services/negociation.png'
+import orgaImg from '../../assets/services/orga.png'
+import relaIntImg from '../../assets/services/rela-inter.png'
+import teamBuildingImg from '../../assets/services/teambuilding.png'
 
 export default function ServicePage() {
 

@@ -1,7 +1,7 @@
-import React, {useEffect, useLayoutEffect} from 'react';
-import Banner from "../components/layout/Banner";
-import formationBanner from "../assets/banners/formation.jpg";
-import {FormationSubItem} from "../components/formation/FormationSubItem";
+import React, {useEffect} from 'react';
+import Banner from "../../components/layout/Banner";
+import formationBanner from "../../assets/banners/formation.jpg";
+import {FormationSubItem} from "../../components/formation/FormationSubItem";
 import {Link, useLocation} from 'react-router-dom';
 
 const DetailFormation = () => {
