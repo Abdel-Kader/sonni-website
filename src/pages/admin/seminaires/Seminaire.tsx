@@ -8,13 +8,17 @@ type formType = {
     theme: string,
     date: string,
     lieu: string,
-    img: string | undefined
+    img: string | undefined,
+    presentation: string[],
+    cible: string[],
+    objectifs: string[]
+    program?: string[]
 }
 
 function Seminaire() {
     const [showModal, setShowModal] = useState(false);
     const [seminaires, setSeminaires] = useState<any[]>([])
-    const [form, setForm] = useState<formType>({theme: '', date: '', lieu: '', img: ''})
+    const [form, setForm] = useState<formType>({theme: '', date: '', lieu: '', img: '', presentation: [], cible:[], objectifs: [], program: []})
 
     useEffect(() => {
         const fetchSemianires = async () => {
@@ -22,7 +26,6 @@ function Seminaire() {
             const semianires = await getDocs(collection(db, "seminaires"));
             semianires.forEach((doc) => {
                 list.push({id: doc.id, ...doc.data()})
-                console.log(doc.id, doc.data())
             })
 
             setSeminaires(list)
@@ -40,6 +43,18 @@ function Seminaire() {
         if (form.theme && form.lieu && form.date) {
             await addDoc(collection(db, "seminaires"), {...form, timestamps: serverTimestamp()})
         } else alert('Veuillez remplir tous les champs')
+    }
+
+    const onChange = (e: any) => {
+        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        console.log(arrayFromTextarea)
+        setForm({
+                ...form,
+            cible: arrayFromTextarea
+        })
+        console.log(e.target.name)
+
+
     }
 
     function convert2base64(e: React.ChangeEvent<HTMLInputElement>) {
@@ -104,6 +119,41 @@ function Seminaire() {
                             />
                         </div>
                         <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Présentation *</p>
+                            <input
+                                placeholder="Présentation"
+                                name="presentation"
+                                required
+                                className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={e => setForm({...form, lieu: e.target.value})}
+
+                            />
+                        </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Présentation *</p>
+                            <textarea
+                                placeholder="Présentation (séparer les élements par un retour à la ligne"
+                                name="presentation"
+                                required
+                                className="focus:border-t-gray-900 text-gray min-w-full h-28 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={e => setForm({...form, lieu: e.target.value})}
+
+                            >
+                            </textarea>
+                        </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Cible *</p>
+                            <textarea
+                                placeholder="Cibme (séparer les élements par un retour à la ligne"
+                                name="cible"
+                                required
+                                className="focus:border-t-gray-900 text-gray min-w-full h-28 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={(e)=> onChange(e)}
+
+                            >
+                            </textarea>
+                        </div>
+                        <div>
                             <p className="mb-3 text-left font-medium !text-gray-900">Image *</p>
                             <input
                                 placeholder="img"
@@ -113,9 +163,9 @@ function Seminaire() {
                                 required
                                 onChange={e => convert2base64(e)}
 
-                             alt='img'/>
+                                alt='img'/>
                         </div>
-                        {form.img && <img className="h-48 w-48" src={form.img} alt='img'/> }
+                        {form.img && <img className="h-48 w-48" src={form.img} alt='img'/>}
 
                     </div>
 
