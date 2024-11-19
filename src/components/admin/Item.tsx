@@ -2,12 +2,12 @@ import React from 'react';
 import {CalendarIcon, MapPinIcon} from "@heroicons/react/16/solid";
 
 
-function Item({title, date, lieu, img, animateur}: {title: string, date: string, lieu: string, img?: string, animateur?:string}) {
+function Item({title, date, lieu, img, animateur, onDelete}: {title: string, date: string, lieu: string, img?: string, animateur?:string, onDelete?:any}) {
     return (
-        <div className="shadow-xl flex items-center flex-col  border-black max-sm:mt-10">
+        <div className="shadow-xl flex items-center flex-col w-full justify-end border-black mt-10">
             {
                 img &&
-                <img src={img} className="w-full h-40" alt={'img'}/>
+                <img src={img} className="w-full h-36" alt={'img'}/>
             }
             <div className="flex flex-col w-full p-2">
                 <span className="font-medium text-primary text-center mt-4">{title}</span>
@@ -16,7 +16,7 @@ function Item({title, date, lieu, img, animateur}: {title: string, date: string,
                 {animateur && <span className="text-gray-500 lg:text-[12px] text-justify mt-4">{animateur}</span>}
             </div>
             <div
-                className="flex flex-row w-full items-center self-center border-t-gray-300 border justify-between  align-bottom">
+                className="flex flex-row w-full border-t-gray-300 border justify-between">
                 <button
                     className="text-white bg-primary text-xs h-10 self-center flex items-center hover:text-white p-2 text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
@@ -40,6 +40,7 @@ function Item({title, date, lieu, img, animateur}: {title: string, date: string,
                     Détail
                 </button>
                 <button
+                    onClick={onDelete}
                     className="text-white bg-red-800 text-xs h-10 items-center hover:text-white p-2 text-center flex">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                          stroke="currentColor" className="size-4">

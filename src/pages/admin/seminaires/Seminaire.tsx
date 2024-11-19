@@ -1,4 +1,4 @@
-import { addDoc, collection, serverTimestamp, getDocs } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, getDocs, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react';
 import Item from "../../../components/admin/Item";
 import {Modal} from "../../../components/admin/Modal";
@@ -10,18 +10,32 @@ type formType = {
     lieu: string,
     img: string | undefined,
     presentation: string[],
-    cible: string[],
-    objectifs: string[]
+    cible?: string[],
+    objectifs?: string[]
     program?: string[]
+    methods?: string[]
 }
 
 function Seminaire() {
     const [showModal, setShowModal] = useState(false);
     const [seminaires, setSeminaires] = useState<any[]>([])
-    const [form, setForm] = useState<formType>({theme: '', date: '', lieu: '', img: '', presentation: [], cible:[], objectifs: [], program: []})
+    const [form, setForm] = useState<formType>({theme: '', date: '', lieu: '', img: '', presentation: [], cible:[], objectifs: [], program: [], methods: []})
 
     useEffect(() => {
-        const fetchSemianires = async () => {
+
+        const subs = onSnapshot(collection(db, "seminaires"), (snapshot) => {
+            let list: any[] = [];
+            snapshot.docs.forEach((doc) => {
+                list.push({id: doc.id, ...doc.data()})
+            })
+            setSeminaires(list)
+        })
+
+        return () => {
+            subs()
+        }
+
+       /* const fetchSeminaires = async () => {
             let list: any[] = []
             const semianires = await getDocs(collection(db, "seminaires"));
             semianires.forEach((doc) => {
@@ -31,7 +45,9 @@ function Seminaire() {
             setSeminaires(list)
         };
 
-        fetchSemianires()
+        fetchSeminaires() */
+
+
     }, []);
 
 
@@ -45,16 +61,49 @@ function Seminaire() {
         } else alert('Veuillez remplir tous les champs')
     }
 
-    const onChange = (e: any) => {
+    const onDeleteItem = async (id: string) => {
+        try {
+            await deleteDoc(doc(db, "seminaires", id))
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    const onChangeCible = (e: any) => {
         const arrayFromTextarea = e.target.value.split(/\r?\n/);
-        console.log(arrayFromTextarea)
         setForm({
                 ...form,
             cible: arrayFromTextarea
         })
-        console.log(e.target.name)
+    }
 
-
+    const onChangePresentation = (e: any) => {
+        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        setForm({
+                ...form,
+            presentation: arrayFromTextarea
+        })
+    }
+    const onChangeObjectifs = (e: any) => {
+        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        setForm({
+                ...form,
+            objectifs: arrayFromTextarea
+        })
+    }
+    const onChangeProgram = (e: any) => {
+        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        setForm({
+                ...form,
+            program: arrayFromTextarea
+        })
+    }
+    const onChangeMethods = (e: any) => {
+        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        setForm({
+                ...form,
+            methods: arrayFromTextarea
+        })
     }
 
     function convert2base64(e: React.ChangeEvent<HTMLInputElement>) {
@@ -118,38 +167,57 @@ function Seminaire() {
 
                             />
                         </div>
-                        <div>
-                            <p className="mb-3 text-left font-medium !text-gray-900">Présentation *</p>
-                            <input
-                                placeholder="Présentation"
-                                name="presentation"
-                                required
-                                className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
-                                onChange={e => setForm({...form, lieu: e.target.value})}
 
-                            />
-                        </div>
                         <div>
                             <p className="mb-3 text-left font-medium !text-gray-900">Présentation *</p>
                             <textarea
                                 placeholder="Présentation (séparer les élements par un retour à la ligne"
                                 name="presentation"
                                 required
-                                className="focus:border-t-gray-900 text-gray min-w-full h-28 rounded border-[1.5px] border-gray-400 p-2"
-                                onChange={e => setForm({...form, lieu: e.target.value})}
+                                className="focus:border-t-gray-900 text-gray min-w-full h-20 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={e => onChangePresentation(e)}
 
                             >
                             </textarea>
                         </div>
                         <div>
-                            <p className="mb-3 text-left font-medium !text-gray-900">Cible *</p>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Objectifs</p>
                             <textarea
-                                placeholder="Cibme (séparer les élements par un retour à la ligne"
-                                name="cible"
-                                required
-                                className="focus:border-t-gray-900 text-gray min-w-full h-28 rounded border-[1.5px] border-gray-400 p-2"
-                                onChange={(e)=> onChange(e)}
+                                placeholder="Objectifs (séparer les élements par un retour à la ligne"
+                                name="objectif"
+                                className="focus:border-t-gray-900 text-gray min-w-full h-20 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={e => onChangeObjectifs(e)}
 
+                            >
+                            </textarea>
+                        </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Cible</p>
+                            <textarea
+                                placeholder="Cible (séparer les élements par un retour à la ligne"
+                                name="cible"
+                                className="focus:border-t-gray-900 text-gray min-w-full h-20 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={(e)=> onChangeCible(e)}
+                            >
+                            </textarea>
+                        </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Program</p>
+                            <textarea
+                                placeholder="Program (séparer les élements par un retour à la ligne"
+                                name="cible"
+                                className="focus:border-t-gray-900 text-gray min-w-full h-20 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={(e)=> onChangeProgram(e)}
+                            >
+                            </textarea>
+                        </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Méthode</p>
+                            <textarea
+                                placeholder="Program (séparer les élements par un retour à la ligne"
+                                name="cible"
+                                className="focus:border-t-gray-900 text-gray min-w-full h-20 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={(e)=> onChangeMethods(e)}
                             >
                             </textarea>
                         </div>
@@ -186,11 +254,12 @@ function Seminaire() {
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-5 gap-5">
+                <div className="grid grid-cols-4 gap-4">
                     {seminaires.map(seminaire => {
                         return <Item title={seminaire.theme}
                                      date={seminaire.date}
                                      img={seminaire.img}
+                                     onDelete={()=>onDeleteItem(seminaire.id)}
                                      lieu={seminaire.lieu}/>
                     })}
 
