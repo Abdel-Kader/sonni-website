@@ -2,7 +2,7 @@ import React from 'react';
 import {CalendarIcon, MapPinIcon} from "@heroicons/react/16/solid";
 
 
-function Item({title, date, lieu, img, animateur, onDelete}: {title: string, date: string, lieu: string, img?: string, animateur?:string, onDelete?:any}) {
+function Item({title, date, lieu, img, animateur, onDelete, onEdit}: {title: string, date: string, lieu: string, img?: string, animateur?:string, onDelete?:any,onEdit?:any}) {
     return (
         <div className="shadow-xl flex items-center flex-col w-full justify-end border-black mt-10">
             {
@@ -18,6 +18,7 @@ function Item({title, date, lieu, img, animateur, onDelete}: {title: string, dat
             <div
                 className="flex flex-row w-full border-t-gray-300 border justify-between">
                 <button
+                    onClick={onEdit}
                     className="text-white bg-primary text-xs h-10 self-center flex items-center hover:text-white p-2 text-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5}
                          stroke="currentColor" className="size-4">

@@ -8,7 +8,7 @@ type ModalProps = {
 export const Modal = ({ show, onClose, children }: ModalProps) => {
     return show ? (
         <div
-            className="fixed flex items-center self-center justify-center h-[95%] w-full bg-black/40 overflow-y-scroll pt-24"
+            className="fixed z-50 flex items-center self-center justify-center h-[95%] w-full bg-black/40 overflow-y-scroll pt-24"
             onClick={onClose}
         >
             <div
