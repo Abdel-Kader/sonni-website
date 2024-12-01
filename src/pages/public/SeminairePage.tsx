@@ -1,14 +1,33 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import certificatBanner from "../../assets/banners/certificat.jpg";
 import Banner from "../../components/layout/Banner";
-import ecriture from "../../assets/seminaire/ecriture.jpg"
-import gestionDeTemps from "../../assets/seminaire/gestion-temps.jpg"
-import priseDeParole from "../../assets/seminaire/prise-de-parole.jpg"
 import {SeminaireItem} from "../../components/seminaire/SeminaireItem";
+import {collection, onSnapshot} from "firebase/firestore";
+import {db} from "../../config/firebase";
+import Spinner from "../../components/Spinner";
 
 
 const SeminairePage = () => {
+    const [loading, isLoading] = useState(false)
+    const [seminaires, setSeminaires] = useState<any[]>([])
+
+
     useEffect(() => {
+        isLoading(true)
+        const subs = onSnapshot(collection(db, "seminaires"), (snapshot) => {
+            let list: any[] = [];
+            snapshot.docs.forEach((doc) => {
+                list.push({_id: doc.id, ...doc.data()})
+            })
+            setSeminaires(list)
+            isLoading(false)
+        })
+
+        return () => {
+
+            subs()
+        }
+
         window.scrollTo(0, 0)
     },[]);
     return (
@@ -21,17 +40,22 @@ const SeminairePage = () => {
             </div>
 
             <section className="mx-auto mt-12">
-                <SeminaireItem id={2} title="Séminaire Pratique en Gestion du Temps et des Priorités"
-                               image={gestionDeTemps}
-                               date={"Démarrage le O9 Novembre"} lieu={"Salle SONNI"}/>
-                <SeminaireItem id={3} title="Atelier de Prise de Parole en Public" image={priseDeParole}
-                               date={"Démarrage le 05 novembre"} lieu={"Salle SONNI"}/>
-                <SeminaireItem id={1}
-                               title="Séminaire pratique d’écriture: Plonger dans l’Écriture d’un livre, trouver votre style d’écriture"
-                               image={ecriture} date={"Démarrage le 11 Novembre"} lieu={"Salle SONNI"}/>
-            </section>
-        </>
-    );
-};
+                {loading ?
+                    <div className="flex flex-1 mt-[20%] justify-center text-center">
+                        <Spinner/>
+                    </div> :
+                    seminaires.length > 0 ?
+                        seminaires.map((sem, index) => (
+                            <SeminaireItem seminaire={sem}/>
+                        ))
+                        :
+                        <div className="flex flex-1 mt-[20%] justify-center text-center">
+                            <h3 className="font-semibold text-2xl text-primary">La liste des séminaires est vide !</h3>
+                        </div>}
+
+                    </section>
+                    </>
+                    );
+                };
 
 export default SeminairePage;

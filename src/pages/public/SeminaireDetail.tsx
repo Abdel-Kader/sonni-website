@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Banner from "../../components/layout/Banner";
 import seminaireBanner from "../../assets/banners/certificat.jpg";
 import {useLocation} from 'react-router-dom';
@@ -8,22 +8,22 @@ import {List, Tabs} from "flowbite-react";
 
 const SeminaireDetail = () => {
     let location = useLocation();
-    const seminaire = ateliers.filter(atelier => atelier.id === location.state.id);
+    const seminaire = location.state?.seminaire
     useEffect(() => {
+        console.log(location.state?.seminaire)
         window.scrollTo(0, 0)
     },[]);
     return (
         <>
-            <Banner image={seminaireBanner} title={location.state?.title} subdescription={location.state.date} description={location.state?.lieu} seminaire={location.state?.title}/>
+            <Banner image={seminaireBanner} title={location.state?.seminaire.title} subdescription={location.state.seminaire.date} description={location.state?.seminaire.lieu} seminaire={location.state?.seminaire.title}/>
             <section className="m-12">
-
                 <div className="grid lg:grid-cols-2 mb-5">
                     <div className="flex">
                         <motion.img initial={{x: 300, opacity: 0}}
                                     animate={{x: 0, opacity: 1}}
                                     exit={{x: -300, opacity: 0}}
-                                    src={location.state?.image}
-                                    key={location.state?.id}
+                                    src={seminaire.img}
+                                    key={seminaire.id}
                                     transition={{
                                         ease: "linear",
                                         duration: 2,
@@ -38,7 +38,7 @@ const SeminaireDetail = () => {
                         <span
                             className="font-medium text-primary mt-4">
                             <List>
-                                {seminaire[0].presentation.map((con: any) => (
+                                {seminaire.presentation.map((con: any) => (
                                     <List.Item className="text-black">
                                         {con}
                                     </List.Item>
@@ -53,7 +53,7 @@ const SeminaireDetail = () => {
                     <Tabs.Item active title="Objectifs">
                         <Tabs.Item active title="Contenu">
                             <List>
-                                {seminaire[0].objectif.map((con: any) => (
+                                {seminaire.objectifs.map((con: any) => (
                                     <List.Item>
                                         {con}
                                     </List.Item>
@@ -63,7 +63,7 @@ const SeminaireDetail = () => {
                     </Tabs.Item>
                     <Tabs.Item active title="Public ciblé">
                             <List>
-                                {seminaire[0].cibles.map((con: any) => (
+                                {seminaire.cible.map((con: any) => (
                                     <List.Item>
                                         {con}
                                     </List.Item>
@@ -71,9 +71,9 @@ const SeminaireDetail = () => {
                             </List>
                     </Tabs.Item>
 
-                    {seminaire[0].programme.length > 0 && <Tabs.Item active title="Programme">
+                    {seminaire.program.filter((element: any) => element !== "").length >= 1 && <Tabs.Item active title="Programme">
                         <List>
-                            {seminaire[0].programme.map((con: any) => (
+                            {seminaire.program.map((con: any) => (
                                 <List.Item>
                                     {con}
                                 </List.Item>
@@ -81,9 +81,9 @@ const SeminaireDetail = () => {
                         </List>
                     </Tabs.Item>}
 
-                    {seminaire[0].methode.length > 0 && <Tabs.Item active title="Méthode">
+                    {seminaire.methods.filter((element: any) => element !== "").length >= 1  && <Tabs.Item active title="Méthode">
                         <List>
-                            {seminaire[0].methode.map((con: any) => (
+                            {seminaire.methods.map((con: any) => (
                                 <List.Item>
                                     {con}
                                 </List.Item>

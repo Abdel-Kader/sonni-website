@@ -1,7 +1,18 @@
 import { Table } from "flowbite-react";
 import React from "react";
+import {deleteDoc, doc} from "firebase/firestore";
+import {db} from "../../config/firebase";
 
-const TableItem = ({seminaires, onDelete, onEdit, detail}: {seminaires: any[], onDelete: (id: string) => void, onEdit: (seminaire: any) => void, detail: (seminaire: any) => void}) => {
+const TableItem = ({seminaires, detail, collection}: {seminaires: any[], detail: (seminaire: any) => void, collection: string}) => {
+
+    const onDeleteItem = async (id: string) => {
+        try {
+            await deleteDoc(doc(db, collection, id))
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
     return (
         <div className="overflow-x-auto mt-12">
             <Table hoverable>
@@ -13,7 +24,6 @@ const TableItem = ({seminaires, onDelete, onEdit, detail}: {seminaires: any[], o
                     <Table.HeadCell>Image</Table.HeadCell>
                     <Table.HeadCell>
                         <span className="sr-only">Détail</span>
-                        <span className="sr-only">Modifier</span>
                         <span className="sr-only">Supprimer</span>
                     </Table.HeadCell>
                 </Table.Head>
@@ -38,16 +48,6 @@ const TableItem = ({seminaires, onDelete, onEdit, detail}: {seminaires: any[], o
                                 </Table.Cell>
 
                                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    <button onClick={()=> onEdit(sem)}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                             strokeWidth={1.5}
-                                             stroke="currentColor" className="size-5 text-primary">
-                                            <path strokeLinecap="round" strokeLinejoin="round"
-                                                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"/>
-                                        </svg>
-                                    </button>
-                                </Table.Cell>
-                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     <button onClick={()=> detail(sem)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              strokeWidth={1.5}
@@ -61,7 +61,7 @@ const TableItem = ({seminaires, onDelete, onEdit, detail}: {seminaires: any[], o
                                 </Table.Cell>
                                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                     <button
-                                        onClick={()=> onDelete(sem.id)}>
+                                        onClick={()=> onDeleteItem(sem._id)}>
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                              strokeWidth={1.5}
                                              stroke="currentColor" className="size-5 text-red-800">

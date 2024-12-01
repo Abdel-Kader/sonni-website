@@ -1,5 +1,4 @@
-import {Navigate, Outlet} from 'react-router-dom';
-import {useUserContext} from "../components/layout/AdminLayout";
+import {Outlet} from 'react-router-dom';
 import AdminNavbar from "../components/layout/AdminNavbar";
 
 export const PrivateRoute = () => {
@@ -7,7 +6,7 @@ export const PrivateRoute = () => {
         return (
             <>
                 <AdminNavbar />
-                <div className="ml-[320px]">
+                <div className="ml-[270px] mt-24">
                     <Outlet/>
                 </div>
             </>

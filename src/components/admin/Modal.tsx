@@ -8,11 +8,11 @@ type ModalProps = {
 export const Modal = ({ show, onClose, children }: ModalProps) => {
     return show ? (
         <div
-            className="fixed z-50 flex items-center self-center justify-center h-[95%] w-full bg-black/40 overflow-y-scroll pt-24"
+            className="absolute z-50 flex rounded-lg items-center self-center justify-center w-[80%] bg-black/40 overflow-y-scroll"
             onClick={onClose}
         >
             <div
-                className="w-[50%] mr-[15%] p-5 bg-white rounded-lg  "
+                className="w-[100%] p-5 bg-white"
                 onClick={(e) => {
                     e.stopPropagation();
                 }}

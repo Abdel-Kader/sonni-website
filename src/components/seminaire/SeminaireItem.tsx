@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {CalendarIcon, MapPinIcon} from "@heroicons/react/16/solid";
 import { motion } from "framer-motion"
 import {Link} from "react-router-dom";
 
 
-export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, image: string, date: string, lieu?: string, id: number}) => {
+export const SeminaireItem = ({seminaire}: any) => {
+    useEffect(() => {
+        console.log(seminaire)
+    }, []);
     return (
         <div className="shadow-md p-2 border-black mt-12 lg:ml-20 max-sm:ml-10 mb-7 flex flex-row justify-between max-sm:grid max-sm:grid-cols-1 max-sm:mx-7">
 
@@ -13,8 +16,8 @@ export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, im
                     <motion.img initial={{x: 300, opacity: 0}}
                                 animate={{x: 0, opacity: 1}}
                                 exit={{x: -300, opacity: 0}}
-                                src={image}
-                                key={image}
+                                src={seminaire.img}
+                                key={seminaire.img}
                                 transition={{
                                     ease: "linear",
                                     duration: 2,
@@ -24,14 +27,14 @@ export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, im
                                 alt="team-building-image"/>
                 </div>
                 <div className="ml-12">
-                    <span className="font-medium text-primary text-center mt-4">{title}</span>
+                    <span className="font-medium text-primary text-center mt-4">{seminaire.theme}</span>
                     <span className="flex flex-row font-medium text-primary text-center mt-4 max-sm:mt-7">
                         <CalendarIcon height={25} style={{marginRight: 5}}/>
-                        {date}
+                        {seminaire.date}
                     </span>
                     <span className="flex flex-row font-medium text-primary text-center mt-4 max-sm:mt-7">
                         <MapPinIcon height={25} style={{marginRight: 5}}/>
-                        {lieu}
+                        {seminaire.lieu}
                     </span>
                 </div>
 
@@ -39,7 +42,7 @@ export const SeminaireItem = ({title, image, date, lieu, id}: {title: string, im
             <div className="flex justify-end flex-col items-end">
                 <div
                     className="flex flex-col hover:bg-primary justify-center w-40 border-t-gray-300 border max-sm:mt-7 h-10  bg-secondary align-bottom">
-                    <Link to={`/seminaires/detail`} state={{title: title, image: image, date:date, lieu: lieu, id: id}}
+                    <Link to={`/seminaires/detail`} state={{seminaire: seminaire}}
                           className="text-white hover:text-white text-center">En
                         savoir plus
                     </Link>

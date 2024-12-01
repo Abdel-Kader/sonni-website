@@ -1,10 +1,11 @@
-import { addDoc, collection, serverTimestamp, deleteDoc, doc, onSnapshot, setDoc } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp, doc, onSnapshot, setDoc } from 'firebase/firestore';
 import React, {useEffect, useState} from 'react';
 import Swal from 'sweetalert2'
-import {Modal} from "../../../components/admin/Modal";
-import {db} from "../../../config/firebase";
-import TableItem from "../../../components/admin/TableItem";
-import {DetailModal} from "../../../components/admin/DetailModal";
+import {Modal} from "../../components/admin/Modal";
+import {db} from "../../config/firebase";
+import TableItem from "../../components/admin/TableItem";
+import {DetailModal} from "../../components/admin/DetailModal";
+import  Spinner  from "../../components/Spinner";
 
 type formType = {
     id?: string,
@@ -24,21 +25,25 @@ function Seminaire() {
     const [showDetail, setShowDetail] = useState(false);
     const [seminaires, setSeminaires] = useState<any[]>([])
     const [seminaire, setSeminaire] = useState<formType>()
-    const [form, setForm] = useState<formType>({id: '',theme: '', date: '', lieu: '', img: '', presentation: [], cible:[], objectifs: [], program: [], methods: []})
+    const [form, setForm] = useState<any>({id: '',theme: '', date: '', lieu: '', img: '', presentation: '', cible:'', objectifs: '', program: '', methods: ''})
     const [edit, isEditing] = useState(false)
+    const [loading, isLoading] = useState(false)
 
 
     useEffect(() => {
 
+        isLoading(true)
         const subs = onSnapshot(collection(db, "seminaires"), (snapshot) => {
             let list: any[] = [];
             snapshot.docs.forEach((doc) => {
-                list.push({id: doc.id, ...doc.data()})
+                list.push({_id: doc.id, ...doc.data()})
             })
             setSeminaires(list)
+            isLoading(false)
         })
 
         return () => {
+
             subs()
         }
 
@@ -48,21 +53,34 @@ function Seminaire() {
         e.preventDefault();
 
         if(!edit) {
+
             if (form.theme && form.lieu && form.date) {
-                await addDoc(collection(db, "seminaires"), {...form, timestamps: serverTimestamp()})
+                form.presentation = form.presentation?.split(/\r?\n/)
+                form.cible = form.cible?.split(/\r?\n/)
+                form.objectifs = form.objectifs?.split(/\r?\n/)
+                form.program = form.program?.split(/\r?\n/)
+                form.methods = form.methods?.split(/\r?\n/)
+
+                await addDoc(collection(db, "seminaires"), {
+                    ...form,
+                    timestamps: serverTimestamp()
+                })
+
                 setShowModal(!showModal);
+
                 Swal.fire({
                     icon: "success",
-                    title: "Seminaire modifié avec succès",
+                    title: "Seminaire ajouté avec succès",
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 800
                 });
+                window.location.reload();
+
             } else alert('Veuillez remplir tous les champs')
         } else {
             if(form.id) {
-                console.log(form.id)
                try {
-                   await setDoc(doc(collection(db, 'seminaires'), form.id), {...form})
+                   await setDoc(doc(collection(db, 'seminaires'), form._id), {...form})
                    setShowModal(!showModal);
                    Swal.fire({
                        icon: "success",
@@ -77,16 +95,9 @@ function Seminaire() {
         }
     }
 
-    const onDeleteItem = async (id: string) => {
-        try {
-            await deleteDoc(doc(db, "seminaires", id))
-        } catch (e) {
-            console.log(e)
-        }
-    }
 
     const onChangeCible = (e: any) => {
-        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        const arrayFromTextarea = e.target.value;
         setForm({
                 ...form,
             cible: arrayFromTextarea
@@ -94,28 +105,28 @@ function Seminaire() {
     }
 
     const onChangePresentation = (e: any) => {
-        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        const arrayFromTextarea = e.target.value;
         setForm({
                 ...form,
             presentation: arrayFromTextarea
         })
     }
     const onChangeObjectifs = (e: any) => {
-        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        const arrayFromTextarea = e.target.value;
         setForm({
                 ...form,
             objectifs: arrayFromTextarea
         })
     }
     const onChangeProgram = (e: any) => {
-        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        const arrayFromTextarea = e.target.value;
         setForm({
                 ...form,
             program: arrayFromTextarea
         })
     }
     const onChangeMethods = (e: any) => {
-        const arrayFromTextarea = e.target.value.split(/\r?\n/);
+        const arrayFromTextarea = e.target.value;
         setForm({
                 ...form,
             methods: arrayFromTextarea
@@ -270,13 +281,14 @@ function Seminaire() {
 
             {showDetail && seminaire && <DetailModal
                 show={showDetail}
+                type="seminaire"
                 onClose={() => {
                     setShowDetail(!showDetail);
                 }}
                 seminaire={seminaire}
             />}
 
-            <section className="mx-auto mt-12">
+            <section className="flex flex-col mx-auto mt-12">
 
                 <div className="flex justify-between mr-8 mb-3">
                     <h3 className="font-bold text-2xl">Gestion des séminaires</h3>
@@ -288,19 +300,23 @@ function Seminaire() {
                     </div>
                 </div>
 
-                 <TableItem
-                     seminaires={seminaires}
-                     onDelete={(id: string) => onDeleteItem(id)}
-                     onEdit={(seminaire: any) => {
-                         setForm(seminaire)
-                         setShowModal(true)
-                         isEditing(true)
-                     }}
-                     detail={(seminaire: any) => {
-                         setSeminaire(seminaire)
-                         setShowDetail(true)
-                     }}
-                 />
+                {loading ?
+                    <div className="flex flex-1 mt-[20%] justify-center text-center">
+                        <Spinner />
+                    </div> :
+                    seminaires.length > 0 ?
+                        <TableItem
+                            seminaires={seminaires}
+                            collection="seminaires"
+                            detail={(seminaire: any) => {
+                                setSeminaire(seminaire)
+                                setShowDetail(true)
+                            }}
+                        />
+                        : <div className="flex flex-1 mt-[20%] justify-center text-center">
+                            <h3 className="font-semibold text-2xl text-primary">La liste des séminaires est vide ! Veuillez en ajouter</h3>
+                        </div>
+                }
 
             </section>
         </>

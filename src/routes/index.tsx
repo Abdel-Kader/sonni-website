@@ -18,7 +18,9 @@ import WebinaireDetail from "../pages/public/WebinaireDetail";
 import LivresPage from "../pages/public/LivresPage";
 import AchatLivre from "../pages/public/AchatLivre";
 import {PrivateRoute} from "./PrivateRoute";
-import Seminaire from "../pages/admin/seminaires/Seminaire";
+import Seminaire from "../pages/admin/Seminaire";
+import Webinaire from "../pages/admin/Webinaire";
+import Article from "../pages/admin/Articles";
 
 
 export const router = createBrowserRouter([
@@ -107,6 +109,18 @@ export const router = createBrowserRouter([
             {
                 path: 'seminaires',
                 element: <Seminaire/>,
+            },
+            {
+                path: 'webinaires',
+                element: <Webinaire/>,
+            },
+            {
+                path: 'articles',
+                element: <Article/>,
+            },
+            {
+                path: 'librairie',
+                element: <Webinaire/>,
             },
         ]
     }
