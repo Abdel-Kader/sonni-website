@@ -11,7 +11,7 @@ export const DetailModal = ({ show, onClose, seminaire, type }: ModalProps) => {
 
     return show ? (
         <div
-            className="fixed z-50 flex items-center self-center justify-center w-[75%] rounded-lg bg-black/40 overflow-y-scroll"
+            className="absolute z-50 flex items-center self-center justify-center w-[75%] rounded-lg bg-black/40 overflow-y-scroll"
             onClick={onClose}
         >
             <div
@@ -85,23 +85,29 @@ export const DetailModal = ({ show, onClose, seminaire, type }: ModalProps) => {
                 }
 
                 {type === "webinaire" &&
-                    <div>
-                        <div className="ml-12 flex flex-col max-sm:mt-7 mb-12">
-                            <p className="text-center text-2xl mb-5 font-bold">Animé par </p>
-                            <div className="flex items-center flex-col p-2 mb-7">
-                                <div>
-                                    <img
-                                        alt="DG"
-                                        src={seminaire.animateurImage}
-                                        className="inline-block h-48 w-48 rounded-full ring-4 ring-secondary"
-                                    />
-                                </div>
-
-                                <span
-                                    className="font-medium text-primary text-xl text-center mt-4">{seminaire.animateurName}</span>
-                                <span className="text-[9px] mt-4 font-medium text-gray-900 text-center mb-2 text-xl">{seminaire.animateurFunction}</span>
-
+                    <div className="ml-12 flex flex-col max-sm:mt-7 mb-12">
+                        <p className="text-center text-2xl mb-5 font-bold">Animé par </p>
+                        <div className="flex items-center flex-col p-2 mb-7">
+                            <div>
+                                <img
+                                    alt="DG"
+                                    src={seminaire.animateurImage}
+                                    className="inline-block h-48 w-48 rounded-full ring-4 ring-secondary"
+                                />
                             </div>
+
+                            <span
+                                className="font-medium text-primary text-xl text-center mt-4">{seminaire.animateurName}</span>
+                            <span className="text-[9px] mt-4 font-medium text-gray-900 text-center mb-2 text-xl">{seminaire.animateurFunction}</span>
+
+                        </div>
+                    </div>
+                }
+
+                {type === "article" &&
+                    <div className="ml-12 flex flex-col max-sm:mt-7 mb-12">
+                        <div className="flex items-center flex-col p-2 mb-7">
+                            <div className="text-xl m-5" dangerouslySetInnerHTML={{__html: seminaire.content}}/>
                         </div>
                     </div>
                 }

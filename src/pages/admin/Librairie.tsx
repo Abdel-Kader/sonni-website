@@ -6,25 +6,6 @@ import {db} from "../../config/firebase";
 import {DetailModal} from "../../components/admin/DetailModal";
 import  Spinner  from "../../components/Spinner";
 import ArticleTableItem from "../../components/admin/ArticleTableItem";
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import {
-    ClassicEditor,
-    Bold,
-    Essentials,
-    Heading,
-    Indent,
-    IndentBlock,
-    Italic,
-    Link,
-    List,
-    MediaEmbed,
-    Paragraph,
-    Table,
-    Undo
-} from 'ckeditor5';
-
-import 'ckeditor5/ckeditor5.css';
-
 
 type formType = {
     id?: string,
@@ -34,12 +15,12 @@ type formType = {
     img: string | undefined
 }
 
-function Article() {
+function Librairie() {
     const [showModal, setShowModal] = useState(false);
     const [showDetail, setShowDetail] = useState(false);
     const [seminaires, setSeminaires] = useState<any[]>([])
     const [seminaire, setSeminaire] = useState<formType>()
-    const [form, setForm] = useState<any>({id: '',titre: '', img: '', content: ''})
+    const [form, setForm] = useState<any>({id: '',titre: '', img: '', prix: ''})
     const [edit, isEditing] = useState(false)
     const [loading, isLoading] = useState(false)
 
@@ -47,7 +28,7 @@ function Article() {
     useEffect(() => {
 
         isLoading(true)
-        const subs = onSnapshot(collection(db, "articles"), (snapshot) => {
+        const subs = onSnapshot(collection(db, "librairie"), (snapshot) => {
             let list: any[] = [];
             snapshot.docs.forEach((doc) => {
                 list.push({_id: doc.id, ...doc.data()})
@@ -68,9 +49,9 @@ function Article() {
 
         if(!edit) {
 
-            if (form.title && form.img && form.content) {
+            if (form.title && form.img && form.prix) {
 
-                await addDoc(collection(db, "articles"), {
+                await addDoc(collection(db, "librairie"), {
                     ...form,
                     timestamps: serverTimestamp()
                 })
@@ -79,7 +60,7 @@ function Article() {
 
                 Swal.fire({
                     icon: "success",
-                    title: "Articles ajouté avec succès",
+                    title: "Ouvrage ajouté avec succès",
                     showConfirmButton: false,
                     timer: 800
                 });
@@ -89,11 +70,11 @@ function Article() {
         } else {
             if(form.id) {
                 try {
-                    await setDoc(doc(collection(db, 'articles'), form._id), {...form})
+                    await setDoc(doc(collection(db, 'librairie'), form._id), {...form})
                     setShowModal(!showModal);
                     Swal.fire({
                         icon: "success",
-                        title: "Article ajouté avec succès",
+                        title: "Ouvrage ajouté avec succès",
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -111,9 +92,9 @@ function Article() {
 
             reader.onloadend = () => {
 
-                    setForm({
-                        ...form, img: reader?.result?.toString()
-                    })
+                setForm({
+                    ...form, img: reader?.result?.toString()
+                })
 
             }
 
@@ -132,8 +113,8 @@ function Article() {
                 <form name="contact"
                       id="contact"
                       onSubmit={handleSubmit}>
-                    <h3 className="font-bold mt-3 mb-3 text-primary">{edit ? "Modifier l'articles" : "Formulaire d'ajout d'articles"}</h3>
-                    <div className="grid lg:grid-cols-1 gap-4">
+                    <h3 className="font-bold mt-3 mb-3 text-primary">{edit ? "Modifier l'ouvrage" : "Formulaire d'ajout d'ouvrage"}</h3>
+                    <div className="grid lg:grid-cols-2 gap-4">
 
                         <div>
                             <p className="mb-3 text-left font-medium !text-gray-900">Titre *</p>
@@ -146,10 +127,22 @@ function Article() {
                                 onChange={e => setForm({...form, title: e.target.value})}
                             />
                         </div>
+                        <div>
+                            <p className="mb-3 text-left font-medium !text-gray-900">Prix *</p>
+                            <input
+                                placeholder="Prix"
+                                required
+                                type="number"
+                                name="prix"
+                                value={form?.prix}
+                                className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
+                                onChange={e => setForm({...form, prix: e.target.value})}
+                            />
+                        </div>
 
 
                         <div>
-                            <p className="mb-3 text-left font-medium !text-gray-900">Image illustrative *</p>
+                            <p className="mt-5 mb-3 text-left font-medium !text-gray-900">Image illustrative *</p>
                             <input
                                 placeholder="img"
                                 name="affiche"
@@ -159,48 +152,8 @@ function Article() {
                                 onChange={e => convert2base64(e)}
                                 alt='img'/>
                         </div>
-                        {form.img && <img className="h-40 w-40" src={form.img} alt='img'/>}
-
-                        <p className="mb-3 text-left font-medium !text-gray-900">Contenu *</p>
-                        <CKEditor
-                            data={form.content}
-                            onChange={(event, editor) => {
-                                const data = editor.getData()
-                                setForm((prev: any)=>{return {...prev, content: data}})
-                            }}
-                            editor={ ClassicEditor }
-                            config={ {
-                                licenseKey: 'GPL',
-                                language: {
-                                    ui: 'fr'
-                                },
-
-                                toolbar: [
-                                    'undo', 'redo', '|',
-                                    'heading', '|', 'bold', 'italic', '|',
-                                    'link', 'insertTable', 'mediaEmbed', '|',
-                                    'bulletedList', 'numberedList', 'indent', 'outdent'
-                                ],
-                                plugins: [
-                                    Bold,
-                                    Essentials,
-                                    Heading,
-                                    Indent,
-                                    IndentBlock,
-                                    Italic,
-                                    Link,
-                                    List,
-                                    MediaEmbed,
-                                    Paragraph,
-                                    Table,
-                                    Undo
-                                ],
-                                initialData: "<h1>Contenu de l'article</h1>",
-                            } }
-                        />
-
+                        {form.img && <img className="h-40 w-40 mt-4" src={form.img} alt='img'/>}
                     </div>
-
                     <button className="mt-3 px-10 bg-primary h-10 rounded-md">
                         Valider
                     </button>
@@ -209,7 +162,7 @@ function Article() {
 
             {showDetail && seminaire &&
                 <DetailModal
-                    type="article"
+                    type="librairie"
                     show={showDetail}
                     onClose={() => {
                         setShowDetail(!showDetail);
@@ -221,11 +174,11 @@ function Article() {
             <section className="flex flex-col mx-auto mt-12">
 
                 <div className="flex justify-between mr-8 mb-3">
-                    <h3 className="font-bold text-2xl">Gestion des articles</h3>
+                    <h3 className="font-bold text-2xl">librairie</h3>
                     <div
                         className="flex flex-col hover:bg-secondary p-4 border-t-gray-300 border justify-center h-10 bg-primary align-bottom rounded-lg">
-                    <button onClick={() => setShowModal(true)}
-                                className="text-secondary text-xs hover:text-white text-center">Ajouter un article
+                        <button onClick={() => setShowModal(true)}
+                                className="text-secondary text-xs hover:text-white text-center">Ajouter un ouvrage
                         </button>
                     </div>
                 </div>
@@ -237,14 +190,14 @@ function Article() {
                     seminaires.length > 0 ?
                         <ArticleTableItem
                             seminaires={seminaires}
-                            collection="articles"
+                            collection="librairie"
                             detail={(seminaire: any) => {
                                 setSeminaire(seminaire)
                                 setShowDetail(true)
                             }}
                         />
                         : <div className="flex flex-1 mt-[20%] justify-center text-center">
-                            <h3 className="font-semibold text-2xl text-primary">La liste des articles est vide ! Veuillez en ajouter</h3>
+                            <h3 className="font-semibold text-2xl text-primary">La liste des ouvrages est vide ! Veuillez en ajouter</h3>
                         </div>
                 }
 
@@ -254,5 +207,5 @@ function Article() {
     );
 }
 
-export default Article;
+export default Librairie;
 

@@ -21,6 +21,8 @@ import {PrivateRoute} from "./PrivateRoute";
 import Seminaire from "../pages/admin/Seminaire";
 import Webinaire from "../pages/admin/Webinaire";
 import Article from "../pages/admin/Articles";
+import Librairie from "../pages/admin/Librairie";
+import Dashboard from "../pages/admin/Dashboard";
 
 
 export const router = createBrowserRouter([
@@ -92,11 +94,12 @@ export const router = createBrowserRouter([
                 path: '/contact',
                 element: <ContactPage />,
             },
-            {
-                path: '/admin/login',
-                element: <LoginPage />,
-            },
+
         ],
+    },
+    {
+        path: '/login',
+        element: <LoginPage />,
     },
     {
         path: '/admin',
@@ -104,7 +107,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '',
-                element: <HomePage/>,
+                element: <Dashboard/>,
             },
             {
                 path: 'seminaires',
@@ -120,7 +123,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'librairie',
-                element: <Webinaire/>,
+                element: <Librairie/>,
             },
         ]
     }

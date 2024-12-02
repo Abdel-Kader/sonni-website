@@ -1,10 +1,11 @@
 import {useState} from "react";
 import {Drawer, Sidebar} from "flowbite-react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import logo from "../../assets/logos/logo-1.jpeg";
 
 export default function AdminNavbar() {
   const [isOpen, setIsOpen] = useState(true);
+  const navigate = useNavigate()
 
   const handleClose = () => setIsOpen(false);
   return (
@@ -32,8 +33,8 @@ export default function AdminNavbar() {
 
                     <Sidebar.Items>
                       <Sidebar.ItemGroup>
-                        <Sidebar.Item href="/">
-                          Dashboard
+                        <Sidebar.Item href="/admin">
+                          Accueil
                         </Sidebar.Item>
                         <Sidebar.Item href="/admin/seminaires">
                           Seminaires
@@ -48,9 +49,15 @@ export default function AdminNavbar() {
                           Librairie
                         </Sidebar.Item>
                       </Sidebar.ItemGroup>
-                      <Sidebar.ItemGroup>
-                        <Sidebar.Item href="https://github.com/themesberg/flowbite-react/">
-                          Utilisateurs
+                      <Sidebar.ItemGroup className="justify-end">
+                        <Sidebar.Item>
+                          <button onClick={()=> {
+                            window.localStorage.removeItem("user")
+                            navigate("/login", { replace: true })
+                          }}>
+
+                            Déconnection
+                          </button>
                         </Sidebar.Item>
 
                       </Sidebar.ItemGroup>

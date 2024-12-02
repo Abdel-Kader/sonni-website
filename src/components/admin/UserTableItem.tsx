@@ -3,7 +3,7 @@ import React from "react";
 import {deleteDoc, doc} from "firebase/firestore";
 import {db} from "../../config/firebase";
 
-const ArticleTableItem = ({seminaires, detail, collection}: {seminaires: any[], detail: (seminaire: any) => void, collection: string}) => {
+const UserTableItem = ({seminaires, detail, collection}: {seminaires: any[], detail: (seminaire: any) => void, collection: string}) => {
 
     const onDeleteItem = async (id: string) => {
         try {
@@ -18,14 +18,11 @@ const ArticleTableItem = ({seminaires, detail, collection}: {seminaires: any[], 
             <Table hoverable striped>
                 <Table.Head>
                     <Table.HeadCell>#</Table.HeadCell>
-                    <Table.HeadCell>Titre</Table.HeadCell>
-                    <Table.HeadCell>Date de publication</Table.HeadCell>
-                    {collection === 'librairie' && <Table.HeadCell>Prix</Table.HeadCell>}
-                    <Table.HeadCell>Image</Table.HeadCell>
-                    <Table.HeadCell>
-                        <span className="sr-only">Détail</span>
-                        <span className="sr-only">Supprimer</span>
-                    </Table.HeadCell>
+                    <Table.HeadCell>Nom</Table.HeadCell>
+                    <Table.HeadCell>Prénom</Table.HeadCell>
+                    <Table.HeadCell>Email</Table.HeadCell>
+                    <Table.HeadCell>Téléphone</Table.HeadCell>
+
                 </Table.Head>
                 <Table.Body className="divide-y">
                     {seminaires.map((sem, index) => (
@@ -34,34 +31,19 @@ const ArticleTableItem = ({seminaires, detail, collection}: {seminaires: any[], 
                                 {index + 1}
                             </Table.Cell>
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                {sem.title}
+                                {sem.firstName}
                             </Table.Cell>
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                {new Date(sem.timestamps?.seconds * 1000).toLocaleDateString()}
+                                {sem.lastName}
                             </Table.Cell>
-                            {collection === 'librairie' &&
-                                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                    {sem.prix} CFA
-                                </Table.Cell>
-                            }
 
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                {sem.img &&
-                                    <img src={sem.img} className="w-14 h-14" alt={'img'}/>}
+                                {sem.email}
+                            </Table.Cell>
+                            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+                                {sem.phoneNumber}
                             </Table.Cell>
 
-                            {collection !== 'librairie' && <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-                                <button onClick={() => detail(sem)}>
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         strokeWidth={1.5}
-                                         stroke="currentColor" className="size-5 text-secondary">
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"/>
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-                                    </svg>
-                                </button>
-                            </Table.Cell>}
                             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
                                 <button
                                     onClick={()=> onDeleteItem(sem._id)}>
@@ -82,4 +64,4 @@ const ArticleTableItem = ({seminaires, detail, collection}: {seminaires: any[], 
     );
 };
 
-export default ArticleTableItem;
+export default UserTableItem;

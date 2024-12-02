@@ -107,7 +107,8 @@ const ArticlePage = () => {
                        <div className="flex flex-col bg-[#dddddd] justify-center items-center">
                            <h3 className="text-3xl text-center text-primary font-semibold mb-5">{openArt.title}</h3>
                            <img className="h-96 w-96 mb-5" src={openArt?.img} alt='img'/>
-                           <p className="text-xl m-5">{openArt.content}</p>
+                               <div className="text-xl m-5" dangerouslySetInnerHTML={{__html: openArt.content}}/>
+
                        </div>
                    }
 
