@@ -27,7 +27,6 @@ const ArticlePage = () => {
                 acc[key].push(current);
                 return acc;
             }, {});
-            console.log(list)
             setArticles(list)
             isLoading(false)
         })
@@ -48,40 +47,51 @@ const ArticlePage = () => {
                {loading ? <div className="flex flex-1 mt-[20%] justify-center items-center text-center">
                        <Spinner/>
                    </div>
-                   : <Sidebar aria-label="Default sidebar example" className="lg:ml-12 max-sm:w-full border-2">
+                   :
+                   <div className=" mb-20">
                        <p className="text-lg text-primary font-bold mb-7 text-center">ARCHIVES</p>
-                       <Sidebar.Items>
-                           {articles.length > 0 &&
-                               articles.map(res => (
+
+                       {
+                           <Sidebar className="lg:ml-12 justify-center items-center max-sm:w-full border-2">
+
+                           <Sidebar.Items>
+                               {articles.length > 0 &&
+                                   articles.map(res => (
+                                       <Sidebar.ItemGroup
+                                           className="flex flex-col h-full justify-center items-center"
+                                           onClick={() => {
+                                               setArticle("")
+                                               setOpenArt(res)
+                                           }}>
+                                           <Sidebar.Item>
+                                               <button  className="flex flex-col">
+                                                   <img
+                                                       src={res.img}
+                                                       key={res.img}
+                                                       className="h-40 max-sm:w-full max-sm:h-80 rounded-xl"
+                                                       alt="team-building-image"/>
+                                                   <div className="grid grid-cols-1 text-wrap">
+                                                       <p className="mt-3 text-[12px] text-center text-primary font-medium">{res.title}</p>
+                                                   </div>
+                                               </button>
+                                           </Sidebar.Item>
+                                       </Sidebar.ItemGroup>
+                                   ))
+                               }
+                               <Sidebar.ItemGroup onClick={() => {
+                                   setOpenArt("")
+                                   setArticle("https://sonnimagazine.blogspot.com/2022/07/umaro-sissoco-embalo-un-leadership-fort.html")
+                               }}>
+                                   <Sidebar.Item className={"text-black hover:bg-primary rounded-0 cursor-pointer"}>
+                                       <button>
+                                           Juillet 2022
+                                       </button>
+                                   </Sidebar.Item>
+                               </Sidebar.ItemGroup>
                                    <Sidebar.ItemGroup onClick={() => {
-                                       setArticle("")
-                                       setOpenArt(res)
-                                   }}>
-                                       <Sidebar.Item className={"text-black hover:bg-primary rounded-0 cursor-pointer"}>
-                                           <button>
-                                               {
-                                                   new Date(res.timestamps.nanoseconds * 1000).toLocaleString('fr', {month: 'long'}).charAt(0).toUpperCase() + new Date(res.timestamps.nanoseconds * 1000).toLocaleString('fr', {month: 'long'}).slice(1)
-                                                   + ' ' + new Date(res.timestamps.seconds * 1000).getFullYear()
-                                               }
-                                           </button>
-                                       </Sidebar.Item>
-                                   </Sidebar.ItemGroup>
-                               ))
-                           }
-                           <Sidebar.ItemGroup onClick={() => {
-                               setOpenArt("")
-                               setArticle("https://sonnimagazine.blogspot.com/2022/07/umaro-sissoco-embalo-un-leadership-fort.html")
-                           }}>
-                               <Sidebar.Item className={"text-black hover:bg-primary rounded-0 cursor-pointer"}>
-                                   <button>
-                                       Juillet 2022
-                                   </button>
-                               </Sidebar.Item>
-                           </Sidebar.ItemGroup>
-                           <Sidebar.ItemGroup onClick={() => {
-                               setOpenArt("")
-                               setArticle("https://sonnimagazine.blogspot.com/2020/01/niger-attaque-terroriste-bilan-63.html")
-                           }}>
+                                   setOpenArt("")
+                                   setArticle("https://sonnimagazine.blogspot.com/2020/01/niger-attaque-terroriste-bilan-63.html")
+                               }}>
                                <Sidebar.Item className={"text-black hover:bg-primary cursor-pointer"}>
                                    <button>
                                        Janvier 2020
@@ -90,8 +100,11 @@ const ArticlePage = () => {
                            </Sidebar.ItemGroup>
 
 
-                       </Sidebar.Items>
-                   </Sidebar>}
+                           </Sidebar.Items>
+                       </Sidebar>}
+                   </div>
+               }
+
                <div className="flex flex-1 lg:ml-10">
                    {article && <iframe
                        title={article}
@@ -107,7 +120,7 @@ const ArticlePage = () => {
                        <div className="flex flex-col bg-[#dddddd] justify-center items-center">
                            <h3 className="text-3xl text-center text-primary font-semibold mb-5">{openArt.title}</h3>
                            <img className="h-96 w-96 mb-5" src={openArt?.img} alt='img'/>
-                               <div className="text-xl m-5" dangerouslySetInnerHTML={{__html: openArt.content}}/>
+                           <div className="text-xl m-5" dangerouslySetInnerHTML={{__html: openArt.content}}/>
 
                        </div>
                    }

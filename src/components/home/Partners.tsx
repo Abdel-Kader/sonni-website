@@ -23,13 +23,13 @@ function Partners() {
                 <Consultant
                     title="Sié Oumar SANOU"
                     img={consultantFinance}
-                    position="Formateur associé à SONNI GROUP, Expert-Comptable mémorial, Cadre de la Banque Centrale des États de l’Afrique de l’Ouest (BECEAO)"
+                    position="Formateur associé à SONNI GROUP, Expert-Comptable mémorialiste, Cadre de la Banque Centrale des États de l’Afrique de l’Ouest (BCEAO)"
                 />
 
                 <Consultant
                     title="Moussa GUEYE"
                     img={consultantDP}
-                    position="Formateur Associé à SONNI GROUP, Expert en Ressources Humaines"
+                    position="Formateur Associé à SONNI GROUP, Expert en Ressources Humaines, Coach"
                 />
                 <Consultant
                     title="Ousmina Soto BALDÉ"
