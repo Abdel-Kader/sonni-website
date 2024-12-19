@@ -23,6 +23,9 @@ import Webinaire from "../pages/admin/Webinaire";
 import Article from "../pages/admin/Articles";
 import Librairie from "../pages/admin/Librairie";
 import Dashboard from "../pages/admin/Dashboard";
+import ExecutiveMBA from "../pages/public/ExecutiveMBA";
+import MBAFinance from "../pages/public/MBAFinance";
+import {MBAContact} from "../pages/public/MBAContact";
 
 
 export const router = createBrowserRouter([
@@ -57,6 +60,18 @@ export const router = createBrowserRouter([
             {
                 path: '/certificats',
                 element: <CertificatPage />,
+            },
+            {
+                path: '/mba-relations-internationales',
+                element: <ExecutiveMBA />,
+            },
+            {
+                path: '/mba-finance-internationale',
+                element: <MBAFinance />,
+            },
+            {
+                path: '/contact-mba',
+                element: <MBAContact />,
             },
             {
                 path: '/seminaires',

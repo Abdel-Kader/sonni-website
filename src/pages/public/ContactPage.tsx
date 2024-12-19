@@ -8,6 +8,8 @@ import TB from '../../assets/teamBuilding/image-1.jpg'
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser'
 import Swal from 'sweetalert2'
+// @ts-ignore
+import Catalogue from "../../docs/Catalogue-Cabinet-SONNI.pdf";
 
 
 const ContactPage = () => {
@@ -53,18 +55,14 @@ const ContactPage = () => {
 
             if(location.state?.type === 'CEDM' || location.state?.type === 'CS'|| location.state?.type === 'TB') {
                 if(form.institution && form.profession) {
-                    fetch("../docs/Catalogue-Cabinet-SONNI.pdf")
-                        .then((res) => res.blob())
-                        .then((blob) => {
+                    const link = document.createElement('a');
+                    link.download = "Catalogue-Cabinet-SONNI";
 
-                            const url = URL.createObjectURL(blob);
+                    link.href = Catalogue;
 
-                            const a = document.createElement("a");
-                            a.href = url;
-                            a.download = "technical-digital-salary-survey-november-2023.pdf";
-                            a.click();
-                        })
-                        .catch((error) => console.error(error));
+                    link.click();
+
+
                 }
             }
         } else alert('Veuillez saisir tous les champs')

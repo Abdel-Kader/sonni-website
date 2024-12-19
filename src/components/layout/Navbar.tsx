@@ -73,6 +73,37 @@ export default function Navbar() {
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Certificats & MBA</p>
                     </Link>
+                    <Menu>
+                      <MenuButton
+                          className={`flex items-center rounded-md px-2 py-2 font-medium text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/mba-finance-internationale' ? 'underline underline-offset-8' : location.pathname === '/mba-relations-internationales' ? 'underline underline-offset-8' : ''}`}>
+                        Exécutive MBA
+                        <ChevronDownIcon className="size-5 fill-white"/>
+                      </MenuButton>
+
+                      <MenuItems
+                          transition
+                          anchor="bottom"
+                          className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                      >
+                        <Link to='/mba-relations-internationales' onClick={()=> setIsOpen(false)}>
+                          <MenuItem>
+                            <button
+                                className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                              MBA en relations Internationales
+                            </button>
+                          </MenuItem>
+                        </Link>
+
+                        <Link to='/mba-finance-internationale' onClick={()=> setIsOpen(false)}>
+                          <MenuItem>
+                            <button
+                                className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                              MBA en finance Internationale
+                            </button>
+                          </MenuItem>
+                        </Link>
+                      </MenuItems>
+                    </Menu>
                     <Link to='/seminaires' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/seminaires' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">Séminaires</p>
@@ -140,8 +171,8 @@ export default function Navbar() {
                 <img className="h-24 w-auto" src={logo} alt="Cabinet Sonni"/>
               </Link>
             </div>
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex space-x-4 ml-28">
+            <div className="hidden sm:ml-2 sm:block">
+              <div className="flex space-x-2 ml-28">
                 <Menu>
                   <MenuButton
                       className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
@@ -185,10 +216,43 @@ export default function Navbar() {
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
                      aria-current="page">Certificats & MBA</p>
                 </Link>
+                <Menu>
+                  <MenuButton
+                      className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/mba-finance-internationale' ? 'underline underline-offset-8' : location.pathname === '/mba-relations-internationales' ? 'underline underline-offset-8' : ''}`}>
+                    Exécutive MBA
+                    <ChevronDownIcon className="size-5 fill-primary"/>
+                  </MenuButton>
+
+                  <MenuItems
+                      transition
+                      anchor="bottom"
+                      className="w-auto z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 text-sm/6 text-primary transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                  >
+                    <Link to='/mba-relations-internationales'>
+                      <MenuItem>
+                        <button
+                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                          MBA en relations Internationales
+                        </button>
+                      </MenuItem>
+                    </Link>
+
+                    <Link to='/mba-finance-internationale'>
+                      <MenuItem>
+                        <button
+                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
+                          MBA en finance Internationale
+                        </button>
+                      </MenuItem>
+                    </Link>
+
+                  </MenuItems>
+                </Menu>
                 <Link to='/seminaires'>
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/seminaires' ? 'underline underline-offset-8' : ''}`}
                      aria-current="page">Séminaires</p>
                 </Link>
+
 
                 <Link to='/team-building'>
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-primary hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team-building' ? 'underline underline-offset-8' : ''}`}
