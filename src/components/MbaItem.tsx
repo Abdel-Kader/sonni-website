@@ -8,12 +8,12 @@ export const MbaItem = ({title, description, objectifs, style_pedagogique, cible
 
                 <div className="grid lg:grid-cols-1 gap-4 mb-10">
 
-                    <div className="flex flex-col">
+                    <div className="flex flex-1 max-sm:w-[89%] flex-col">
 
                         <h3 className="font-bold underline text-xl text-primary">Description de la formation</h3>
 
                             <span
-                                className="font-medium text-justify mt-4 text-[#7A7A7A]">
+                                className="font-medium text-justify  mt-4 text-[#7A7A7A]">
                                 <span className={"font-bold underline"}>L’Executive MBA</span> est un diplôme professionnel délivré par le Centre d’Études en Diplomatie et Management – SONNI d’une durée de 10 mois en formation à distance sur la plateforme Zoom.
                                 La formation est dispensée deux fois par semaine, le plus souvent les week-ends, et basée sur le développement des compétences et capacités en gestion, avec une spécialité en
                                 {type === 'finance' && <span className="font-bold ml-1">Management des Risques Financiers et Stratégies d’Investissement</span>}
