@@ -16,16 +16,15 @@ export const mbaFinance = {
     "Conférence internationale sur la finance internationale",
     "Séminaires sur la gestion des risques des entreprises à Dakar",
     "Édition de votre mémoire en livre aux éditions SONNI",
-    "Découvertes culturelles sur l’île de Gorée"
+    "Découvertes sur Gorée"
     ],
     infos_supplementaires: [
         "Programme 100% en ligne",
         "Durée de la formation 8 Mois",
-        "Durée de la rédaction du memoire livre 2 Mois",
         "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
 
 ],
-    cout: "4900 Euros avec possibilité de paiement en plusieurs tranches"
+    cout: "2000 Euros avec possibilité de paiement en plusieurs tranches"
 }
 
 export const relaInter = {
@@ -50,12 +49,11 @@ export const relaInter = {
         "Conférence internationale sur la finance internationale.",
         "Séminaires sur la gestion des risques des entreprises à Dakar.",
         "Édition de votre mémoire en livre aux éditions SONNI.",
-        "Découvertes culturelles sur l’île de Gorée."
+        "Découvertes sur Gorée."
     ],
     infos_supplementaires: [
         "Programme 100% en ligne",
         "Durée de la formation 8 Mois",
-        "Durée de la rédaction du memoire livre 2 Mois",
         "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
 
     ],
@@ -65,6 +63,6 @@ export const relaInter = {
             "telephone": "+221 77 216 27 85",
             "site_web": "https://www.sonni-group.com"
     },
-    cout: "4900 Euros avec possibilité de paiement en plusieurs tranches"
+    cout: "2000 Euros avec possibilité de paiement en plusieurs tranches"
 }
 

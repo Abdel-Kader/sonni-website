@@ -3,9 +3,9 @@ import {useLocation} from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 // @ts-ignore
-import finance from "../../assets/certifications/finance.pdf";
+import finance from "../../assets/certifications/finance2.pdf";
 // @ts-ignore
-import relaInter from "../../assets/certifications/diplomatie.pdf";
+import relaInter from "../../assets/certifications/diplomatie2.pdf";
 
 
 export const MBAContact = () => {

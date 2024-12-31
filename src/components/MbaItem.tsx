@@ -24,7 +24,7 @@ export const MbaItem = ({title, description, objectifs, style_pedagogique, cible
                                 className="font-bold">en formation des cadres supérieurs.</span>.
                                 <br/>
                                 <br/>
-                                La durée globale de la formation est de 8 mois de cours, suivis de 2 mois pour la préparation d’un mémoire d’application.
+                                La durée globale de la formation est de 8 mois de cours, avec un projet d’application.
                             </span>
 
 
