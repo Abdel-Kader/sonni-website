@@ -16,12 +16,12 @@ export const mbaFinance = {
     "Conférence internationale sur la finance internationale",
     "Séminaires sur la gestion des risques des entreprises à Dakar",
     "Édition de votre mémoire en livre aux éditions SONNI",
-    "Découvertes sur Gorée"
+    "Découvertes sur Gorée",
+    "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
     ],
     infos_supplementaires: [
         "Programme 100% en ligne",
         "Durée de la formation 8 Mois",
-        "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
 
 ],
     cout: "2000 Euros avec possibilité de paiement en plusieurs tranches"
@@ -49,12 +49,12 @@ export const relaInter = {
         "Conférence internationale sur la finance internationale.",
         "Séminaires sur la gestion des risques des entreprises à Dakar.",
         "Édition de votre mémoire en livre aux éditions SONNI.",
-        "Découvertes sur Gorée."
+        "Découvertes sur Gorée",
+        "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
     ],
     infos_supplementaires: [
         "Programme 100% en ligne",
         "Durée de la formation 8 Mois",
-        "graduation Cérémonie à Dakar, suivie de conférences, séminaires et visites touristiques",
 
     ],
 

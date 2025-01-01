@@ -90,7 +90,7 @@ export const MbaItem = ({title, description, objectifs, style_pedagogique, cible
                             </List>
                         </span>
 
-                        <h3 className="mt-4 font-bold underline text-xl text-primary">Atouts de la formation</h3>
+                        <h3 className="mt-4 font-bold underline text-xl text-primary">Possibilté de la formation</h3>
                         <span className="font-medium text-justify mt-4 text-[#7A7A7A]">
 
                             <List>

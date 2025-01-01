@@ -180,18 +180,13 @@ export const MBAContact = () => {
                                         className="focus:border-t-gray-900 text-gray min-w-full h-10 rounded border-[1.5px] border-gray-400 p-2"
                                         onChange={e => setForm({...form, financement: e.target.value})}
                                     >
-                                        Sur le formulaire de financement,
-                                        Comme ce site que je t’ai envoyé tu mets ces options de paiement:
-                                        Un versement de 4200 Euros (réduction 700 euros)
-                                        Deux versements de 4500 Euros
-                                        (Réduction 400 euros)
-                                        Trois versements 4900 euros
+
                                         <option value="Un versement de 4200 Euros (réduction 700 euros)">Un versement de
-                                            4200 Euros (réduction 700 euros)</option>
+                                            1750 Euros (réduction 250 euros)</option>
                                         <option value="Deux versements de 4500 Euros (Réduction 400 euros)">Deux
-                                            versements de 4500 Euros (Réduction 400 euros)
+                                            versements de 1850 Euros (Réduction 150 euros)
                                         </option>
-                                        <option value="Trois versements 4900 euros">Trois versements 4900 euros</option>
+                                        <option value="Trois versements 4900 euros">Trois versements 2000 euros</option>
                                     </select>
                                 </div>
                             }
