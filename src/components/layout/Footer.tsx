@@ -1,17 +1,17 @@
 
-import {address, email, mobile, presentation, telephone} from '../../assets/contents/homePage'
-import logo from '../../assets/logos/logo-1.jpeg'
+import {address, email, mobile, telephone} from '../../assets/contents/homePage'
+import logo from '../../assets/logos/logo-2.png'
 
 export default function Footer() {
     return (
 
 
-        <footer className="bg-stone-900">
+        <footer className="bg-[#312783]">
             <div className="mx-auto w-full p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-between md:items-center md:w-[75%] md:ml-[12%]">
                     <div className="mb-6 md:mb-0 flex-1 mr-12">
                         <a href="/" className="flex items-center mb-6">
-                            <img src={logo} className="h-12 me-3" alt="Sonni Logo" />
+                            <img src={logo} className="h-20 me-3" alt="Sonni Logo" />
                             <span className="self-center text-xl font-semibold whitespace-nowrap text-white">SONNI GROUP</span>
                         </a>
 
