@@ -7,7 +7,7 @@ const Testimonial = () => {
 
         <div className="h-56 mt-10 mb-20 max-sm:h-auto xl:h-80 2xl:h-96">
             <h2 className="text-xl ml-24 mb-10 font-bold tracking-tight text-primary sm:text-2xl animate-slidein500 opacity-0">LES TEMOIGNAGES</h2>
-
+<span className='ml-24'>SONNI Group Advisory accompagne des institutions publiques, des ambassades, des organisations régionales, des entreprises et des dirigeants à travers l’Afrique.</span>
             <Carousel
                 slide={false}
                 leftControl={
