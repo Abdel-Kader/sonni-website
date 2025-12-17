@@ -81,35 +81,6 @@ export default function Footer() {
                         </ul>
                     </div>
 
-                        <div>
-                            <h2 className="mb-6 text-sm font-semibold text-gray-300 uppercase">Menu</h2>
-                            <ul className="text-gray-500 dark:text-gray-400 font-medium">
-                                <li className="mb-4">
-                                    <a href="/team" className="hover:underline ">A propos</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/formations" className="hover:underline ">Formation</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/services" className="hover:underline">Services</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/certificats" className="hover:underline">Certificats & MBA</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/seminaires" className="hover:underline">Séminaires</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/team-building" className="hover:underline">Team Building</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/blog" className="hover:underline">Blog</a>
-                                </li>
-                                <li className="mb-4">
-                                    <a href="/contact" className="hover:underline">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
                 </div>
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"/>
                 <div className="sm:flex sm:items-center sm:justify-between">
