@@ -5,6 +5,7 @@ import {CalendarIcon, MapPinIcon} from "@heroicons/react/16/solid";
 type bannerProps = {
     image: string,
     title: string,
+    type?: string,
     description?: string
     catalogue?: string
     seminaire?: string
@@ -12,10 +13,23 @@ type bannerProps = {
     subdescription?: string
 }
 
-const Banner = ({image, title, description, catalogue, seminaire, subdescription, webinaire}: bannerProps) => {
+const Banner = ({image, title, type, description, catalogue, seminaire, subdescription, webinaire}: bannerProps) => {
     return (
-        <div className=" block justify-center bg-cover shadow-lg h-[700px] max-sm:h-full overflow-hidden"
-             style={{backgroundImage: `url(${image})`}}>
+        <div className="block justify-center bg-cover shadow-lg h-[600px] max-sm:h-full overflow-hidden">
+            {type === 'video' ?
+                <video
+                src={image}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute w-full object-cover"
+            /> :
+                <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${image})` }}
+        />}
+
 
             <div className="bg-black bg-opacity-40 h-full flex justify-center items-center mt-20">
                 <div className="mx-auto justify-center flex flex-col">
@@ -81,6 +95,7 @@ const Banner = ({image, title, description, catalogue, seminaire, subdescription
 
             </div>
         </div>
+
     );
 };
 
