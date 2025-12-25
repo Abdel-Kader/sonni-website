@@ -42,7 +42,7 @@ export default function Navbar() {
                           anchor="bottom"
                           className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                       >
-                        <Link to='/reference' onClick={()=> setIsOpen(false)}>
+                        <Link to='/about' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -74,7 +74,7 @@ export default function Navbar() {
                           anchor="bottom"
                           className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                       >
-                        <Link to='/team' onClick={()=> setIsOpen(false)}>
+                        <Link to='/intelligence-strategy' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -156,7 +156,7 @@ export default function Navbar() {
                       anchor="bottom"
                       className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 text-sm/6 text-[#312783] transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
-                    <Link to='/reference' onClick={()=> setIsOpen(false)}>
+                    <Link to='/about' onClick={()=> setIsOpen(false)}>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -185,7 +185,7 @@ export default function Navbar() {
                       anchor="bottom"
                       className="w-72 z-40 mt-3 rounded-s border border-gray-100 bg-white shadow-2xl p-1 text-sm/6 text-[#312783] transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
-                    <Link to='/team'>
+                    <Link to='/intelligence-strategy'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">

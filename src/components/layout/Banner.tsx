@@ -23,7 +23,7 @@ const Banner = ({image, title, type, description, catalogue, seminaire, subdescr
                 loop
                 muted
                 playsInline
-                className="absolute w-full object-cover"
+                className="absolute w-full max-sm:h-[400px]"
             /> :
                 <div
                 className="absolute inset-0 bg-cover bg-center"
