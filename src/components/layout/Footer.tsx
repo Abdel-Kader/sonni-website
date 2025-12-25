@@ -1,6 +1,6 @@
 
 import {address, email, mobile, telephone} from '../../assets/contents/homePage'
-import logo from '../../assets/logos/logo-2.png'
+import logo from '../../assets/logos/logo-transparent.png'
 
 export default function Footer() {
     return (

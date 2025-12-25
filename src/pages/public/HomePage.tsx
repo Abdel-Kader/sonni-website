@@ -3,7 +3,7 @@ import dgImg from "../../assets/teams/dg1.jpg";
 import Banner from "../../components/layout/Banner";
 import Services from "../../components/home/Services";
 import About from "../../components/home/About";
-import ReferencePage from "./ReferencePage";
+import Reference from "../../components/home/Reference";
 
 const homeBanner = new URL(
     "../../assets/banners/bg-video.mp4",
@@ -23,7 +23,7 @@ export default function HomePage() {
 
               {/* Texte */}
               <div className="flex-1">
-                  <p className="text-lg lg:text-xl text-[#54595f] text-justify leading-relaxed space-y-4">
+                  <p className="text-lg lg:text-xl text-[#54595f] leading-relaxed space-y-4">
                       SONNI Group Advisory est né d’une conviction simple : l’Afrique a besoin de plateformes
                       d’intelligence, d’influence et d’investissement capables de porter une vision ambitieuse du continent.
                       <br />
@@ -70,14 +70,14 @@ export default function HomePage() {
           <Valeurs/>*/}
           <Services/>
 
-          <h2 className="text-xl ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Dernières Publications & Actualités</h2>
+          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Dernières Publications & Actualités</h2>
           <span className='ml-24'>
 Affichage sous forme de 3 "Cartes"
           </span>
 
-          <h2 className="text-xl ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Références </h2>
+          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Références </h2>
 
-          <ReferencePage />
+          <Reference />
       </>
   )
 }

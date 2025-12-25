@@ -24,13 +24,14 @@ export const PublicRouter = createBrowserRouter([
                 element: <HomePage />,
             },
             {
+                path: '/about',
+                element: <ReferencePage />,
+            },
+            {
                 path: '/team',
                 element: <TeamPage />,
             },
-            {
-                path: '/reference',
-                element: <ReferencePage />,
-            },
+
             {
                 path: '/formations',
                 element: <FormationPage />

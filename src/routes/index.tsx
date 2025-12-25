@@ -26,6 +26,7 @@ import Dashboard from "../pages/admin/Dashboard";
 import ExecutiveMBA from "../pages/public/ExecutiveMBA";
 import MBAFinance from "../pages/public/MBAFinance";
 import {MBAContact} from "../pages/public/MBAContact";
+import IntStrategyPage from "../pages/public/IntStrategyPage";
 
 
 export const router = createBrowserRouter([
@@ -42,12 +43,12 @@ export const router = createBrowserRouter([
                 element: <TeamPage />,
             },
             {
-                path: '/reference',
+                path: '/about',
                 element: <ReferencePage />,
             },
             {
-                path: '/formations',
-                element: <FormationPage />
+                path: '/intelligence-strategy',
+                element: <IntStrategyPage />
             },
             {
                 path: '/formations/:id',
