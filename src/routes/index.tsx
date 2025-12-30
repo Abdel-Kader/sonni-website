@@ -27,6 +27,8 @@ import ExecutiveMBA from "../pages/public/ExecutiveMBA";
 import MBAFinance from "../pages/public/MBAFinance";
 import {MBAContact} from "../pages/public/MBAContact";
 import IntStrategyPage from "../pages/public/IntStrategyPage";
+import BusDiploPage from "../pages/public/BusDiploPage";
+import CommBrandingPage from "../pages/public/CommBrandingPage";
 
 
 export const router = createBrowserRouter([
@@ -49,6 +51,14 @@ export const router = createBrowserRouter([
             {
                 path: '/intelligence-strategy',
                 element: <IntStrategyPage />
+            },
+            {
+                path: '/business-diplomacy',
+                element: <BusDiploPage />
+            },
+            {
+                path: '/communication-branding',
+                element: <CommBrandingPage />
             },
             {
                 path: '/formations/:id',
