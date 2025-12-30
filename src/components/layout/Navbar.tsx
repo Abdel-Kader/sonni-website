@@ -83,7 +83,7 @@ export default function Navbar() {
                           </MenuItem>
                         </Link>
 
-                        <Link to='/reference' onClick={()=> setIsOpen(false)}>
+                        <Link to='/business-diplomacy' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -91,7 +91,7 @@ export default function Navbar() {
                             </button>
                           </MenuItem>
                         </Link>
-                        <Link to='/reference' onClick={()=> setIsOpen(false)}>
+                        <Link to='/communication-branding' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -194,7 +194,7 @@ export default function Navbar() {
                       </MenuItem>
                     </Link>
 
-                    <Link to='/reference'>
+                    <Link to='/business-diplomacy'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
@@ -202,7 +202,7 @@ export default function Navbar() {
                         </button>
                       </MenuItem>
                     </Link>
-                    <Link to='/reference'>
+                    <Link to='/communication-branding'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
