@@ -29,6 +29,7 @@ import {MBAContact} from "../pages/public/MBAContact";
 import IntStrategyPage from "../pages/public/IntStrategyPage";
 import BusDiploPage from "../pages/public/BusDiploPage";
 import CommBrandingPage from "../pages/public/CommBrandingPage";
+import Forum from "../pages/public/Forum";
 
 
 export const router = createBrowserRouter([
@@ -61,8 +62,8 @@ export const router = createBrowserRouter([
                 element: <CommBrandingPage />
             },
             {
-                path: '/formations/:id',
-                element: <DetailFormation />
+                path: '/forum',
+                element: <Forum />
             },
             {
                 path: '/services',

@@ -6,12 +6,38 @@ import {
 import logo from '../../assets/logos/logo.svg'
 import {Fragment, useState} from "react";
 import {Drawer} from "flowbite-react";
+import {useTranslation} from "react-i18next";
+
+const languages = [
+  {
+    code: "fr",
+    label: "Français",
+    flag: "https://flagcdn.com/w20/fr.png",
+  },
+  {
+    code: "en",
+    label: "English",
+    flag: "https://flagcdn.com/w20/gb.png",
+  }
+
+];
 
 export default function Navbar() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
+  const [selected, setSelected] = useState(languages[0]);
+  const [open, setOpen] = useState(false);
+
+  const {t, i18n} = useTranslation();
+
+  const changeLanguage = (lang: any) => {
+    setSelected(lang);
+    i18n.changeLanguage(lang.code);
+    setOpen(false);
+  };
 
   const handleClose = () => setIsOpen(false);
+
 
   return (
     <nav className="bg-white shadow-2xl fixed w-full z-40 border-gray-100 ">
@@ -33,7 +59,7 @@ export default function Navbar() {
                     <Menu>
                       <MenuButton
                           className={`flex items-center rounded-md px-2 py-2 font-medium text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
-                        A Propos
+                        {t('title.about')}
                         <ChevronDownIcon className="size-5 fill-white"/>
                       </MenuButton>
 
@@ -65,7 +91,7 @@ export default function Navbar() {
                     <Menu>
                       <MenuButton
                           className={`flex items-center rounded-md px-2 py-2 font-medium text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
-                        Notre expertise
+                        {t('title.expertise')}
                         <ChevronDownIcon className="size-5 fill-white"/>
                       </MenuButton>
 
@@ -78,7 +104,7 @@ export default function Navbar() {
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Sonni Intelligence & Strategie
+                              {t('title.sonni_intelligence_strategy')}
                             </button>
                           </MenuItem>
                         </Link>
@@ -87,7 +113,7 @@ export default function Navbar() {
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Business Diplomacy & Public Relations
+                              {t('title.sonni_business_diplomacy_investment_advisory')}
                             </button>
                           </MenuItem>
                         </Link>
@@ -95,7 +121,7 @@ export default function Navbar() {
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Communication & Corporate Branding
+                              {t('title.sonni_communication_branding_public_relations')}
                             </button>
                           </MenuItem>
                         </Link>
@@ -103,30 +129,30 @@ export default function Navbar() {
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Events & Strategic Networking
+                              {t('title.sonni_academy_influence_institute')}
                             </button>
                           </MenuItem>
                         </Link> <Link to='/reference' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              SONNI Academy & Influence Institute
+                              {t('title.events_strategic_networking')}
                             </button>
                           </MenuItem>
                         </Link>
                       </MenuItems>
                     </Menu>
-                    <Link to='/services' onClick={()=> setIsOpen(false)}>
+                    <Link to='/forum' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
-                         aria-current="page">Africa Invest Forum</p>
+                         aria-current="page">{t('title.forum')}</p>
                     </Link>
                     <Link to='/certificats' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
-                         aria-current="page">SONNI Insights Magazine</p>
+                         aria-current="page">{t('title.magazine')}</p>
                     </Link>
                     <Link to='/contact' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2  font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/contact' ? 'underline underline-offset-8' : ''}`}
-                         aria-current="page">Contact</p>
+                         aria-current="page">{t('title.contact')}</p>
                     </Link>
                   </div>
                 </Drawer.Items>
@@ -147,7 +173,7 @@ export default function Navbar() {
                 <Menu>
                   <MenuButton
                       className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
-                    A Propos
+                    {t('title.about')}
                     <ChevronDownIcon className="size-5 fill-[#312783]"/>
                   </MenuButton>
 
@@ -177,19 +203,19 @@ export default function Navbar() {
                 <Menu>
                   <MenuButton
                       className={`flex items-center rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/team' ? 'underline underline-offset-8' : location.pathname === '/reference' ? 'underline underline-offset-8' : ''}`}>
-                    Notre expertise
+                    {t('title.expertise')}
                     <ChevronDownIcon className="size-5 fill-[#312783]"/>
                   </MenuButton>
                   <MenuItems
                       transition
                       anchor="bottom"
-                      className="w-72 z-40 mt-3 rounded-s border border-gray-100 bg-white shadow-2xl p-1 text-sm/6 text-[#312783] transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
+                      className="w-96 z-40 mt-3 rounded-s border border-gray-100 bg-white shadow-2xl p-1 text-sm/6 text-[#312783] transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
                     <Link to='/intelligence-strategy'>
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Sonni Intelligence & Strategie
+                          {t('title.sonni_intelligence_strategy')}
                         </button>
                       </MenuItem>
                     </Link>
@@ -198,7 +224,7 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Business Diplomacy & Public Relations
+                          {t('title.sonni_business_diplomacy_investment_advisory')}
                         </button>
                       </MenuItem>
                     </Link>
@@ -206,7 +232,7 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Communication & Corporate Branding
+                          {t('title.sonni_communication_branding_public_relations')}
                         </button>
                       </MenuItem>
                     </Link>
@@ -214,7 +240,7 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Events & Strategic Networking
+                          {t('title.sonni_academy_influence_institute')}
                         </button>
                       </MenuItem>
                     </Link>
@@ -222,29 +248,57 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          SONNI Academy & Influence Institute
+                          {t('title.events_strategic_networking')}
                         </button>
                       </MenuItem>
                     </Link>
                   </MenuItems>
                 </Menu>
-                <Link to='/formations'>
-                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/formations' ? 'underline underline-offset-8' : ''}`}
-                     aria-current="page">Africa Invest Forum</p>
+                <Link to='/forum'>
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/forum' ? 'underline underline-offset-8' : ''}`}
+                     aria-current="page">{t('title.forum')}
+                  </p>
                 </Link>
                 <Link to='/services'>
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
-                     aria-current="page">SONNI Insights Magazine</p>
+                     aria-current="page">{t('title.magazine')}
+                  </p>
                 </Link>
 
                 <Link to='/contact'>
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/contact' ? 'underline underline-offset-8' : ''}`}
-                     aria-current="page">Contact</p>
+                     aria-current="page">{t('title.contact')}</p>
                 </Link>
               </div>
             </div>
           </div>
 
+          <div className="relative inline-block text-left">
+            {/* Selected language */}
+            <button
+                onClick={() => setOpen(!open)}
+                className="flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm hover:bg-gray-50"
+            >
+              <img src={selected.flag} alt={selected.label} className="h-4 w-6" />
+              <span>{selected.label}</span>
+            </button>
+
+            {/* Dropdown */}
+            {open && (
+                <div className="absolute right-0 z-10 mt-2 w-36 rounded-md border bg-white shadow-lg">
+                  {languages.map((lang) => (
+                      <button
+                          key={lang.code}
+                          onClick={() => changeLanguage(lang)}
+                          className="flex w-full items-center gap-2 px-3 py-2 text-sm hover:bg-gray-100"
+                      >
+                        <img src={lang.flag} alt={lang.label} className="h-4 w-6" />
+                        {lang.label}
+                      </button>
+                  ))}
+                </div>
+            )}
+          </div>
         </div>
 
       </div>

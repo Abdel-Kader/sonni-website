@@ -4,6 +4,7 @@ import Banner from "../../components/layout/Banner";
 import Services from "../../components/home/Services";
 import About from "../../components/home/About";
 import Reference from "../../components/home/Reference";
+import {useTranslation} from "react-i18next";
 
 const homeBanner = new URL(
     "../../assets/banners/bg-video.mp4",
@@ -14,32 +15,24 @@ export default function HomePage() {
     useEffect(() => {
         window.scrollTo(0, 0)
     },[]);
+
+    const {t} = useTranslation();
+
   return (
       <>
           <Banner image={homeBanner} type='video' title={" SONNI GROUP ADVISORY"} description={''}/>
           <About/>
-          <h2 className="text-2xl ml-36 mt-6 font-bold tracking-tight text-primary sm:text-2xl">Mot du DG</h2>
+          <h2 className="text-2xl ml-36 mt-6 font-bold tracking-tight text-primary sm:text-2xl"> {t('title.ceo')}</h2>
           <div className="mx-6 lg:mx-12 lg:px-24 lg:flex mt-4">
 
               {/* Texte */}
               <div className="flex-1">
-                  <p className="text-lg lg:text-xl text-[#54595f] leading-relaxed space-y-4">
-                      SONNI Group Advisory est né d’une conviction simple : l’Afrique a besoin de plateformes
-                      d’intelligence, d’influence et d’investissement capables de porter une vision ambitieuse du continent.
-                      <br />
-                      Notre cabinet combine expertise stratégique, connaissance des enjeux africains, capacité d’analyse,
-                      relations diplomatiques, innovation, communication et leadership. SONNI est plus qu’une entreprise :
-                      c’est une mission.
-                      <br />
-                      Une mission de transformation, d’intégration africaine, de diplomatie économique et
-                      d’accompagnement des institutions et dirigeants.
-                      <br />
-                      À travers nos pôles, nos événements et nos programmes, nous construisons une Afrique plus forte,
-                      mieux connectée, plus influente et plus compétitive.
+                  <p className="text-lg lg:text-xl text-[#54595f] lg:leading-loose space-y-4">
+                      {t('home.ceo')}
                       <br />
                       <span className="font-semibold text-[#1f2937]">
-        Bienvenue dans l’univers SONNI – Think, Influence, Invest, Transform.
-      </span>
+                        {t('home.ceo_sub')}
+                      </span>
                   </p>
               </div>
 
@@ -52,11 +45,7 @@ export default function HomePage() {
                           className="w-full h-[520px] object-cover"
                       />
                   </div>
-
-                  <p className="mt-4 text-center font-semibold text-gray-800">
-                      Directeur Exécutif
-                  </p>
-                  <p className="text-center text-sm text-gray-600">
+                  <p className="text-center text-sm mt-4 text-gray-600">
                       Mahamadou Chaïbou Maïga, PhD.C
                   </p>
               </div>
@@ -75,8 +64,7 @@ export default function HomePage() {
 Affichage sous forme de 3 "Cartes"
           </span>
 
-          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Références </h2>
-
+          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">{t('title.reference')} </h2>
           <Reference />
       </>
   )
