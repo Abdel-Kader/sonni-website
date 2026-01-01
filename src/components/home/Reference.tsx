@@ -16,6 +16,7 @@ import ref13 from "../../assets/refs/ref13.png";
 import ref14 from "../../assets/refs/ref14.png";
 import ref15 from "../../assets/refs/ref15.png";
 import ref16 from "../../assets/refs/ref16.png";
+import {useTranslation} from "react-i18next";
 
 const ArrowLeft = () => (
     <svg width="44" height="44" viewBox="0 0 512 512">
@@ -45,16 +46,23 @@ const ArrowRight = () => (
     </svg>
 );
 
+const references = [
+    ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8,
+    ref9, ref10, ref11, ref12, ref13, ref14, ref15, ref16,
+];
 
 const Reference = () => {
-
-    const references = [
-        ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8,
-        ref9, ref10, ref11, ref12, ref13, ref14, ref15, ref16,
-    ];
+    const {t} = useTranslation();
 
     return (
         <>
+            <h4 className="text-xl mx-6 lg:ml-24 mt-5 font-semibold uppercase sm:text-2xl">
+                {t('title.reference_sub')}
+            </h4>
+
+            <p className="mx-6 lg:ml-24 mt-2 text-[#54595f] lg:leading-loose">
+                {t('home.reference')}
+            </p>
             {/* 📱 MOBILE — 1 logo par slide */}
             <div className="block md:hidden ">
                 <Carousel slide={false} className="h-36" leftControl={<ArrowLeft />} rightControl={<ArrowRight />}>
@@ -78,7 +86,7 @@ const Reference = () => {
                     {[references.slice(0, 8), references.slice(8, 16)].map((group, idx) => (
                         <div
                             key={idx}
-                            className="flex px-10 place-items-center"
+                            className="flex px-5 place-items-center"
                         >
                             {group.map((logo, i) => (
                                 <div
@@ -95,6 +103,10 @@ const Reference = () => {
                     ))}
                 </Carousel>
             </div>
+            <p className="mx-6 lg:ml-24 mb-20 text-[#54595f] lg:leading-loose">
+                {t('home.reference_sub')}
+            </p>
+
         </>
     );
 };

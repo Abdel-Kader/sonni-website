@@ -1,13 +1,17 @@
 import React from 'react';
 import { Carousel } from "flowbite-react";
 import {TestimonialItem} from "./TestimonialItem";
+import sgCom from '../../assets/testimonials/sgcom.png'
+import dgSahel from '../../assets/testimonials/dgsahel.png'
+import ambasMali from '../../assets/testimonials/ambassadeMali.png'
+import ambasGuine from '../../assets/testimonials/ambassadeGuine.png'
+
+
 const Testimonial = () => {
 
     return (
 
-        <div className="h-56 mt-10 mb-20 max-sm:h-auto xl:h-80 2xl:h-96">
-            <h2 className="text-xl ml-24 mb-10 font-bold tracking-tight text-primary sm:text-2xl animate-slidein500 opacity-0">LES TEMOIGNAGES</h2>
-<span className='ml-24'>SONNI Group Advisory accompagne des institutions publiques, des ambassades, des organisations régionales, des entreprises et des dirigeants à travers l’Afrique.</span>
+        <div className="mb-36 max-sm:h-auto">
             <Carousel
                 slide={false}
                 leftControl={
@@ -31,59 +35,28 @@ const Testimonial = () => {
                     </svg>
                 }>
                 <TestimonialItem
-                    name="Gisèle Catherine MANGA Dr en pharmacie"
-                    position="Responsable Logistique  (Sénégal)"
-                    message="Félicitations pour le choix des professeurs, très compétents et dynamiques. Enseignements reçus, répondant à nos attentes. Merci au Cabinet SONNI. Personnels très disponibles et réactifs."
+                    name="Seydina NDIAYE"
+                    img={sgCom}
+                    position="Sécretaire Général du Ministère du commerce et de l'industrie du Sénégal"
+                    message="Le Africa Invest & Integration Forum s’inscrit pleinement dans les priorités de transformation économique et d’intégration régionale portées par l’État du Sénégal. La qualité des échanges et des recommandations formulées mérite d’être saluée"
                 />
                 <TestimonialItem
-                    name="Rubben UMBA "
-                    position="Responsable logistique de l’action humanitaire"
-                    message="Votre réactivité, disponibilité à nous accompagner nous touche. Merci beaucoup au Cabinet SONNI. "
+                    name="Mohamed SECK"
+                    img={dgSahel}
+                    position="Directeur Général de Sahel Distribution ( Distributeur de Produits Pétroliers) Vice Président du patronat Président ASDEA ( Association sénégalaise pour le développement de l’Energie en Afrique)"
+                    message="Ce forum a démontré que le secteur privé africain est prêt à jouer un rôle moteur dans l’intégration économique du continent. Les discussions ont été pragmatiques, orientées action et création de valeur"
                 />
                 <TestimonialItem
-                    name="Yacouba ASKOU"
-                    position="Agent Humanitaire"
-                    message="Merci beaucoup au Cabinet SONNI, à son personnel, pour la qualité de la formation. Nous sommes vraiment sorti grandi à l’issue de c programme de certification de deux mois. Que Dieu vous récompense"
+                    name="Boubacar BIRO DIALLO"
+                    img={ambasMali}
+                    position="Ambassadeur de la République du Mali au Sénégal"
+                    message="Le Africa Invest & Integration Forum a offert un cadre de réflexion stratégique rare, où la diplomatie retrouve pleinement son rôle de facilitateur économique. Ce forum pose les bases d’une diplomatie africaine orientée vers des résultats concrets et mesurables. "
                 />
                 <TestimonialItem
-                    name="Fanta BALDÉ"
-                    position="Assistante au service Régional de Pêche de Dakar"
-                    message="Je suis très contente de la formation d’assistante de direction passée à SONNI qui m’a permis d’avoir une nouvelle opportunité. Fanta BALDÉ - Assistante au service Régional de Pêche de Dakar Je suis très contente de la formation d’assistante de direction passée à SONNI qui m’a permis d’avoir une nouvelle opportunité. "
-                />
-                <TestimonialItem
-                    name="Abdourahmane SAMB"
-                    position="Entrepreneur"
-                    message="Je suis très satisfait de la certification en gestion de stock passée au cabinet SONNI avec un formateur compétent. Ce qui m’a permis de maîtriser la pratique. Je remercie aussi M. Maiga pour son cours en développement personnel. "
-                />
-                <TestimonialItem
-                    name="Abdoul Amadou BA"
-                    position="Gestionnaire de Stock à H&D Industrie Chère"
-                    message="je remercie de passage toute l’équipe du Cabinet SONNI. Grâce à la certification passée à SONNI, j’ai pu saisir une nouvelle opportunité. Remerciement spécial à M. MAIGA. "
-                />
-                <TestimonialItem
-                    name="Frédéric KANFANY"
-                    position="fonctionnaire au TER Dakar "
-                    message="C’est avec un grand plaisir que j’ai découvert le Cabinet SONNI où j’ai pu faire une formation certifiante en comptabilité. Remerciement spécial au Directeur M. Maiga et au grand formateur M. Idrissa qui nous a appris à mieux cerner les contours de SAGE."
-                />
-                <TestimonialItem
-                    name="Adama DIONE"
-                    position="Comptable"
-                    message="Ce fut une belle expérience la formation passée au Cabinet SONNI. Avec des formateurs hautement qualifiés. Nous remercions M. Maiga avec son équipe."
-                />
-                <TestimonialItem
-                    name="Modou SARR"
-                    position="Gendarme/ Chef Comptable magasin d’approvisionnement "
-                    message="Je tenais à remercier le cabinet SONNI pour la bonne formation en gestion de stock que j'ai acquise là-bas, actuellement, chef comptable Magasin approvisionnement des pièces détachées pour les véhicules automobiles, acquise grâce à la formation. Merci beaucoup de m'avoir donné cette chance"
-                />
-                <TestimonialItem
-                    name="Moussa CAMARA "
-                    position="Manager de commerce Auchan Sénégal"
-                    message="La formation a été intéressante et instructive. Votre expertise, votre clarté d'explication et votre disponibilité ont rendu l'apprentissage particulièrement agréable et stimulant la formation. Je suis enchanté d'avoir eu l'opportunité de participer à cette formation."
-                />
-                <TestimonialItem
-                    name="Mme KAKPO"
-                    position="Entrepreneur"
-                    message="Je suis vraiment satisfaite de ma formation passée à votre cabinet. Actuellement ça m’aide beaucoup dans la gestion de mes produits que je vends en ligne. Aussi, en tant qu’assistante administrative en ligne."
+                    name="Mandjou Dioubaté"
+                    img={ambasGuine}
+                    position="Ambassadeur de la République de Guinée au Sénégal"
+                    message="Ce forum a su créer une convergence intelligente entre vision politique, diplomatie et investissement. Il constitue une plateforme crédible pour porter les ambitions économiques africaines à un niveau supérieur."
                 />
             </Carousel>
         </div>

@@ -1,6 +1,10 @@
 import React, {useEffect} from 'react';
+import {ServiceItem} from "../../components/home/ServiceItem";
+import {Trans, useTranslation} from "react-i18next";
 
 const TeamPage = () => {
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -9,13 +13,74 @@ const TeamPage = () => {
     return (
         <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
             <div className="mx-auto lg:mx-0 mb-10">
-                <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">NOTRE EQUIPE</h2>
+                <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">Leadership</h2>
                 <p className="mt-6 text-xl leading-loose text-center">
-                    Notre équipe rassemble des profils hautement qualifiés en stratégie, relations internationales, communication, intelligence économique, diplomatie, gestion de projets et formation exécutive.
+                    {t('about.leadership')}
+                </p>
+        <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Governance &amp; Advisory Network</h2>
+                <p className="mt-6 text-xl leading-loose text-center">
+                    {t('about.governance')}
+                    <br/>
+
+                    <Trans i18nKey="about.governance_list" />
+                    <br/>
+                    {t('about.governance_text')}
                 </p>
 
+                <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Notre approche</h2>
+                <p className="mt-6 text-xl leading-loose text-center">
+                    SONNI Group Advisory privilégie une approche :<br/>
+                    - sélective, orientée vers des partenaires et clients à fort impact,<br/>
+                    - stratégique, centrée sur la décision, l’influence et le long terme,<br/>
+                    - institutionnelle, conforme aux standards des organisations<br/>
+                    publiques, diplomatiques et internationales.       <br/>
+                </p>
+
+                <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Notre équipe opérationnelle</h2>
+
+
+                <p className="mt-6 mb-12 text-xl leading-loose text-center">
+                    SONNI Group Advisory s’appuie sur une équipe opérationnelle agile et
+                    pluridisciplinaire, chargée de la mise en œuvre des activités de
+                    sensibilisation, de conseil, de communication, de formation et de gestion de
+                    projets stratégiques.
+                    Placée sous la supervision directe de la Direction Exécutive, l’équipe
+                    opérationnelle contribue à l’exécution des missions du cabinet, au
+                    déploiement de ses programmes et à l’accompagnement de ses partenaires
+                    institutionnels, diplomatiques et économiques.
+                    Membres de l’équipe opérationnelle
+                </p>
+
+                <div className="flex">
+                    <ServiceItem
+                        bgColor={'#fff'}
+                        color={'#F39200'}
+                        title={"Fatouma DOUCOURÉ"}
+                        description={'Directrice administrative et financière'}
+                    />
+                    <ServiceItem
+                        bgColor={'#fff'}
+                        color={'#F39200'}
+                        title={"Houleye SY"}
+                        description={'Chargée du développement et des partenariats'}
+                    />
+                    <ServiceItem
+                        bgColor={'#fff'}
+                        color={'#F39200'}
+                        title={"Aïssatou Mbaye"}
+                        description={'Chargée de la communication digitale et visuelle'}
+                    />
+                    <ServiceItem
+                        bgColor={'#fff'}
+                        color={'#F39200'}
+                        title={"Abdourahamane AKILOU"}
+                        description={'Chargé de mission et de programmes'}
+                    />
+                </div>
                 <p className="mt-6 text-xl font-medium leading-loose text-center">
-                    Ensemble, nous portons la vision SONNI : bâtir un leader panafricain du conseil et de l’influence.
+                    L’équipe opérationnelle agit en étroite collaboration avec la Direction
+                    Exécutive afin d’assurer la cohérence stratégique, la qualité des livrables et
+                    l’impact des actions menées par SONNI Group Advisory.
                 </p>
             </div>
             {/*<Avatar*/}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from "framer-motion"
 
-export const ServiceItem = ({title, description, bgColor, color}: {title: string, description: string, bgColor: string, color: string}) => {
+export const ServiceItem = ({title, description, bgColor, color}: {title: string, description?: string, bgColor: string, color: string}) => {
     return (
 
 
@@ -12,13 +12,13 @@ export const ServiceItem = ({title, description, bgColor, color}: {title: string
                 style={{backgroundColor: `${bgColor}`}}>
                 <div className="lg:max-w-sm h-full p-8 rounded-lg">
                     <h5
-                        className="mb-4 font-medium text-center text-xl leading-tight max-sm:leading-relaxed"  style={{color: `${color}`}}>
+                        className="font-medium text-center capitalize text-xl leading-tight max-sm:leading-relaxed"  style={{color: `${color}`}}>
                         {title}
                     </h5>
-                    {/*<p
-                        className="mb-4 mt-7 text-base text-white">
+                    {description &&
+                        <p className="mb-4 mt-7 text-base text-center text-black">
                         {description}
-                    </p>*/}
+                    </p>}
 
                 </div>
 

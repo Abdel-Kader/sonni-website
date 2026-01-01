@@ -1,15 +1,19 @@
 import React from 'react';
 
-export const TestimonialItem = ({name, position, message}: {name: string, position: string, message: string}) => {
+export const TestimonialItem = ({name, position, message, img}: {name: string, position?: string, message: string, img?:any}) => {
     return (
-        <div className="max-w-screen-xl shadow-2xl border-black border-t-black mt-4 px-4 pt-4 mx-auto text-center lg:py-16 lg:px-6">
+        <div className="max-w-screen-xl shadow-xl border-black border-t-black mt-4 px-4 pt-4 mx-auto text-center lg:py-16 lg:px-6">
 
-            <p className="text-xl font-medium text-gray-900">{message}</p>
+            <div className="text-center content-center justify-center flex">
+                <img src={img} alt={name} className="w-32 h-32 rounded-full  "/>
+            </div>
+
+            <p className="font-medium mt-6 text-gray-900">{message}</p>
             <div className="flex items-center mt-7 divide-gray-500 flex-col">
                 <div className="pr-3 font-medium text-secondaty">{name}
                 </div>
-                <div className="pl-3 max-sm:mb-10 text-sm font-light text-gray-500 dark:text-gray-400">{position}
-                </div>
+                {position && <div className="pl-3 max-sm:mb-10 text-sm font-light text-gray-500 dark:text-gray-400">{position}
+                </div>}
             </div>
             {/*<figure className="max-w-screen-md mx-auto">
                 <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27"
