@@ -1,11 +1,17 @@
 import React from 'react';
 import { Carousel } from "flowbite-react";
 import {TestimonialItem} from "./TestimonialItem";
+import sgCom from '../../assets/testimonials/sgcom.png'
+import dgSahel from '../../assets/testimonials/dgsahel.png'
+import ambasMali from '../../assets/testimonials/ambassadeMali.png'
+import ambasGuine from '../../assets/testimonials/ambassadeGuine.png'
+
+
 const Testimonial = () => {
 
     return (
 
-        <div className="h-44 mb-36 max-sm:h-auto xl:h-60 2xl:h-80">
+        <div className="mb-36 max-sm:h-auto">
             <Carousel
                 slide={false}
                 leftControl={
@@ -29,12 +35,28 @@ const Testimonial = () => {
                     </svg>
                 }>
                 <TestimonialItem
-                    name="Sécretaire Général du Ministère du commerce"
-                    message="Un forum structurant, visionnaire et essentiel pour l’Afrique."
+                    name="Seydina NDIAYE"
+                    img={sgCom}
+                    position="Sécretaire Général du Ministère du commerce et de l'industrie du Sénégal"
+                    message="Le Africa Invest & Integration Forum s’inscrit pleinement dans les priorités de transformation économique et d’intégration régionale portées par l’État du Sénégal. La qualité des échanges et des recommandations formulées mérite d’être saluée"
                 />
                 <TestimonialItem
-                    name="Directeur Général, Groupe bancaire"
-                    message="Un rendez-vous majeur de la diplomatie économique africaine."
+                    name="Mohamed SECK"
+                    img={dgSahel}
+                    position="Directeur Général de Sahel Distribution ( Distributeur de Produits Pétroliers) Vice Président du patronat Président ASDEA ( Association sénégalaise pour le développement de l’Energie en Afrique)"
+                    message="Ce forum a démontré que le secteur privé africain est prêt à jouer un rôle moteur dans l’intégration économique du continent. Les discussions ont été pragmatiques, orientées action et création de valeur"
+                />
+                <TestimonialItem
+                    name="Boubacar BIRO DIALLO"
+                    img={ambasMali}
+                    position="Ambassadeur de la République du Mali au Sénégal"
+                    message="Le Africa Invest & Integration Forum a offert un cadre de réflexion stratégique rare, où la diplomatie retrouve pleinement son rôle de facilitateur économique. Ce forum pose les bases d’une diplomatie africaine orientée vers des résultats concrets et mesurables. "
+                />
+                <TestimonialItem
+                    name="Mandjou Dioubaté"
+                    img={ambasGuine}
+                    position="Ambassadeur de la République de Guinée au Sénégal"
+                    message="Ce forum a su créer une convergence intelligente entre vision politique, diplomatie et investissement. Il constitue une plateforme crédible pour porter les ambitions économiques africaines à un niveau supérieur."
                 />
             </Carousel>
         </div>

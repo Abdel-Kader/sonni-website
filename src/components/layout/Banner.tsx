@@ -21,7 +21,6 @@ const Banner = ({image, title, type, description, catalogue, seminaire, subdescr
                 src={image}
                 autoPlay
                 loop
-                muted
                 playsInline
                 className="absolute w-full max-sm:h-[400px]"
             /> :
