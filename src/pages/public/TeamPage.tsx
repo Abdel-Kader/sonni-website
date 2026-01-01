@@ -1,7 +1,10 @@
 import React, {useEffect} from 'react';
 import {ServiceItem} from "../../components/home/ServiceItem";
+import {Trans, useTranslation} from "react-i18next";
 
 const TeamPage = () => {
+
+    const {t} = useTranslation();
 
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -12,38 +15,16 @@ const TeamPage = () => {
             <div className="mx-auto lg:mx-0 mb-10">
                 <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">Leadership</h2>
                 <p className="mt-6 text-xl leading-loose text-center">
-                    SONNI Group Advisory est fondé et dirigé par Mahamadou Chaïbou Maïga,
-                    expert en relations internationales, diplomatie d’affaires et intelligence
-                    stratégique, avec une spécialisation sur l’intégration économique africaine et
-                    les dynamiques d’investissement sur le continent.
-                    Il intervient depuis plusieurs années à l’interface entre États, institutions
-                    diplomatiques, entreprises, investisseurs et organisations régionales, sur des
-                    enjeux liés à la géopolitique, à l’attractivité économique, à la ZLECAf, aux
-                    stratégies d’influence et au positionnement international des acteurs
-                    africains.
-                    Il est également Président fondateur de l’Africa Invest &amp; Integration Forum,
-                    plateforme panafricaine de dialogue stratégique réunissant décideurs publics,
-                    diplomates, dirigeants d’entreprises et investisseurs autour des enjeux
-                    d’investissement, d’intégration régionale et de diplomatie économique.
+                    {t('about.leadership')}
                 </p>
         <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Governance &amp; Advisory Network</h2>
                 <p className="mt-6 text-xl leading-loose text-center">
+                    {t('about.governance')}
+                    <br/>
 
-                    SONNI Group Advisory s’appuie sur un réseau d’experts, de consultants
-                    sectoriels et de partenaires institutionnels en Afrique et à l’international,
-                    mobilisés selon les missions et les besoins spécifiques des clients.
-                    Cette organisation en plateforme de conseil stratégique permet à SONNI
+                    <Trans i18nKey="about.governance_list" />
                     <br/>
-                    Group Advisory de combiner :  <br/>
-                    - expertise intellectuelle et analytique,  <br/>
-                    - compréhension fine des enjeux africains,  <br/>
-                    - réseau diplomatique et économique de haut niveau,  <br/>
-                    - capacité d’intervention multi-pays et multi-secteurs.  <br/>
-                    <br/>
-                    La gouvernance de SONNI Group Advisory est fondée sur les principes de
-                    rigueur analytique, indépendance intellectuelle, confidentialité, impact
-                    stratégique et création de valeur durable pour les institutions et organisations
-                    accompagnées.
+                    {t('about.governance_text')}
                 </p>
 
                 <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Notre approche</h2>

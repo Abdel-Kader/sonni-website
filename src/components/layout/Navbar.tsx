@@ -186,7 +186,7 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Le Cabinet
+                          {t('title.office')}
                         </button>
                       </MenuItem>
                     </Link>
@@ -194,7 +194,7 @@ export default function Navbar() {
                       <MenuItem>
                         <button
                             className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          Notre Equipe
+                          {t('title.team')}
                         </button>
                       </MenuItem>
                     </Link>

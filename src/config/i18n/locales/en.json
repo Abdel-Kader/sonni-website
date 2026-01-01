@@ -1,6 +1,8 @@
 {
   "title": {
     "about": "About",
+    "office": "About the office",
+    "team": "Our team",
     "expertise": "Our expertise",
     "sonni_intelligence_strategy": "SONNI Intelligence & Strategy",
     "sonni_business_diplomacy_investment_advisory": "SONNI Business Diplomacy & Investment Advisory",
@@ -21,6 +23,15 @@
     "ceo_sub": "Welcome to the SONNI universe - Think, Influence, Invest, Transform.",
     "reference": "SONNI Group Advisory works with public institutions, embassies, regional\norganisations, companies and leaders across Africa.",
     "reference_sub": "These references reflect the quality of our assignments, the trust placed in\nour firm and our commitment to excellence."
-
+  },
+  "about": {
+    "title": "OUR OFFICE",
+    "subtitle": "SONNI Group Advisory is a pan-African institutional advisory firm specialised in :",
+    "services": "• Strategy & economic intelligence <br/>• Communication, public relations & influence <br/>• Business diplomacy & investment <br/>• Executive training & leadership <br/>• Organization of continental strategic events",
+    "footer": "Based in Dakar, the firm operates at the crossroads of political, economic and diplomatic dynamics on the continent, leveraging a broad network of public institutions, embassies, agencies, companies and African leaders.",
+    "leadership": "SONNI Group Advisory is founded and led by Mahamadou Chaïbou Maïga,\nan expert in international relations, business diplomacy and strategic\nintelligence, with a strong focus on African economic integration and\ninvestment dynamics across the continent.\nHe has been operating for several years at the intersection of governments,\ndiplomatic institutions, private sector leaders, investors and regional\norganisations, advising on issues related to geopolitics, economic\nattractiveness, the AfCFTA, influence strategies and the international\npositioning of African stakeholders.\nHe is also the Founder and President of the Africa Invest & Integration\nForum, a pan-African strategic platform bringing together public decision-\nmakers, diplomats, corporate leaders and investors to address key challenges related to investment, regional integration and economic diplomacy in\nAfrica.",
+    "governance": "SONNI Group Advisory operates through a network of senior experts,\nsectoral consultants and institutional partners across Africa and\ninternationally, mobilised on a mission-by-mission basis according to\nclients’ specific needs.\nThis platform-based advisory model enables SONNI Group Advisory to\ncombine:",
+    "governance_text": "The governance of SONNI Group Advisory is grounded in the principles of\nanalytical rigour, intellectual independence, confidentiality, strategic impact\nand sustainable value creation for the institutions and organisations we\nadvise.",
+    "governance_list": "- high-level intellectual and analytical expertise <br/>- in-depth understanding of African challenges <br/>- high-level diplomatic and economic networks <br/>- multi-country and multi-sector intervention capabilities"
   }
 }
