@@ -14,11 +14,11 @@ const TeamPage = () => {
         <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
             <div className="mx-auto lg:mx-0 mb-10">
                 <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">Leadership</h2>
-                <p className="mt-6 text-xl leading-loose text-center">
+                <p className="mt-6 text-xl leading-loose">
                     {t('about.leadership')}
                 </p>
         <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Governance &amp; Advisory Network</h2>
-                <p className="mt-6 text-xl leading-loose text-center">
+                <p className="mt-6 text-xl leading-loose ">
                     {t('about.governance')}
                     <br/>
 
@@ -28,7 +28,7 @@ const TeamPage = () => {
                 </p>
 
                 <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Notre approche</h2>
-                <p className="mt-6 text-xl leading-loose text-center">
+                <p className="mt-6 text-xl leading-loose ">
                     SONNI Group Advisory privilégie une approche :<br/>
                     - sélective, orientée vers des partenaires et clients à fort impact,<br/>
                     - stratégique, centrée sur la décision, l’influence et le long terme,<br/>
@@ -39,7 +39,7 @@ const TeamPage = () => {
                 <h2 className="text-[35px] font-bold tracking-tight text-center mt-12 text-secondary">Notre équipe opérationnelle</h2>
 
 
-                <p className="mt-6 mb-12 text-xl leading-loose text-center">
+                <p className="mt-6 mb-12 text-xl leading-loose ">
                     SONNI Group Advisory s’appuie sur une équipe opérationnelle agile et
                     pluridisciplinaire, chargée de la mise en œuvre des activités de
                     sensibilisation, de conseil, de communication, de formation et de gestion de
@@ -51,7 +51,7 @@ const TeamPage = () => {
                     Membres de l’équipe opérationnelle
                 </p>
 
-                <div className="flex">
+                <div className="lg:flex">
                     <ServiceItem
                         bgColor={'#fff'}
                         color={'#F39200'}

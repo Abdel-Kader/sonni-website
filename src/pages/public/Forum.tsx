@@ -52,7 +52,7 @@ const Forum = () => {
             <Banner image={homeBanner} type='video' title={""} description={''}/>
             <section className="mx-auto max-w-7xl px-6 lg:px-8 lg:mt-72 mt-52">
                 <div className="mx-auto lg:mx-0 mb-10">
-                    <p className="mt-6 text-xl leading-loose text-center">
+                    <p className="mt-6 text-xl leading-loose">
                         L’Africa Invest & Integration Forum est le plus grand forum africain porté
                         sur la business diplomacy, l’investissement & l’intégration économique du
                         continent.
@@ -62,12 +62,13 @@ const Forum = () => {
                     </p>
 
                     <h2 className="text-[30px] mt-12 font-bold tracking-tight text-center animate-slidein500  text-secondary">Appel à partenariat</h2>
-                    <p className="mt-6 text-xl leading-loose text-center">
+                    <p className="mt-6 text-xl leading-loose">
                         Rejoignez les partenaires institutionnels et corporate du Africa Invest &
                         Integration Forum et contribuez à construire une plateforme continentale au
                         service de l’investissement et de l’intégration africaine.
                         <br/>
-                        <button className="bg-secondary h-10 px-10 rounded-md">
+                        <br/>
+                        <button className="bg-secondary h-10 px-10 rounded-md text-center">
                             Devenir Partenaire
                         </button>
                     </p>

@@ -8,7 +8,7 @@ export const ServiceItem = ({title, description, bgColor, color}: {title: string
             <motion.div whileHover={{ scale: 1.2 }}
                         onHoverStart={e => {}}
                         onHoverEnd={e => {}}
-                className="block justify-center lg:max-w-sm rounded-lg bg-cover shadow-lg ml-4"
+                className="block justify-center lg:max-w-sm rounded-lg bg-cover shadow-lg ml-4 mt-6"
                 style={{backgroundColor: `${bgColor}`}}>
                 <div className="lg:max-w-sm h-full p-8 rounded-lg">
                     <h5
