@@ -30,6 +30,7 @@ import IntStrategyPage from "../pages/public/IntStrategyPage";
 import BusDiploPage from "../pages/public/BusDiploPage";
 import CommBrandingPage from "../pages/public/CommBrandingPage";
 import Forum from "../pages/public/Forum";
+import ExpertisePage from "../pages/public/ExpertisePage";
 
 
 export const router = createBrowserRouter([
@@ -50,8 +51,8 @@ export const router = createBrowserRouter([
                 element: <ReferencePage />,
             },
             {
-                path: '/intelligence-strategy',
-                element: <IntStrategyPage />
+                path: '/expertise',
+                element: <ExpertisePage />
             },
             {
                 path: '/business-diplomacy',
