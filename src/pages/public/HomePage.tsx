@@ -60,9 +60,20 @@ export default function HomePage() {
           <Services/>
 
           <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Dernières Publications & Actualités</h2>
-          <span className='ml-24'>
-Affichage sous forme de 3 "Cartes"
-          </span>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-6 lg:ml-24 mt-12">
+              <div className="shadow-md border rounded h-[200px]">
+                  <p className="text-center mt-3">Dernier Rapport/Analyse (Zoom sur l'Indice Sonni).</p>
+
+              </div>
+              <div className="shadow-md border rounded h-[200px]">
+                  <p className="text-center mt-3">Vie du Groupe (Le PDG reçoit une délégation...).</p>
+
+              </div>
+              <div className="shadow-md border rounded h-[200px]">
+                  <p className="text-center mt-3">Événement à venir.</p>
+
+              </div>
+          </div>
 
           <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">{t('title.reference')} </h2>
           <Reference />
