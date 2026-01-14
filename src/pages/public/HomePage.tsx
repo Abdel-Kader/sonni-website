@@ -59,24 +59,144 @@ export default function HomePage() {
           <Valeurs/>*/}
           <Services/>
 
-          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Dernières Publications & Actualités</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mx-6 lg:ml-24 mt-12">
-              <div className="shadow-md border rounded h-[200px]">
-                  <p className="text-center mt-3">Dernier Rapport/Analyse (Zoom sur l'Indice Sonni).</p>
+          <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">Dernières Publications</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mx-6 lg:mx-24 mt-12">
+              <a
+                  href={require("../../assets/publications/analyse_strategique.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shadow-md border border-primary rounded h-[200px] flex flex-col justify-center items-center hover:shadow-lg transition"
+              >
+                  <svg
+                      className="w-14 h-14 mb-3 text-red-600"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                  >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <text
+                          x="5"
+                          y="17"
+                          fontSize="7"
+                          fill="white"
+                      >
+                          PDF
+                      </text>
+                  </svg>
+                  <p className="text-center mt-3"> Attractivité économique de l'Afrique de l'Ouest</p>
+              </a>
 
-              </div>
-              <div className="shadow-md border rounded h-[200px]">
-                  <p className="text-center mt-3">Vie du Groupe (Le PDG reçoit une délégation...).</p>
+              <a
+                  href={require("../../assets/publications/dynamic_securitaire.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shadow-md border border-primary rounded h-[200px] flex flex-col justify-center items-center hover:shadow-lg transition"
+              >
+                  <svg
+                      className="w-14 h-14 mb-3 text-red-600"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                  >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <text
+                          x="5"
+                          y="17"
+                          fontSize="7"
+                          fill="white"
+                      >
+                          PDF
+                      </text>
+                  </svg>
+                  <p className="text-center mt-3"> Dynamiques sécuritaires et économiques au Sahel</p>
+              </a>
 
-              </div>
-              <div className="shadow-md border rounded h-[200px]">
-                  <p className="text-center mt-3">Événement à venir.</p>
+              <a
+                  href={require("../../assets/publications/recomp_geopolitique.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shadow-md border border-primary rounded h-[200px] flex flex-col justify-center items-center hover:shadow-lg transition"
+              >
+                  <svg
+                      className="w-14 h-14 mb-3 text-red-600"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                  >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <text
+                          x="5"
+                          y="17"
+                          fontSize="7"
+                          fill="white"
+                      >
+                          PDF
+                      </text>
+                  </svg>
+                  <p className="text-center mt-3"> L'Afrique de l'Ouest face à la recomposition géopolitique mondiale</p>
+              </a>
 
-              </div>
+              <a
+                  href={require("../../assets/publications/zlecaf.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shadow-md border border-primary rounded h-[200px] flex flex-col justify-center items-center hover:shadow-lg transition"
+              >
+                  <svg
+                      className="w-14 h-14 mb-3 text-red-600"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                  >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <text
+                          x="5"
+                          y="17"
+                          fontSize="7"
+                          fill="white"
+                      >
+                          PDF
+                      </text>
+                  </svg>
+                  <p className="text-center mt-3"> La ZLECAf et l'intégration régionale africaine</p>
+              </a>
+
+              <a
+                  href={require("../../assets/publications/investir_afrik.pdf")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shadow-md border border-primary rounded h-[200px] flex flex-col justify-center items-center hover:shadow-lg transition"
+              >
+                  <svg
+                      className="w-14 h-14 mb-3 text-red-600"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden="true"
+                  >
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <text
+                          x="5"
+                          y="17"
+                          fontSize="7"
+                          fill="white"
+                      >
+                          PDF
+                      </text>
+                  </svg>
+                  <p className="text-center mt-3"> Investir en Afrique de l'Ouest 2025–2028</p>
+              </a>
           </div>
 
+          <h2 className="text-xl mx-6 lg:ml-24 mt-12 mb-4 font-bold tracking-tight text-primary sm:text-2xl">Actualités</h2>
+          <Reference type='actu' />
+
           <h2 className="text-xl mx-6 lg:ml-24 mt-12 font-bold tracking-tight text-primary sm:text-2xl">{t('title.reference')} </h2>
-          <Reference />
+          <Reference type='ref' />
       </>
   )
 }
