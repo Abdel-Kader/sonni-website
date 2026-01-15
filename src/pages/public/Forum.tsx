@@ -16,6 +16,7 @@ import img14 from '../../assets/testimonials/dgsahel.png'
 import img15 from '../../assets/testimonials/ambassadeMali.png'
 import img16 from '../../assets/testimonials/ambassadeGuine.png'
 import Banner from "../../components/layout/Banner";
+import {Link} from "react-router-dom";
 
 
 const homeBanner = new URL(
@@ -68,9 +69,13 @@ const Forum = () => {
                         service de l’investissement et de l’intégration africaine.
                         <br/>
                         <br/>
-                        <button className="bg-secondary h-10 px-10 rounded-md text-center">
-                            Devenir Partenaire
-                        </button>
+                        <div className="flex justify-center items-center">
+                            <Link to="/contact" state={{type: 'forum'}}
+                                  className="px-6 py-3 bg-secondary  text-white font-medium hover:opacity-90 transition">
+                                Devenir Partenaire
+                            </Link>
+                        </div>
+
                     </p>
 
                     <h2 className="text-[30px] mt-12 font-bold tracking-tight text-center animate-slidein500  text-secondary">Témoignages</h2>

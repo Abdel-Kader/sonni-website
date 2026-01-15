@@ -31,6 +31,7 @@ import BusDiploPage from "../pages/public/BusDiploPage";
 import CommBrandingPage from "../pages/public/CommBrandingPage";
 import Forum from "../pages/public/Forum";
 import ExpertisePage from "../pages/public/ExpertisePage";
+import MagazinePage from "../pages/public/MagazinePage";
 
 
 export const router = createBrowserRouter([
@@ -55,8 +56,8 @@ export const router = createBrowserRouter([
                 element: <ExpertisePage />
             },
             {
-                path: '/business-diplomacy',
-                element: <BusDiploPage />
+                path: '/magazine',
+                element: <MagazinePage />
             },
             {
                 path: '/communication-branding',

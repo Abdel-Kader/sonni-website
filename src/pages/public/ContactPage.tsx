@@ -74,7 +74,7 @@ const ContactPage = () => {
             <Banner image={certificatBanner} title={"Contactez-nous"}
                     description={"Un conseiller client toujours à votre écoute"}/>
 
-            <section className="px-8 py-8 lg:py-16">
+            <section className="px-8 py-8 lg:py-16 lg:mt-72 mt-[600px]">
                 <div className="container mx-auto text-center">
                     <h5 className="mb-4 !text-base lg:!text-2xl text-primary">
                         Contactez-nous !
@@ -104,7 +104,7 @@ const ContactPage = () => {
                                     location.state && location.state.type === 'devis' && 'Demande de dévis'
                                 }
                                 {
-                                    ((location.state && location.state.type === 'CEDM') || (location.state && location.state.type === 'CS')) && 'Téléchargement Catalogue'
+                                    (location.state && location.state.type === 'forum') && 'Devenir partenaire'
                                 }{
                                     ((location.state && location.state.type === 'TB')) && 'Téléchargement Contenu Team building'
                                 }
@@ -222,8 +222,8 @@ const ContactPage = () => {
 
 
                             <div>
-                                {location.state && (location.state.type === 'CEDM' || location.state.type === 'CS'|| location.state.type === 'TB') &&
-                                    <p className="mb-2 text-left font-medium !text-gray-900">Raision du téléchargement
+                                {location.state && (location.state.type === 'forum') &&
+                                    <p className="mb-2 text-left font-medium !text-gray-900">Type de partenariat
                                         *</p>}
                                 {!location.state &&
                                     <p className="mb-2 text-left font-medium !text-gray-900">Message *</p>}
@@ -251,7 +251,7 @@ const ContactPage = () => {
 
                                 </textarea>}
                             </div>
-                            <button className="w-full bg-primary h-10 rounded-md">
+                            <button className="px-6 py-3 bg-secondary  text-white font-medium hover:opacity-90 transition">
                                 Valider
                             </button>
                         </form>

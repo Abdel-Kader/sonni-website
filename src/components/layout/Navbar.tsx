@@ -97,7 +97,7 @@ export default function Navbar() {
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">{t('title.forum')}</p>
                     </Link>
-                    <Link to='/certificats' onClick={()=> setIsOpen(false)}>
+                    <Link to='/magazine' onClick={()=> setIsOpen(false)}>
                       <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">{t('title.magazine')}</p>
                     </Link>
@@ -160,7 +160,7 @@ export default function Navbar() {
                      aria-current="page">{t('title.forum')}
                   </p>
                 </Link>
-                <Link to='/services'>
+                <Link to='/magazine'>
                   <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
                      aria-current="page">{t('title.magazine')}
                   </p>
