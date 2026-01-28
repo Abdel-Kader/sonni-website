@@ -23,12 +23,13 @@ const WebinairePage = () => {
             isLoading(false)
         })
 
+        window.scrollTo(0, 0)
+
         return () => {
 
             subs()
         }
 
-        window.scrollTo(0, 0)
 
     },[]);
     return (

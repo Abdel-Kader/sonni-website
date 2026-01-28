@@ -13,23 +13,24 @@ const SeminairePage = () => {
 
 
     useEffect(() => {
-        isLoading(true)
+        isLoading(true);
+
         const subs = onSnapshot(collection(db, "seminaires"), (snapshot) => {
             let list: any[] = [];
             snapshot.docs.forEach((doc) => {
-                list.push({_id: doc.id, ...doc.data()})
-            })
-            setSeminaires(list)
-            isLoading(false)
-        })
+                list.push({ _id: doc.id, ...doc.data() });
+            });
+            setSeminaires(list);
+            isLoading(false);
+        });
+
+        window.scrollTo(0, 0);
 
         return () => {
+            subs();
+        };
+    }, []);
 
-            subs()
-        }
-
-        window.scrollTo(0, 0)
-    },[]);
     return (
         <>
             <Banner image={certificatBanner} title={"Nos séminaires"}

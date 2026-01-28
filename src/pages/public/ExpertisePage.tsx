@@ -4,8 +4,6 @@ import busDiplo from "../../assets/expertise/busDiplo.png";
 import accademic from "../../assets/expertise/accademic.png";
 import communication from "../../assets/expertise/communication.png";
 import event from "../../assets/expertise/event.png";
-import Banner from "../../components/layout/Banner";
-import certificatBanner from "../../assets/banners/certificat.jpg";
 
 export default function ExpertisePage() {
     useEffect(() => {
