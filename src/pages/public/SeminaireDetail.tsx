@@ -1,9 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Banner from "../../components/layout/Banner";
 import seminaireBanner from "../../assets/banners/certificat.jpg";
 import {useLocation} from 'react-router-dom';
 import {motion} from "framer-motion";
-import {ateliers} from "../../assets/contents/seminairePage";
 import {List, Tabs} from "flowbite-react";
 
 const SeminaireDetail = () => {

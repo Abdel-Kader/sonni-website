@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import Banner from "../../components/layout/Banner";
 import seminaireBanner from "../../assets/banners/certificat.jpg";
 import {useLocation} from 'react-router-dom';
-import animateur from "../../assets/webinaires/animateur1.png";
 
 const WebinaireDetail = () => {
     let location = useLocation();
