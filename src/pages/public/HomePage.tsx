@@ -7,7 +7,7 @@ import Reference from "../../components/home/Reference";
 import {useTranslation} from "react-i18next";
 
 const homeBanner = new URL(
-    "../../assets/banners/bg-video.mp4",
+    "../../assets/banners/video.mp4",
     import.meta.url
 ).href;
 

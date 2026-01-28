@@ -20,8 +20,10 @@ const Banner = ({image, title, type, description, catalogue, seminaire, subdescr
                 <video
                 src={image}
                 autoPlay
+                muted
                 loop
                 playsInline
+                preload="auto"
                 className="absolute w-full max-sm:h-[400px]"
             /> :
                 <div

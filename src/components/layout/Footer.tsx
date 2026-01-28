@@ -16,10 +16,7 @@ export default function Footer() {
                         </a>
 
                         <p className="text-justify text-sm text-gray-300">
-                            Nous sommes un organisme de conseils et
-                            de formation professionnelle continue. Implanté à Dakar, nous disposons d’une
-                            expertise avérée en ingénierie pédagogique, en conseils et solutions : Relations
-                            Internationales, Diplomatie, Organisation Managériale et Leadership.
+                            Nous sommes un organisme de conseils et de formation professionnelle continue. Implanté à Dakar, nous disposons d’une expertise avérée en ingénierie pédagogique, en conseils et solutions : Relations Internationales, Diplomatie, Organisation Managériale et Leadership.
                         </p>
 
                         <ul className="text-gray-300 mt-8">
