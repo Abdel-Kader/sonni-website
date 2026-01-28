@@ -20,7 +20,7 @@ export default function HomePage() {
 
   return (
       <>
-          <Banner image={homeBanner} type='video' title={" SONNI GROUP ADVISORY"} description={''}/>
+          <Banner image={homeBanner} type='video' title={""} description={''}/>
           <About/>
           <h2 className="text-2xl ml-36 mt-6 font-bold tracking-tight text-primary sm:text-2xl"> {t('title.ceo')}</h2>
           <div className="mx-6 lg:mx-12 lg:px-24 lg:flex mt-4">
