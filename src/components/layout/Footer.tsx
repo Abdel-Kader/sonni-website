@@ -1,6 +1,7 @@
 
 import {address, email, mobile, telephone} from '../../assets/contents/homePage'
 import logo from '../../assets/logos/logo-transparent.png'
+import {Link} from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -12,7 +13,6 @@ export default function Footer() {
                     <div className="mb-6 md:mb-0 flex-1 mr-12">
                         <a href="/" className="flex items-center mb-6">
                             <img src={logo} className="h-20 me-3" alt="Sonni Logo" />
-                            <span className="self-center text-xl font-semibold whitespace-nowrap text-white">SONNI GROUP</span>
                         </a>
 
                         <p className="text-justify text-sm text-gray-300">
@@ -43,7 +43,7 @@ export default function Footer() {
 
                                     <span>
                                         Téléphone
-                                        <p className="text-justify text-sm text-gray-300 mt-4">{telephone}</p>
+                                        <a href={`tel:${telephone}`} className="text-justify text-sm text-gray-300 mt-4 block hover:text-white">{telephone}</a>
                                     </span>
                                 </div>
 
@@ -56,7 +56,7 @@ export default function Footer() {
 
                                     <span>
                                         Mobile
-                                        <p className="text-justify text-sm text-gray-300 mt-4">{mobile}</p>
+                                        <a href={`tel:${mobile}`} className="text-justify text-sm text-gray-300 mt-4 block hover:text-white">{mobile}</a>
                                     </span>
                                 </div>
 
@@ -71,12 +71,16 @@ export default function Footer() {
 
                                     <span>
                                         Email
-                                        <p className="text-justify text-sm text-gray-300 mt-4">{email}</p>
+                                        <a href={`mailto:${email}`} className="text-justify text-sm text-gray-300 mt-4 block hover:text-white">{email}</a>
                                     </span>
                                 </div>
 
                             </li>
+                            <Link to="/contact" className="text-secondary hover:text-gray-900 dark:hover:text-white ms-5 text-md">
+                                S’inscrire à notre Newsletters
+                            </Link>
                         </ul>
+
                     </div>
 
                 </div>
@@ -84,7 +88,7 @@ export default function Footer() {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2024  All Rights Reserved.
                     </span>
-                    <div className="flex mt-4 sm:justify-center sm:mt-0">
+                    <div className="flex mt-4 sm:justify-center sm:mt-0 items-center">
                         <a href="https://www.facebook.com/cedmsonnidiplomatie?mibextid=LQQJ4d"
                            className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" className="w-5 h-5" aria-hidden="true"
@@ -139,6 +143,7 @@ export default function Footer() {
                             </svg>
                             <span className="sr-only">Instagram account</span>
                         </a>
+
                     </div>
                 </div>
             </div>

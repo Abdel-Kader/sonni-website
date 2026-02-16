@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import certificatBanner from "../../assets/banners/certificat.jpg";
+import img3 from '../../assets/galery/img3.png'
 import Banner from "../../components/layout/Banner";
 import Maps from "../../assets/img_1.png"
 import CEDM from "../../assets/cedm.png"
@@ -71,12 +71,12 @@ const ContactPage = () => {
 
     return (
         <>
-            <Banner image={certificatBanner} title={"Contactez-nous"}
-                    description={"Un conseiller client toujours à votre écoute"}/>
+            <Banner image={img3} title={"SONNY GROUP ADVISORY"}
+                    description={"Cabinet panafricain de conseil stratégique, d’intelligence, de communication et d’accompagnement des décideurs publics et privés en Afrique "}/>
 
-            <section className="px-8 py-8 lg:py-16 lg:mt-72 mt-[600px]">
+            <section className="px-8 py-8 lg:py-16 ">
                 <div className="container mx-auto text-center">
-                    <h5 className="mb-4 !text-base lg:!text-2xl text-primary">
+                    <h5 className="mb-4 font-bold text-3xl text-secondary">
                         Contactez-nous !
                     </h5>
 

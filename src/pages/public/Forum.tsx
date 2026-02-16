@@ -51,7 +51,7 @@ const Forum = () => {
     return (
         <>
             <Banner image={homeBanner} type='video' title={""} description={''}/>
-            <section className="mx-auto max-w-7xl px-6 lg:px-8 lg:mt-72 mt-52">
+            <section className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto lg:mx-0 mb-10">
                     <p className="mt-6 text-xl leading-loose">
                         L’Africa Invest & Integration Forum est le plus grand forum africain porté

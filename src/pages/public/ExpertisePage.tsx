@@ -4,6 +4,9 @@ import busDiplo from "../../assets/expertise/busDiplo.png";
 import accademic from "../../assets/expertise/accademic.png";
 import communication from "../../assets/expertise/communication.png";
 import event from "../../assets/expertise/event.png";
+import img3 from '../../assets/galery/img3.png'
+import Banner from "../../components/layout/Banner";
+
 
 export default function ExpertisePage() {
     useEffect(() => {
@@ -11,15 +14,15 @@ export default function ExpertisePage() {
     }, []);
 
     return (
-        // <>
-        //     <Banner image={certificatBanner} title={"Nos certificats et MBA"}
-        //             description={"SONNI GROUP, organisme de formation professionnelle continue reconnu du droit sénégalais. Nous mettons à votre disposition des certifications et MBA conçus par notre comité pédagogique composé d’experts praticiens, répondants aux critères d’excellences."}/>
+        <>
+            <Banner image={img3} title={"SONNY GROUP ADVISORY"}
+                    description={"Cabinet panafricain de conseil stratégique, d’intelligence, de communication et d’accompagnement des décideurs publics et privés en Afrique "}/>
 
 
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32 pb-24">
+        <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-5 pb-14">
 
             {/* Titre */}
-            <div className="mb-14">
+            <div className="mb-10">
                 <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">
                     Notre expertise
                 </h2>
@@ -27,7 +30,7 @@ export default function ExpertisePage() {
             </div>
 
             {/* Contenu */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-start">
+            <div className="grid grid-cols-1 max-sm:gap-4 lg:grid-cols-2 items-start">
 
                 {/* Image */}
                 <div className="max-w-lg">
@@ -230,7 +233,8 @@ export default function ExpertisePage() {
 
                 </div>
             </div>
-            {/*</>*/}
         </section>
+        </>
+
     );
 }

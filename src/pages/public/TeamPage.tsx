@@ -1,6 +1,9 @@
 import React, {useEffect} from 'react';
 import {ServiceItem} from "../../components/home/ServiceItem";
 import {Trans, useTranslation} from "react-i18next";
+import Banner from "../../components/layout/Banner";
+import img3 from '../../assets/galery/img3.png'
+
 
 const TeamPage = () => {
 
@@ -11,7 +14,12 @@ const TeamPage = () => {
     },[]);
 
     return (
-        <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-32">
+        <>
+            <Banner image={img3} title={"SONNY GROUP ADVISORY"}
+                    description={"Cabinet panafricain de conseil stratégique, d’intelligence, de communication et d’accompagnement des décideurs publics et privés en Afrique "}/>
+
+
+            <section className="mx-auto max-w-7xl px-6 lg:px-8 pt-5 pb-14">
             <div className="mx-auto lg:mx-0 mb-10">
                 <h2 className="text-[35px] font-bold tracking-tight text-center text-secondary">Leadership</h2>
                 <p className="mt-6 text-xl leading-loose">
@@ -128,6 +136,7 @@ const TeamPage = () => {
             {/*<Partners />*/}
 
         </section>
+            </>
     );
 };
 

@@ -68,19 +68,19 @@ export default function Navbar() {
                           anchor="bottom"
                           className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                       >
-                        <Link to='/about' onClick={()=> setIsOpen(false)}>
-                          <MenuItem>
-                            <button
-                                className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Le Cabinet
-                            </button>
-                          </MenuItem>
-                        </Link>
+                        {/*<Link to='/about' onClick={()=> setIsOpen(false)}>*/}
+                        {/*  <MenuItem>*/}
+                        {/*    <button*/}
+                        {/*        className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">*/}
+                        {/*      Le Cabinet*/}
+                        {/*    </button>*/}
+                        {/*  </MenuItem>*/}
+                        {/*</Link>*/}
                         <Link to='/team' onClick={()=> setIsOpen(false)}>
                           <MenuItem>
                             <button
                                 className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                              Notre Equipe
+                              Leadership & Gouvernance
                             </button>
                           </MenuItem>
                         </Link>
@@ -98,7 +98,7 @@ export default function Navbar() {
                          aria-current="page">{t('title.forum')}</p>
                     </Link>
                     <Link to='/magazine' onClick={()=> setIsOpen(false)}>
-                      <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/certificats' ? 'underline underline-offset-8' : ''}`}
+                      <p className={`rounded-md px-2 py-2   font-medium  text-white hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/magazine' ? 'underline underline-offset-8' : ''}`}
                          aria-current="page">{t('title.magazine')}</p>
                     </Link>
                     <Link to='/contact' onClick={()=> setIsOpen(false)}>
@@ -133,14 +133,14 @@ export default function Navbar() {
                       anchor="bottom"
                       className="w-40 z-40 mt-3 rounded-s border border-gray-100  bg-white shadow-2xl p-1 text-sm/6 text-[#312783] transition duration-100 ease-out [--anchor-gap:var(--spacing-1)] focus:outline-none data-[closed]:scale-95 data-[closed]:opacity-0"
                   >
-                    <Link to='/about' onClick={()=> setIsOpen(false)}>
-                      <MenuItem>
-                        <button
-                            className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                          {t('title.office')}
-                        </button>
-                      </MenuItem>
-                    </Link>
+                    {/*<Link to='/about' onClick={()=> setIsOpen(false)}>*/}
+                    {/*  <MenuItem>*/}
+                    {/*    <button*/}
+                    {/*        className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">*/}
+                    {/*      {t('title.office')}*/}
+                    {/*    </button>*/}
+                    {/*  </MenuItem>*/}
+                    {/*</Link>*/}
                     <Link to='/team'>
                       <MenuItem>
                         <button
@@ -161,7 +161,7 @@ export default function Navbar() {
                   </p>
                 </Link>
                 <Link to='/magazine'>
-                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/services' ? 'underline underline-offset-8' : ''}`}
+                  <p className={`rounded-md px-2 py-2 text-sm font-medium text-[#312783] hover:underline hover:underline-offset-8 hover:-translate-y-1 hover:scale-80 ${location.pathname === '/magazine' ? 'underline underline-offset-8' : ''}`}
                      aria-current="page">{t('title.magazine')}
                   </p>
                 </Link>
