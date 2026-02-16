@@ -22,7 +22,7 @@ export default function HomePage() {
       <>
           <Banner image={homeBanner} type='video' title={""} description={''}/>
           <About/>
-          <h2 className="text-2xl ml-36 mt-6 font-bold tracking-tight text-secondary sm:text-2xl"> {t('title.ceo')}</h2>
+          <h2 className="text-2xl lg:ml-36 ml-6 mt-6 font-bold tracking-tight text-secondary sm:text-2xl"> {t('title.ceo')}</h2>
           <div className="mx-6 lg:mx-12 lg:px-24 lg:flex mt-4">
 
               {/* Texte */}
